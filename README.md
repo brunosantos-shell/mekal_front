@@ -22,7 +22,7 @@ Inicie o servidor de desenvolvimento com
 yarn dev
 ```
 
-#### Linting
+### Linting
 
 Estão configurados o ESLint e o Prettier para este projeto.
 Ao salvar um arquivo, ele é formatado automaticamente. (Ctrl + S)
@@ -30,7 +30,7 @@ Só será possível realizar commits se não houver nenhum erro indicado pelo ES
 
 > Certifique-se de ter instalado a extensão "ESLint" no seu VSCode.
 
-#### Estilização
+### Estilização
 
 O projeto está configurado para utilizar o SCSS modules.
 
@@ -49,7 +49,7 @@ Ao criar um novo componente, importe o arquivo /styles/utils/index.scss. Esse ar
 
 Ao importar o utils, você pode aplicar os seletores que se encontram em /styles/utils/global.scss para estilizar um componente.
 
-#### Componentes
+### Componentes
 
 Os componentes são divididos em dois grandes grupos:
 
@@ -62,12 +62,12 @@ Cada pasta de componente deve conter os arquivos:
 - index.tsx -> código do componente e os tipos específicos do componente declarados logo após os imports
 - styles.modules.scss -> estilização
 
-#### Context API
+### Context API
 
 Os Contexts estão dividos dentro da pasta /context, seguindo o padrão:
-/context
-/[NomeDoContexto]
-index.tsx -> conteúdo do Context
-types.ts -> tipos referentes ao Context
+- /context
+  - /[NomeDoContexto]
+    - index.tsx -> conteúdo do Context
+    - types.ts -> tipos referentes ao Context
 
 Para adicionar o Provider de um Context à aplicação, inclua-o na prop "contexts" do componente ContextNester instanciado em /pages/\_app.tsx
