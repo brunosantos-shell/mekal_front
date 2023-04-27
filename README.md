@@ -51,7 +51,7 @@ Ao importar o utils, você pode aplicar os seletores que se encontram em /styles
 
 ## Componentes
 
-Os componentes são divididos em dois grandes grupos:
+Os componentes são divididos em três grandes grupos:
 
 - /components/global -> componentes únicos que podem ser aplicados em qualquer parte da aplicação
 - /components/templates -> componentes de maior complexidade que reutilizam componentes globais
