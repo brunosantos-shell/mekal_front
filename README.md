@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Badaró NextJS Template
 
-## Getting Started
+Este repositório possui as configurações básicas para iniciar um projeto com NextJS
 
-First, run the development server:
+### Iniciando o projeto
+
+Ao clonar o projeto, instale as dependências com o yarn
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Então, rode o seguinde comando (husky é o serviço para garantir o linting do código pré-commit)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn husky install
+```
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+Inicie o servidor de desenvolvimento com
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+yarn dev
+```
 
-## Learn More
+#### Linting
 
-To learn more about Next.js, take a look at the following resources:
+Estão configurados o ESLint e o Prettier para este projeto.
+Ao salvar um arquivo, ele é formatado automaticamente. (Ctrl + S)
+Só será possível realizar commits se não houver nenhum erro indicado pelo ESLint.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Certifique-se de ter instalado a extensão "ESLint" no seu VSCode.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Estilização
 
-## Deploy on Vercel
+O projeto está configurado para utilizar o SCSS modules.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Em /styles/global.scss estão os estilos que serão aplicados de forma global, este arquivo é importado em /pages/\_app.tsx
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Em /styles/pages.module.scss estão algumas classes de apoio para utilizar nas páginas.
+
+- O seletor .wrapper pode ser aplicado em uma div contendo os elementos header, main e footer, respectivamente.
+
+Ao criar um novo componente, importe o arquivo /styles/utils/index.scss. Esse arquivo contém:
+
+- Design Tokens
+- Funções
+- Grid
+- Estilos globais (aplicados por classe)
+
+Ao importar o utils, você pode aplicar os seletores que se encontram em /styles/utils/global.scss para estilizar um componente.
+
+#### Componentes
+
+Os componentes são divididos em dois grandes grupos:
+
+- /components/global -> componentes únicos que podem ser aplicados em qualquer parte da aplicação
+- /components/templates -> componentes de maior complexidade que reutilizam componentes globais
+- /components/pages -> componentes de páginas específicas, devem estar aninhados dentro de pastas com o mesmo nome da página em que serão utilizados
+
+Cada pasta de componente deve conter os arquivos:
+
+- index.tsx -> código do componente e os tipos específicos do componente declarados logo após os imports
+- styles.modules.scss -> estilização
+
+#### Context API
+
+Os Contexts estão dividos dentro da pasta /context, seguindo o padrão:
+/context
+/[NomeDoContexto]
+index.tsx -> conteúdo do Context
+types.ts -> tipos referentes ao Context
+
+Para adicionar o Provider de um Context à aplicação, inclua-o na prop "contexts" do componente ContextNester instanciado em /pages/\_app.tsx

@@ -1,0 +1,139 @@
+// Fonte Responsiva
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+@mixin font-responsive($min-font-size, $max-font-size, $lh) {
+  $u1: unit($min-width-site);
+  $u2: unit($max-width-site);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      line-height: $lh;
+      @media screen and (min-width: $min-width-site) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-width-site}) / #{strip-unit($max-width-site - $min-width-site)})
+        );
+      }
+      @media screen and (min-width: $max-width-site) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+// Tamanho das telas
+
+@mixin Session {
+  max-width: $max-width-site;
+  min-width: $min-width-site;
+  margin-left: auto;
+  margin-right: auto;
+
+  /*Mobile*/
+  @media (min-width: $breakpoint-mobile-min) and (max-width: $breakpoint-mobile-max) {
+    width: $width-site-mobile;
+  }
+  /*Tablet*/
+  @media (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
+    width: $width-site-tablet;
+  }
+  /*Desktop M*/
+  @media (min-width: $breakpoint-desktop-M-min) and (max-width: $breakpoint-desktop-M-max) {
+    width: $width-site-desktop-M;
+  }
+  /*Desktop L*/
+  @media (min-width: $breakpoint-desktop-L-min) {
+    width: $width-site-desktop-L;
+  }
+}
+
+// Mixin para facilitar compatibilidade de navegadores
+@mixin transition($params) {
+  -webkit-transition: $params;
+  -moz-transition: $params;
+  -khtml-transition: $params;
+  -o-transition: $params;
+  transition: $params;
+}
+
+@mixin scale($params) {
+  -webkit-transform: scale($params);
+  -moz-transform: scale($params);
+  -khtml-transform: scale($params);
+  -o-transform: scale($params);
+  transform: scale($params);
+}
+
+@mixin box-shadow($params) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  -khtml-box-shadow: $params;
+  -o-box-shadow: $params;
+  box-shadow: $params;
+}
+
+@mixin rotate($params) {
+  -webkit-transform: rotate($params);
+  -moz-transform: rotate($params);
+  -khtml-transform: rotate($params);
+  -o-transform: rotate($params);
+  transform: rotate($params);
+}
+
+@mixin opacity($opacity) {
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  -o-opacity: $opacity;
+  opacity: $opacity;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Mixin para facilitar as Media Queries
+
+@mixin Mobile {
+  @media (min-width: $breakpoint-mobile-min) and (max-width: $breakpoint-mobile-max) {
+    @content;
+  }
+}
+
+@mixin Tablet {
+  @media (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
+    @content;
+  }
+}
+
+@mixin SmallScreen {
+  @media (max-width: $breakpoint-tablet-max) {
+    @content;
+  }
+}
+@mixin Desktop {
+  @media (min-width: $breakpoint-desktop-M-min) {
+    @content;
+  }
+}
+
+@mixin DesktopM {
+  @media (min-width: $breakpoint-desktop-M-min) and (max-width: $breakpoint-desktop-M-max) {
+    @content;
+  }
+}
+
+@mixin DesktopL {
+  @media (min-width: $breakpoint-desktop-L-min) {
+    @content;
+  }
+}

@@ -1,0 +1,92 @@
+@import "_utils/_tokens";
+@import "_utils/_functions";
+@import "_utils/_reset";
+@import "_utils/_grid";
+
+// Definições Globais
+*:focus,
+*:focus-visible {
+    outline: 2px solid $color-brand-secundary;
+    outline-offset: 10px;
+}
+
+*::-moz-selection,
+*::selection {
+    background-color: $color-brand-secundary;
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    background-color: $color-background;
+    font-family: $font-family-primary;
+    color: $color-gray-500;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+// Style Guide
+code {
+    border: solid 1px $color-gray-200;
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: $color-gray-100;
+    color: $color-warning;
+}
+
+p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-gray-500;
+    margin-bottom: 24px;
+    &.small {
+        font-weight: 400;
+        font-size: 14px;
+    }
+}
+
+a {
+    color: $color-link-default;
+    text-decoration: none;
+    @include transition(all 0.5s ease);
+    &:hover {
+        color: $color-link-mousehover;
+    }
+}
+
+ol.list {
+    counter-reset: li;
+    margin-bottom: 24px;
+    padding: 0;
+    li {
+        counter-increment: li;
+        &::before {
+            content: counter(li);
+            color: $color-brand-secundary;
+            display: inline-block;
+            width: 1em;
+        }
+    }
+}
+
+ul.list {
+    margin-bottom: 24px;
+    li::before {
+        content: "•";
+        color: $color-brand-secundary;
+        width: 1em;
+        display: inline-block;
+    }
+}
+
+blockquote {
+    border-left: 4px solid $color-gray-200;
+    padding-left: 16px;
+    margin-bottom: 24px;
+}
+

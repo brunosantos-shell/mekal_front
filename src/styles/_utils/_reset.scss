@@ -1,0 +1,50 @@
+/* Remove padding de listas */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Remove margin dos objetos */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Seta configurações no body  */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove estilo nas listas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Estilo padrão para links sem classe  */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Reset em fonte de elementos de formulario */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}

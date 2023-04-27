@@ -1,0 +1,83 @@
+// Cores
+$color-background: #fff;
+$color-brand-primary: #ff1f6d;
+$color-brand-primary-light: lighten($color-brand-primary, 10%);
+$color-brand-primary-dark: darken($color-brand-primary, 10%);
+$color-brand-secundary: #232528;
+$color-brand-secundary-light: lighten($color-brand-secundary, 10%);
+$color-brand-secundary-dark: darken($color-brand-secundary, 10%);
+$color-brand-tertiary: #2a2a72;
+$color-brand-tertiary-light: lighten($color-brand-tertiary, 10%);
+$color-brand-tertiary-dark: darken($color-brand-tertiary, 10%);
+$color-brand-quaternary: #256bd3;
+$color-brand-quaternary-light: lighten($color-brand-quaternary, 10%);
+$color-brand-quaternary-dark: darken($color-brand-quaternary, 10%);
+
+// Cores de suporte
+$color-suport-primary: #040747;
+$color-suport-secundary: #330197;
+$color-suport-tertiary: #fec105;
+
+// Cores | Escala de cinza
+$color-gray-700: #0f1114;
+$color-gray-600: #363d47;
+$color-gray-500: #5d697a;
+$color-gray-400: #8495ad;
+$color-gray-300: #b8c5d8;
+$color-gray-200: #e3ebf7;
+$color-gray-100: #f1f4f6;
+$color-white: #fcfdfd;
+
+// Cores de Feedback
+$color-danger: #e65148;
+$color-warning: #ea8952;
+$color-information: #5b77d6;
+$color-sucess: #379a28;
+
+$color-link-default: $color-brand-primary;
+$color-link-mousehover: $color-brand-secundary;
+
+/* Ratio */
+$ratio-image: 56.25%; //16:9
+$ratio-image-vertical: 33.12%; //3x4
+
+/* Tamanhos Padrões de breakpoint para telas */
+
+$breakpoint-desktop-L-min: 1367px;
+$breakpoint-desktop-M-max: 1366px;
+$breakpoint-desktop-M-min: 998px;
+$breakpoint-tablet-max: 997px;
+$breakpoint-tablet-min: 600px;
+$breakpoint-mobile-max: 599px;
+$breakpoint-mobile-min: 320px;
+
+/*Tamanho máximo do layout*/
+$max-width-site: 1216px;
+
+/*Tamanho minimo do layout*/
+$min-width-site: 320px;
+
+/* Largura do content sobre a janela*/
+$width-site-desktop-L: 90%; /*acima de 1366px*/
+$width-site-desktop-M: 90%; /*acima de 998px*/
+$width-site-tablet: 90%; /*acima de 768px*/
+$width-site-mobile: 90%; /*acima de 320px*/
+
+/* Tamanho de ícones */
+$size-icon: 28px;
+
+// Fontes
+$font-family-primary: Poppins, sans-serif;
+$font-family-secundary: Arial, sans-serif;
+$font-family-tertiary: Verdana, sans-serif;
+
+// Forms
+$label-font-size: 12px; //Tamanho da fonte da label
+$label-color: $color-gray-600; //Cor da label
+
+$input-border-color: $color-gray-500; //Cor da borda do input
+$input-border-width: 1px; //Largura da borda do input
+$input-border-radius: 2px; //Arredondamento da borda do input
+
+// Transitions
+$micro-transition-time: 250ms; //Tempo de transição

@@ -1,0 +1,156 @@
+@import "../../../styles/utils";
+
+#footer {
+    background-color: $color-gray-100;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    @include SmallScreen {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .content {
+        display: grid;
+        #logo {
+            grid-area: logo;
+        }
+        #categories {
+            grid-area: menu;
+        }
+        hr {
+            grid-area: line;
+        }
+        #social {
+            grid-area: social;
+        }
+        #terms {
+            grid-area: terms;
+        }
+        p {
+            grid-area: reserved;
+        }
+
+        grid-template-columns: 240px auto auto auto 240px;
+        grid-template-areas:
+            "logo menu menu menu menu"
+            "line line line line line"
+            "social terms terms terms reserved";
+
+        @include SmallScreen {
+            grid-template-columns: 240px auto;
+            grid-template-areas:
+                "logo logo"
+                "menu menu"
+                "line line"
+                "social social"
+                "terms terms"
+                "reserved reserved";
+
+            #logo {
+                margin-bottom: 25px;
+            }
+        }
+
+        #logo a {
+            cursor: pointer;
+        }
+        #categories {
+            > ul {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
+                justify-content: space-between;
+                @include Tablet {
+                    // grid-template-columns: repeat(auto-fit, minmax(80px, 130px));
+                }
+                li {
+                    margin-bottom: 16px;
+                }
+            }
+            label {
+                color: $color-brand-tertiary;
+                margin-bottom: 16px;
+                cursor: default;
+                display: block;
+            }
+            a {
+                color: $color-brand-primary;
+                margin-bottom: 16px;
+                &:hover,
+                &:focus-within {
+                    color: $color-brand-secundary;
+                }
+            }
+        }
+        hr {
+            width: 100%;
+            border-width: 1px;
+            margin-bottom: 40px;
+            border-top: 0 solid;
+            border-bottom: 1px solid $color-gray-300;
+            @include SmallScreen {
+                margin-bottom: 25px;
+            }
+        }
+        #social ul {
+            display: grid;
+            grid-gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(10px, 24px));
+            @include SmallScreen {
+                justify-content: space-around;
+                max-width: 200px;
+                margin: 0 auto 50px;
+                grid-gap: 10px;
+            }
+            label {
+                display: none;
+            }
+            a {
+                width: 24px;
+                height: 24px;
+                display: block;
+                svg path {
+                    stroke: $color-brand-primary;
+                }
+            }
+            a:hover,
+            a:focus-within {
+                svg path {
+                    stroke: $color-brand-secundary;
+                }
+            }
+        }
+        #terms ul {
+            display: grid;
+            grid-gap: 18px;
+            grid-template-columns: repeat(auto-fit, 70px);
+            justify-content: end;
+            text-align: right;
+            padding-right: 20px;
+            @include SmallScreen {
+                justify-content: space-around;
+                max-width: 320px;
+                margin: 0 auto;
+                grid-gap: 10px;
+            }
+            a {
+                color: $color-brand-primary;
+                height: 24px;
+                display: block;
+                text-align: center;
+                &:hover,
+                &:focus-within {
+                    color: $color-brand-secundary;
+                }
+            }
+        }
+        p {
+            color: $color-gray-400;
+            text-align: right;
+            font-size: 12px;
+            line-height: 24px;
+            @include SmallScreen {
+                text-align: center;
+                margin-top: 15px;
+            }
+        }
+    }
+}

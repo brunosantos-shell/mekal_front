@@ -1,0 +1,34 @@
+// Configs Desktop
+$grid-columns-number-desktop: 12; //Números de colunas do layout
+$grid-columns-gap-desktop: 24px; //Largura do gap entre as colunas
+$grid-row-gap-desktop: 16px; //Altura do gap entre as colunas
+
+// Configs Tablet
+$grid-columns-number-tablet: 8; //Números de colunas do layout
+$grid-columns-gap-tablet: 24px; //Largura do gap entre as colunas
+$grid-row-gap-tablet: 16px; //Altura do gap entre as colunas
+
+// Configs Mobile
+$grid-columns-number-mobile: 4; //Números de colunas do layout
+$grid-columns-gap-mobile: 24px; //Largura do gap entre as colunas
+$grid-row-gap-mobile: 16px; //Altura do gap entre as colunas
+
+.grid {
+    display: grid;
+
+    @include Mobile {
+        grid-template-columns: repeat($grid-columns-number-mobile, 1fr);
+        column-gap: $grid-columns-gap-mobile;
+        row-gap: $grid-row-gap-mobile;
+    }
+    @include Tablet {
+        grid-template-columns: repeat($grid-columns-number-tablet, 1fr);
+        column-gap: $grid-columns-gap-tablet;
+        row-gap: $grid-row-gap-tablet;
+    }
+    @include Desktop {
+        grid-template-columns: repeat($grid-columns-number-desktop, 1fr);
+        column-gap: $grid-columns-gap-desktop;
+        row-gap: $grid-row-gap-desktop;
+    }
+}
