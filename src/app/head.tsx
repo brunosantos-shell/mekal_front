@@ -1,4 +1,4 @@
-const Head: React.FC = () => {
+export default function Head () {
   return (
     <>
       <title>Mekal</title>
@@ -29,4 +29,3 @@ const Head: React.FC = () => {
   )
 }
 
-export default Head

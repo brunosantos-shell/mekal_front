@@ -2,7 +2,6 @@
 
 $hamburger-button-size: 50px;
 $hamburger-button-radius: 4px;
-$hamburger-bar-color: $color-brand-primary;
 $hamgurger-bar-width: 32px;
 $hamgurger-bar-height: 3px;
 $hamgurger-bar-spacing: 8px;
@@ -10,6 +9,4 @@ $hamgurger-transition-speed: 0.5s;
 $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
 #header {
-    border-bottom: 1px solid $color-gray-200;
-
 }
