@@ -1,41 +1,27 @@
-// Cores
-$color-background: #fff;
-$color-brand-primary: #ff1f6d;
-$color-brand-primary-light: lighten($color-brand-primary, 10%);
-$color-brand-primary-dark: darken($color-brand-primary, 10%);
-$color-brand-secundary: #232528;
-$color-brand-secundary-light: lighten($color-brand-secundary, 10%);
-$color-brand-secundary-dark: darken($color-brand-secundary, 10%);
-$color-brand-tertiary: #2a2a72;
-$color-brand-tertiary-light: lighten($color-brand-tertiary, 10%);
-$color-brand-tertiary-dark: darken($color-brand-tertiary, 10%);
-$color-brand-quaternary: #256bd3;
-$color-brand-quaternary-light: lighten($color-brand-quaternary, 10%);
-$color-brand-quaternary-dark: darken($color-brand-quaternary, 10%);
+// Brand / Neutral
+
+$color-neutral-low-pure: #282828;
+$color-neutral-low-dark: #626466;
+$color-neutral-low-light: #BFBFBF;
+$color-neutral-high-pure: #FFFFFF;
+$color-neutral-high-light: #F2F2F2;
+$color-neutral-high-dark: #E3E3E3;
+
+// Shades
+
+$color-shade-dark:rgba(55, 52, 53, 0.7);
+$color-shade-light: rgba(255, 255, 255, 0.24);
+
+// Feedback
+
+$color-sucess: #24C796;
+$color-warning: #FFBB37;
+$color-danger: #EE2D44;
 
 // Cores de suporte
 $color-suport-primary: #040747;
 $color-suport-secundary: #330197;
 $color-suport-tertiary: #fec105;
-
-// Cores | Escala de cinza
-$color-gray-700: #0f1114;
-$color-gray-600: #363d47;
-$color-gray-500: #5d697a;
-$color-gray-400: #8495ad;
-$color-gray-300: #b8c5d8;
-$color-gray-200: #e3ebf7;
-$color-gray-100: #f1f4f6;
-$color-white: #fcfdfd;
-
-// Cores de Feedback
-$color-danger: #e65148;
-$color-warning: #ea8952;
-$color-information: #5b77d6;
-$color-sucess: #379a28;
-
-$color-link-default: $color-brand-primary;
-$color-link-mousehover: $color-brand-secundary;
 
 /* Ratio */
 $ratio-image: 56.25%; //16:9
@@ -73,11 +59,21 @@ $font-family-tertiary: Verdana, sans-serif;
 
 // Forms
 $label-font-size: 12px; //Tamanho da fonte da label
-$label-color: $color-gray-600; //Cor da label
 
-$input-border-color: $color-gray-500; //Cor da borda do input
 $input-border-width: 1px; //Largura da borda do input
 $input-border-radius: 2px; //Arredondamento da borda do input
 
 // Transitions
 $micro-transition-time: 250ms; //Tempo de transição
+
+// spacing
+$spacing-quarck: 0.4px;
+$spacing-nano: 0.8px;
+$spacing-xxxs: 12px;
+$spacing-xxxs: 16px;
+$spacing-xxs: 24px;
+$spacing-xs: 32px;
+$spacing-md: 48px;
+$spacing-lg: 80px;
+$spacing-xl: 128px;
+$spacing-xxl: 144px;

@@ -1,18 +1,12 @@
-@import "_utils/_tokens";
-@import "_utils/_functions";
-@import "_utils/_reset";
-@import "_utils/_grid";
+@import '_utils/_tokens';
+@import '_utils/_functions';
+@import '_utils/_reset';
+@import '_utils/_grid';
 
 // Definições Globais
 *:focus,
 *:focus-visible {
-    outline: 2px solid $color-brand-secundary;
-    outline-offset: 10px;
-}
-
-*::-moz-selection,
-*::selection {
-    background-color: $color-brand-secundary;
+    outline: 3px solid #ff7816;
 }
 
 html {
@@ -21,46 +15,97 @@ html {
 }
 
 body {
-    background-color: $color-background;
+    background-color: $color-neutral-high-pure;
     font-family: $font-family-primary;
-    color: $color-gray-500;
     box-sizing: border-box;
     height: 100%;
 }
 
-// Style Guide
-code {
-    border: solid 1px $color-gray-200;
-    border-radius: 5px;
-    padding: 2px 5px;
-    background-color: $color-gray-100;
-    color: $color-warning;
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
 
+// Style Guide
+
 p {
+    color: $color-neutral-low-dark;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: $color-gray-500;
-    margin-bottom: 24px;
+    line-height: 24px; /* 150% */
+    &.medium {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 130%;
+    }
     &.small {
         font-weight: 400;
-        font-size: 14px;
+        font-size: 15px;
+        line-height: 125%;
+    }
+    &.quote1 {
+        font-style: italic;
+        font-weight: 400;
+        font-size: 56px;
+        line-height: 120%;
+    }
+    &.quote2 {
+        font-style: italic;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 130%;
     }
 }
 
+h1 {
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 120%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 130%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 120%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 120%;
+}
+
+h5 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+}
+
 a {
-    color: $color-link-default;
+    /*  color: $color-link-default;
     text-decoration: none;
     @include transition(all 0.5s ease);
     &:hover {
         color: $color-link-mousehover;
-    }
+    } */
 }
 
 ol.list {
-    counter-reset: li;
+    /* counter-reset: li;
     margin-bottom: 24px;
     padding: 0;
     li {
@@ -71,21 +116,21 @@ ol.list {
             display: inline-block;
             width: 1em;
         }
-    }
+    } */
 }
 
 ul.list {
-    margin-bottom: 24px;
+    /* margin-bottom: 24px;
     li::before {
         content: "•";
         color: $color-brand-secundary;
         width: 1em;
         display: inline-block;
-    }
+    } */
 }
 
 blockquote {
-    border-left: 4px solid $color-gray-200;
+    /*  border-left: 4px solid $color-gray-200;
     padding-left: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 24px; */
 }

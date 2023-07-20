@@ -1,0 +1,55 @@
+@import '../../../styles/utils';
+
+@import '../../../styles/utils';
+
+.btn {
+  font-family: Mulish;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 21px */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: transparent;
+
+  display: inline-flex;
+  padding: 24px 40px;
+  align-items: flex-start;
+  gap: 8px;
+
+  border: 1px solid $color-neutral-low-light;
+  transition: 0.5s ease-in-out;
+
+  
+
+  &:hover {
+    background: $color-neutral-low-pure;
+  }
+
+  &.btn_default {
+    color: $color-neutral-low-pure;
+
+    &:hover {
+      color: $color-neutral-high-pure;
+    }
+  }
+
+  &.btn_inverter {
+    color: $color-neutral-high-pure;
+    padding: 21px 32px;
+
+  }
+
+    &.btn_rounded {
+        border-radius: 100%;
+        width: 64px; 
+        height: 64px;
+        justify-content: center;
+
+        span {
+            margin-right: 0px !important;
+        }
+      }
+}
+
+

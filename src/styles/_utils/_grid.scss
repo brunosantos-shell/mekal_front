@@ -1,6 +1,6 @@
 // Configs Desktop
-$grid-columns-number-desktop: 12; //Números de colunas do layout
-$grid-columns-gap-desktop: 24px; //Largura do gap entre as colunas
+$grid-columns-number-desktop: 8; //Números de colunas do layout
+$grid-columns-gap-desktop: 40px; //Largura do gap entre as colunas
 $grid-row-gap-desktop: 16px; //Altura do gap entre as colunas
 
 // Configs Tablet
@@ -9,8 +9,8 @@ $grid-columns-gap-tablet: 24px; //Largura do gap entre as colunas
 $grid-row-gap-tablet: 16px; //Altura do gap entre as colunas
 
 // Configs Mobile
-$grid-columns-number-mobile: 4; //Números de colunas do layout
-$grid-columns-gap-mobile: 24px; //Largura do gap entre as colunas
+$grid-columns-number-mobile: 2; //Números de colunas do layout
+$grid-columns-gap-mobile: 40px; //Largura do gap entre as colunas
 $grid-row-gap-mobile: 16px; //Altura do gap entre as colunas
 
 .grid {

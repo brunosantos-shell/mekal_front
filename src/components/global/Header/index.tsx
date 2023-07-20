@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 
 
-const Header: React.FC = () => {
+export default function Header(){
 
   return (
     <header id={styles.header}>
@@ -10,5 +10,3 @@ const Header: React.FC = () => {
     </header>
   )
 }
-
-export default Header

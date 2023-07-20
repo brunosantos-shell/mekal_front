@@ -1,7 +1,6 @@
-const Home: React.FC = () => {
+'use client'
+
+export default function Home () {
     return <>
-        <a href="/about">About</a>
     </>
 }
-
-export default Home
