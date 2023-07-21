@@ -9,6 +9,12 @@
     outline: 3px solid #ff7816;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     box-sizing: border-box;
     height: 100%;
@@ -19,6 +25,7 @@ body {
     font-family: $font-family-primary;
     box-sizing: border-box;
     height: 100%;
+    
 }
 
 button {
