@@ -1,0 +1,56 @@
+@import '../../../styles/utils';
+
+.card_solution {
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+
+    h4 {
+        font-weight: 600;
+        color: $color-neutral-low-pure;
+    }
+}
+
+.card_solution:hover {
+    .image_wrapper__card_solution img {
+        transform: scale(1.20);
+    }
+
+    .card_product__btn__view_solution {
+        background-color: $color-neutral-low-pure;
+    }
+
+    .card_product__btn__view_solution svg {
+        path {
+            stroke: $color-neutral-high-pure;
+        }
+    }
+}
+  
+.image_wrapper__card_solution {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.image_wrapper__card_solution img {
+    transition: all 0.5s ease-in-out;
+}
+
+.card_product__btn__view_solution {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: $color-neutral-high-pure;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+
+    transition: all 0.5s ease-in-out;
+
+}
+  
