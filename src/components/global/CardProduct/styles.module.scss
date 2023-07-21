@@ -1,0 +1,69 @@
+@import '../../../styles/utils';
+
+.card_product {
+    max-width: 565px;
+    background-color: $color-neutral-high-light;
+    position: relative;
+    padding: 24px 24px 74px 24px;
+    cursor: pointer;
+
+    h5 {
+        color: $color-neutral-low-pure;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    p {
+        color: $color-neutral-low-dark;
+    }
+}
+
+.card_product:hover {
+        .image_wrapper__card_product img {
+            transform: scale(1.15);
+        }
+
+        .card_product__btn__view_product {
+            background-color: $color-neutral-low-pure;
+        }
+
+        .card_product__btn__view_product svg {
+            path {
+                stroke: $color-neutral-high-pure;
+            }
+        }
+}
+
+.image_wrapper__card_product {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.image_wrapper__card_product img {
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    transition: all 0.5s ease-in-out;
+}
+
+.card_product__btn__view_product {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: $color-neutral-high-pure;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+
+    transition: all 0.5s ease-in-out;
+
+}

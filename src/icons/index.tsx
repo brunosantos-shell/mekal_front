@@ -105,3 +105,34 @@ export const IconTwitter: React.FC = () => {
     </svg>
   )
 }
+
+export const IconPlusButton: React.FC = () => {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="plus">
+        <path
+          id="Vector"
+          d="M7 2.19995V11.7999"
+          stroke="#282828"
+          stroke-width="1.5"
+          stroke-linecap="square"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Vector_2"
+          d="M2.19995 7H11.7999"
+          stroke="#282828"
+          stroke-width="1.5"
+          stroke-linecap="square"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
+  )
+}
