@@ -4,6 +4,7 @@ export default function Head () {
       <title>Mekal</title>
       <meta name="description" content="Insira a descrição aqui" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="https://use.typekit.net/vrg2rta.css"></link>
       <link rel="icon" href="/favicon.ico" />
 
       {/* Favicon */}
