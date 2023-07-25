@@ -24,6 +24,7 @@ interface SlideGalleryProps {
 
 
 export default function SlideGallery ({ images } : SlideGalleryProps) {
+
   return (
     <>
     <h5
