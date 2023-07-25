@@ -3,6 +3,7 @@
 import CardProduct from "@/components/global/CardProduct"
 import CardSolution from "@/components/global/CardSolution"
 import SlideGallery from "@/components/global/SlideGallery"
+import VideoPlayer from "@/components/global/VideoPlayer"
 
 const imagens = [
     '/gallerySlide/foto1.jpg',
@@ -34,6 +35,11 @@ export default function Home () {
         <h2>Componente de slide galeria</h2>
         <SlideGallery 
             images={imagens}
+        />
+
+        <h2>Componente de video player</h2>
+        <VideoPlayer
+            src="/videoTeste/testeVideo.mp4"
         />
     </>
 }
