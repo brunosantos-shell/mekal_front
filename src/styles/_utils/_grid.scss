@@ -26,7 +26,7 @@ $grid-row-gap-mobile: 16px; //Altura do gap entre as colunas
         column-gap: $grid-columns-gap-tablet;
         row-gap: $grid-row-gap-tablet;
     }
-    @include Desktop {
+    @include LargeScreen {
         grid-template-columns: repeat($grid-columns-number-desktop, 1fr);
         column-gap: $grid-columns-gap-desktop;
         row-gap: $grid-row-gap-desktop;

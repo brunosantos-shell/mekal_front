@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import Tabs from "@/components/global/Tabs"
 
 import Mocks from '@/mocks/linhas.json'
+import LayoutFresstanding from '@/components/pages/Solucoes/Freestanding/LayoutFresstanding'
 
 
 interface Product {
@@ -30,10 +31,11 @@ export default function Modulares () {
     const pathElements = pathname.split("/").filter((element) => element.trim() !== "")
     
     const slugToMatch = pathElements[1]
+    const categoryToMatch = pathElements[2]
+
 
     const matchingSolution = Mocks.solutions.find((solution) => solution.slug === slugToMatch) as MockSolution | undefined
 
-    console.log(matchingSolution)
 
     return (
         <div>
@@ -42,6 +44,25 @@ export default function Modulares () {
                             categories={matchingSolution.linhas}
                             />
                     )}
+
+            <section>
+                {
+                    categoryToMatch === 'freestanding' && (
+                        <LayoutFresstanding category={categoryToMatch} />
+                    )
+                }
+                {
+                    categoryToMatch === 'smart-premium' && (
+                        <h1>Smart Premium</h1>
+                    )
+                }
+                {
+                    categoryToMatch === 'smart-kit' && (
+                        <h1>Smart Kit</h1>
+                    )
+                }
+            </section>
+                    
         </div>
     )
 }
