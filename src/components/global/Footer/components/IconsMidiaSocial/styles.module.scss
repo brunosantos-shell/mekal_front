@@ -1,0 +1,28 @@
+@import '../../../../../styles/utils';
+
+.icons_midia_social {
+    ul {
+        display: flex;
+        gap: 32px;
+
+        li {
+            a {
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+
+            &:hover {
+                a {
+                    svg {
+                        path {
+                            fill: $color-neutral-high-pure;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
