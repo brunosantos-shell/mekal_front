@@ -1,0 +1,79 @@
+@import '../../../../styles/utils';
+
+.container_card__slide {
+    background-color: $color-neutral-high-light;
+
+    max-width: 848px;
+    max-height: 386px;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 24px;
+
+    .container_card__slide__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        border-right: 1px solid #BFBFBF;
+
+        width: 50%;
+
+        .container_card__slide__info__title {
+            h5 {
+                color: $color-neutral-low-pure;
+
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 120%;
+            }
+
+            > span {
+                color: $color-neutral-low-dark;
+
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 125%;
+            }
+        }
+
+        .container_card__slide__info__dimensions {
+            .container_card__slide__info__dimensions__item {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+
+                p {
+                    color: $color-neutral-low-dark;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                }
+
+                span {
+                    color: $color-neutral-low-pure;
+
+                    font-family: Mulish;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                }
+            }
+        }
+    }
+
+    .container_card__slide__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            mix-blend-mode: multiply;
+        }
+    }
+}
