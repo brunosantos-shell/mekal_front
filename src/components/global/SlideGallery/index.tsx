@@ -10,7 +10,7 @@ import 'swiper/css/scrollbar'
 import './swiper.css'
 
 
-const swiperParams = {
+const swiperParamsSlideGallery = {
     modules: [Navigation, Pagination, Scrollbar, A11y],
     spaceBetween: 50,
     slidesPerView: 1,
@@ -26,12 +26,14 @@ interface SlideGalleryProps {
 export default function SlideGallery ({ images } : SlideGalleryProps) {
 
   return (
-    <>
+    <section
+        className={styles.container_slide__gallery}
+    >
     <h5
         className={styles.title_slide__gallery}
     >Confira outras imagens</h5>
     <Swiper
-        {...swiperParams}
+        {...swiperParamsSlideGallery}
     >
         {images.map((image, index) => (
             <SwiperSlide key={index}>
@@ -40,7 +42,7 @@ export default function SlideGallery ({ images } : SlideGalleryProps) {
             </SwiperSlide>
         ))}
     </Swiper>
-    </>
+    </section>
   )
 };
 

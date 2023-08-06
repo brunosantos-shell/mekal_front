@@ -1,5 +1,22 @@
 @import '../../../styles/utils';
 
+.container_slide__gallery {
+    padding: 0px 48px 174px 96px;
+
+
+    h5 {
+
+        color: $color-neutral-low-pure;
+
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; 
+
+        margin-bottom: 16px;
+    }
+}
+
 
 .image_slide__gallery {
         height: 100vh; 
