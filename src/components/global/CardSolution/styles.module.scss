@@ -1,19 +1,70 @@
 @import '../../../styles/utils';
 
+.container_card_solution {
+
+    width: fit-content;
+
+    a {
+        text-decoration: none;
+        color: $color-neutral-low-pure;
+    }
+
+    @include Tablet {
+        width: 100%;
+    }
+}
+
+.card_solution__numeric {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 12px;
+
+    span {
+        color: $color-neutral-low-dark;
+
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+    }
+}
+
 .card_solution {
     display: inline-block;
     cursor: pointer;
     overflow: hidden;
 
-    h4 {
-        font-weight: 600;
-        color: $color-neutral-low-pure;
+}
+
+
+
+@media (max-width: 1750px) {
+    
+    .card_solution.responsive {
+      width: 100%;
+      height: auto;
+  
+      .image_wrapper__card_solution {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }  
+  
+  
+.responsive {
+    @include Tablet {
+      width: 100%;
+      height: auto;
     }
 }
+  
+  
 
 .card_solution:hover {
     .image_wrapper__card_solution img {
-        transform: scale(1.20);
+        transform: scale(1.2);
     }
 
     .card_product__btn__view_solution {
@@ -26,10 +77,14 @@
         }
     }
 }
-  
+
 .image_wrapper__card_solution {
     position: relative;
     margin-bottom: 24px;
+
+    @include SmallScreen {
+        margin-bottom: 0px;
+    }
 }
 
 .image_wrapper__card_solution img {
@@ -51,6 +106,151 @@
     bottom: 16px;
 
     transition: all 0.5s ease-in-out;
+}
+
+.card_solution__title {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+
+    margin-top: 20px;
 
 }
-  
+
+@include SmallScreen {
+    .card_solution.seriados {
+        width: 284px;
+        height: 284px;
+
+        @include Tablet {
+            max-width: 100% !important;
+        }
+
+        @include Mobile {
+            height: 184px !important;
+        }
+
+        .image_wrapper__card_solution {
+
+            @include Tablet {
+                height: 100%;
+            }
+
+            img {
+                @include Tablet {
+                    width: 100% !important;
+                   
+                }
+            }
+        }
+    }
+
+    .card_solution.sob-medida {
+        width: 284px;
+        height: 284px;
+
+        @include Tablet {
+            max-width: 100% !important;
+        }
+
+        @include Mobile {
+            height: 184px !important;
+        }
+
+        .image_wrapper__card_solution {
+
+            @include Tablet {
+                height: 100%;
+            }
+
+            img {
+
+                @include Tablet {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .card_solution.modulados {
+        width: 284px;
+        height: 443.75px;
+
+        @include Tablet {
+            max-width: 100% !important;
+            height: 384px !important;
+        }
+
+        @include Mobile {
+            height: 184px !important;
+        }
+
+        .image_wrapper__card_solution {
+
+            @include Tablet {
+                height: 384px !important;
+            }
+
+            img {
+                @include Tablet {
+                    width: 100%;                 
+                }
+            }
+        }
+    }
+
+    .card_solution.corporativo {
+        width: 284px;
+        height: 284px;
+
+        @include Tablet {
+            max-width: 100% !important;
+        }
+
+        @include Mobile {
+            height: 184px !important;
+        }
+
+        .image_wrapper__card_solution {
+
+            @include Tablet {
+                height: 100%;
+            }
+
+            img {
+                @include Tablet {
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+
+    .card_solution.art-e-design {
+        width: 446px;
+        height: 278.026px;
+
+
+        @include Tablet {
+            max-width: 100% !important;
+        }
+
+        @include Mobile {
+            height: 184px !important;
+        }
+
+        .image_wrapper__card_solution {
+
+            @include Tablet {
+                height: 100%;
+            }
+
+            img {
+                @include Tablet {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
