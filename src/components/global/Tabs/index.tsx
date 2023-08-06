@@ -1,7 +1,7 @@
 'use client'
 
 import { redirect, usePathname } from 'next/navigation'
-import NextLink from 'next/link'
+import Link from 'next/link'
 import styles from './styles.module.scss'
 import { useLayoutEffect, useState } from 'react'
 import CardProduct from '../CardProduct'
@@ -35,6 +35,9 @@ interface TabsProps {
 }
 
 export default function Tabs({ categories }: TabsProps) {
+
+  console.log(categories)
+
   const categorySlugs = categories.map((categoryObj) => {
     const categoryName = Object.keys(categoryObj)[0]
     return slugify(categoryObj[categoryName]?.name) ?? ''
@@ -64,9 +67,10 @@ export default function Tabs({ categories }: TabsProps) {
             const isActive = currentTab === category
 
             return (
-              <NextLink
+              <Link
                 href={`${pathnameWithoutLastSlash}/${category}`}
                 key={category}
+                shallow={true}
               >
                 <li
                   onClick={() => handleTabClick(category)}
@@ -74,12 +78,14 @@ export default function Tabs({ categories }: TabsProps) {
                 >
                   <span>{category}</span>
                 </li>
-              </NextLink>
+              </Link>
             )
           })}
         </ul>
       </div>
       <div className={styles.container_products}>
+
+        <h4>Todos os produtos</h4>
       {categories.map((categoryObj) => {
         const categoryName = Object.keys(categoryObj)[0]
         const isActive = currentTab === slugify(categoryObj[categoryName]?.name)
