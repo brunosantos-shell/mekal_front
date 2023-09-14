@@ -1,0 +1,94 @@
+@import '../../../../styles/utils';
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 48px 128px 96px;
+}
+
+.menu {
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    z-index: 1;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 3px;
+
+        li {
+
+          padding: 13px 24px;
+          transition: all 0.5s ease-in-out;
+          cursor: pointer;   
+          width: fit-content;
+          
+          display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+                color: $color-neutral-low-dark;
+
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 150%; 
+                letter-spacing: 1px;
+                text-transform: uppercase;
+
+                text-decoration: none;
+
+                white-space: nowrap;
+
+                transition: all 0.5s ease-in-out;
+        }
+
+        li:hover {
+            background-color: $color-neutral-low-pure;
+            border-radius: 2px;
+
+                color: $color-neutral-high-pure;
+        }
+    }
+}
+
+.active {
+    background-color: $color-neutral-low-pure;
+    border-radius: 2px;
+
+        color: $color-neutral-high-pure !important;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media (max-width: 1600px) {
+        align-items: flex-start;
+    }
+}
+
+.content_autor {
+    height: auto;
+    margin-bottom: 240px;
+}
+
+.scrollableContent {
+    overflow-y: auto;
+}
+
+.fixedMenu {
+    position: fixed;
+    top: 70px;
+    padding-left: 96px;
+}
+
+.menuPlaceholder {
+    width: 326px;
+    height: 0;
+}

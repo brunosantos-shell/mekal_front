@@ -1,15 +1,24 @@
 import Image from 'next/image'
 import styles from './styles.module.scss'
 import { IconPlusButton } from '@/icons'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 interface CardProductProps {
     title: string;
     category: string;
     image: string;
+    id: number;
 }
 
-export default function CardProduct({ title, category, image }: CardProductProps) {
+export default function CardProduct({ title, category, image, id }: CardProductProps) {
+  const pathname = usePathname()
+
+  console.log(pathname)
+
+
   return (
+    <Link href={`${pathname}/${id}`}>
     <div className={styles.card_product}>
       <h5>{title}</h5>
       <p className="small">{category}</p>
@@ -25,5 +34,6 @@ export default function CardProduct({ title, category, image }: CardProductProps
         <IconPlusButton />
       </button>
     </div>
+    </Link>
   )
 }

@@ -8,6 +8,14 @@
     opacity: 1; 
     cursor: pointer;
   }
+
+.slide-products-swiper .swiper-pagination-bullet {
+  border: 2px solid #BFBFBF;
+}
+
+.slide-products-swiper .swiper-pagination-bullet-active {
+  background-color: #BFBFBF;
+}
   
   .swiper-pagination-bullet-active {
     background-color: white; 

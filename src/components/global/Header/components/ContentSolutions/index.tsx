@@ -7,12 +7,20 @@ import CardSolution from '@/components/global/CardSolution'
 import styles from './styles.module.scss'
 import { IconArrowDown, IconArrowUp } from '@/icons'
 
-export default function ContentSolutions() {
+interface ContentSolutionsProps {
+  responsive?: number
+}
+
+
+export default function ContentSolutions({
+  responsive
+}: ContentSolutionsProps) {
   const [scrollPosition, setScrollPosition] = useState(0)
+  const [windowWidthSize, setWindowWidthSize] = useState(800)
   const controls = useAnimation()
 
   const handleScroll = (scrollStep: number) => {
-    const maxScroll = 1024
+    const maxScroll = windowWidthSize
     const newScrollPosition = Math.min(
       Math.max(0, scrollPosition + scrollStep),
       maxScroll
@@ -38,8 +46,22 @@ export default function ContentSolutions() {
     void controls.start({ y: -scrollPosition }, animationConfig)
   }, [scrollPosition, controls])
 
+  const handleScrollWheel = (event: { deltaY: number }) => {
+    const scrollStep = event.deltaY > 0 ? 350 : -350
+    handleScroll(scrollStep)
+  }
+
+  useEffect(() => {
+    if (window.innerWidth <= 1024) {
+      setWindowWidthSize(1244)
+    }
+
+  }, [])
+
   return (
-    <div className={styles.container_content__solutions}>
+    <div className={styles.container_content__solutions}
+    onWheel={handleScrollWheel}
+    >
       <motion.div
         className={styles.column}
         style={{ y: -scrollPosition }}
@@ -48,19 +70,27 @@ export default function ContentSolutions() {
         <h2>Nossas soluções</h2>
         <CardSolution
           title="Modulados"
-          type="modulados"
           image="/images/highlightsProducts/modulados.jpg"
           alt="Modulados"
           numeric={'02'}
           url="/solucoes/modulares"
+          width={
+            responsive === 444 ? 284 : 344}
+          height={
+            responsive === 444 ? 443.75 : 480 }
+          responsive
         />
         <CardSolution
           title="Corporativo"
-          type="corporativo"
           image="/images/highlightsProducts/corporativo.jpg"
           alt="Corporativo"
           numeric={'04'}
           url="/solucoes/corporativo"
+          width={
+            responsive === 444 ? 284 : 384 }
+          height={
+            responsive === 444 ? 284 : 384 }
+          responsive
         />
       </motion.div>
 
@@ -71,29 +101,41 @@ export default function ContentSolutions() {
       >
         <CardSolution
           title="Seriados"
-          type="seriados"
           image="/images/highlightsProducts/seriados.jpg"
           alt="Seriados"
           numeric={'01'}
           url="/solucoes/seriados"
+          width={
+            responsive === 444 ? 284 : 384 }
+          height={
+            responsive === 444 ? 284 : 384 }
+          responsive
         />
 
         <CardSolution
           title="Sob medida"
-          type="sob-medida"
           image="/images/highlightsProducts/sobMedida.jpg"
           alt="Sob medida"
           numeric={'03'}
           url="/solucoes/sob-medida"
+          width={
+            responsive === 444 ? 284 : 384 }
+          height={
+            responsive === 444 ? 284 : 384 }
+          responsive
         />
 
         <CardSolution
           title="Arte e Design"
-          type="art-e-design"
           image="/images/highlightsProducts/arteDesign.jpg"
           alt="Arte e Design"
           numeric={'05'}
           url="/solucoes/arte-e-design"
+          width={
+            responsive === 444 ? 324 : 424 }
+          height={
+            responsive === 444 ? 284 : 324}
+          responsive
         />
       </motion.div>
 

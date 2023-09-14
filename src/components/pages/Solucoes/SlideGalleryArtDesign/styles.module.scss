@@ -1,0 +1,28 @@
+@import '../../../../styles/utils';
+
+.container_slide__gallery {
+    width: 100%;
+
+    h5 {
+
+        color: $color-neutral-low-pure;
+
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; 
+
+        margin-bottom: 16px;
+    }
+}
+
+
+.image_slide__gallery { 
+        width: 100%;   
+        object-fit: cover; 
+}
+
+.title_slide__gallery {
+    font-weight: 600;
+    color: $color-neutral-low-pure;
+}

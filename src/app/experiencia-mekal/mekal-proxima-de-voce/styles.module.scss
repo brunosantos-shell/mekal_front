@@ -1,0 +1,160 @@
+@import '../../../styles/utils';
+
+.container {
+    padding: 132px 48px 200px 96px;
+    background-color: $color-neutral-high-light;
+
+    .container_header {
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 231px;
+
+        @include SmallScreen {
+            gap: 80px;
+        }
+
+        .container_img {
+            max-width: 1080px;
+            height: 480px;
+            position: relative;
+            width: 100%;
+
+            @include SmallScreen {
+                max-width: 717px;
+            }
+        }
+
+        > div {
+            h2 {
+                max-width: 616px;
+
+                font-size: 42px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 130%; /* 54.6px */
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            span {
+                margin-bottom: 80px;
+                display: block;
+
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 150%;
+            }
+        }
+    }
+
+    .container_content {
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 200px;
+
+        @include SmallScreen {
+            gap: 150px;
+        }
+
+        .container_img {
+            max-width: 617px;
+            height: 426px;
+            position: relative;
+            width: 100%;
+            flex: 1;
+        }
+
+        .container_content_texto {
+            max-width: 848px;
+
+            @include SmallScreen {
+                max-width: 648px;
+            }
+
+            > div {
+                display: flex;
+                gap: 80px;
+
+                p {
+                    max-width: 384px;
+                }
+            }
+        }
+    }
+
+    .container_footer {
+        h1 {
+            margin-bottom: 200px;
+
+            font-size: 72px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%; /* 86.4px */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            @include SmallScreen {
+                font-size: 48px;
+            }
+        }
+
+        .container_footer_texto {
+            display: flex;
+            justify-content: space-between;
+
+            @include SmallScreen {
+                gap: 80px;
+            }
+
+            > div {
+                max-width: 848px;
+
+                @include SmallScreen {
+                    max-width: 648px;
+                }
+
+                span {
+                    display: block;
+                    margin-bottom: 80px;
+                }
+
+                h2 {
+                    margin-bottom: 48px;
+                    font-size: 42px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 130%; /* 54.6px */
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                }
+            }
+
+            .container_img {
+                max-width: 617px;
+                height: 426px;
+                position: relative;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.container_img__hero {
+    height: 712px;
+    position: relative;
+    width: 100%;
+
+    @include SmallScreen {
+        height: 580px;
+    }
+}

@@ -4,7 +4,9 @@ import { usePathname } from 'next/navigation'
 import Tabs from "@/components/global/Tabs"
 
 import Mocks from '@/mocks/linhas.json'
-import LayoutFresstanding from '@/components/pages/Solucoes/Freestanding/LayoutFresstanding'
+import LayoutFresstanding from '@/components/pages/Solucoes/LayoutFresstanding'
+import LayoutSmartPremium from '@/components/pages/Solucoes/LayoutSmartPremium'
+import LayoutSmartKit from '@/components/pages/Solucoes/LayoutSmartKit'
 
 
 interface Product {
@@ -38,14 +40,14 @@ export default function Modulares () {
 
 
     return (
-        <div>
+        <>
             {matchingSolution?.linhas !== null && matchingSolution?.linhas !== undefined && (
                         <Tabs 
                             categories={matchingSolution.linhas}
                             />
                     )}
 
-            <section>
+            <>
                 {
                     categoryToMatch === 'freestanding' && (
                         <LayoutFresstanding category={categoryToMatch} />
@@ -53,16 +55,16 @@ export default function Modulares () {
                 }
                 {
                     categoryToMatch === 'smart-premium' && (
-                        <h1>Smart Premium</h1>
+                        <LayoutSmartPremium category={categoryToMatch} />
                     )
                 }
                 {
                     categoryToMatch === 'smart-kit' && (
-                        <h1>Smart Kit</h1>
+                       <LayoutSmartKit category={categoryToMatch} />
                     )
                 }
-            </section>
+            </>
                     
-        </div>
+        </>
     )
 }

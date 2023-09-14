@@ -1,4 +1,3 @@
-// AnimationContext.tsx
 import React, { createContext } from 'react'
 
 interface AnimationContextProviderProps {

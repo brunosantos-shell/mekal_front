@@ -1,0 +1,12 @@
+@import '../../../../styles/utils';
+
+.container_slide__gallery {
+    width: 100%;
+}
+
+
+.image_slide__gallery { 
+        width: 100%; 
+        object-fit: cover;
+        height: auto; 
+}

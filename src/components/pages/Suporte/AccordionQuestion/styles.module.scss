@@ -1,0 +1,60 @@
+@import '../../../../styles/utils';
+
+.section_questionnaire__question {
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid #BFBFBF;
+    padding-bottom: 32px;
+    margin-top: 32px;
+
+    &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    >div {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h4 {
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%;
+    
+            color: $color-neutral-low-pure;
+        }
+    
+        button {
+            width: 32px;
+            height: 32px;
+            border-radius: 100%;
+            border: 1px solid #bfbfbf;
+    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            margin-top: 5px;
+    
+            transition: all 0.5s ease-out;
+    
+            background-color: rgba(55, 52, 53, 0.7);
+    
+            svg {
+                path {
+                    stroke: $color-neutral-high-pure;
+                }
+            }
+        }
+    }
+
+    
+}

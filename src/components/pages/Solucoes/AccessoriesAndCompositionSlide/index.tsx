@@ -12,52 +12,22 @@ import './swiper.css'
 import styles from './styles.module.scss'
 import CardSlideAccessoriesAndComposition from '../CardSlideAccessoriesAndComposition'
 
+interface dataProps {
+  image: string;
+  name: string;
+  category: string;
+  comprimento?: string;
+  largura?: string;
+  profundidade?: string;
+  codigo?: string;
+  content?: string;
+}
 
-const Mock = [
-  {
-    id: 1,
-    image: '/images/pageModulares/freestanding/slideTemp/tabuaDeMadeiraTeca.jpg',
-    name: 'Nome do acessório lorem ipsum ',
-    category: 'Freestanding',
-    comprimento: ' Customizável',
-    largura: 'Customizável',
-    profundidade: '230',
-    codigo: '0000000',
-  },
-  {
-    id: 2,
-    image: '/images/pageModulares/freestanding/slideTemp/acessorio.jpg',
-    name: 'Nome do acessório lorem ipsum ',
-    category: 'Freestanding',
-    comprimento: ' Customizável',
-    largura: 'Customizável',
-    profundidade: '230',
-    codigo: '0000000',
-  },
-  {
-    id: 3,
-    image: '/images/pageModulares/freestanding/slideTemp/acessorio.jpg',
-    name: 'Nome do acessório lorem ipsum ',
-    category: 'Freestanding',
-    comprimento: ' Customizável',
-    largura: 'Customizável',
-    profundidade: '230',
-    codigo: '0000000',
-  },
-  {
-    id: 4,
-    image: '/images/pageModulares/freestanding/slideTemp/acessorio.jpg',
-    name: 'Nome do acessório lorem ipsum ',
-    category: 'Freestanding',
-    comprimento: ' Customizável',
-    largura: 'Customizável',
-    profundidade: '230',
-    codigo: '0000000',
-  },
-]
 
 interface AccessoriesAndCompositionSlideProps {
   type: 'accessories' | 'composition'
+  data : dataProps[]
+  customStyles?: React.CSSProperties;
 }
 
 const swiperParamsAccessoriesAndComposition = {
@@ -73,9 +43,12 @@ const swiperParamsAccessoriesAndComposition = {
 
 export default function AccessoriesAndCompositionSlide({
   type,
+  data,
+  customStyles
 }: AccessoriesAndCompositionSlideProps) {
+
   return (
-    <div className={styles.container_accessories_and_composition__slide}>
+    <div className={styles.container_accessories_and_composition__slide} style={customStyles}>
       <div className={styles.title_accessories_and_composition__slide}>
         <h3>
           {type === 'accessories'
@@ -100,8 +73,8 @@ export default function AccessoriesAndCompositionSlide({
       </div>
       <div className={styles.container_swiper__slide}>
         <Swiper {...swiperParamsAccessoriesAndComposition}>
-          {Mock.map((item) => (
-            <SwiperSlide key={item.id}>
+          {data.map((item, index) => (
+            <SwiperSlide key={index}>
               <CardSlideAccessoriesAndComposition
                 image={item.image}
                 name={item.name}
@@ -110,6 +83,7 @@ export default function AccessoriesAndCompositionSlide({
                 largura={item.largura}
                 profundidade={item.profundidade}
                 codigo={item.codigo}
+                content={item.content}
               />
             </SwiperSlide>
           ))}

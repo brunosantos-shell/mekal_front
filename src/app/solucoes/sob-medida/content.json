@@ -1,0 +1,25 @@
+{
+    "title": "Soluções customizadas de acordo com as suas necessidades",
+    "description": "Um dos maiores diferenciais da Mekal é ser uma das poucas empresas no país a confeccionar produtos de aço inox sob medida, o que desperta ainda mais a criatividade de arquitetos e designers, graças às inúmeras possibilidades de uso do material. Mesmo contando com um catálogo variado de cubas, pias e acessórios premium, a marca se destaca por ser especialista em projetos personalizados. A partir do comportamento e hábitos na cozinha, entendemos como melhor atender à organização, fluxo e armazenamento no espaço. Nossa contribuição ao projeto vai muito além de fornecer peças essenciais para sua casa. Logo, temos a missão de construir um espaço de bem-estar para que a cozinha seja um ambiente prático, eficiente, belo e aconchegante",
+    "secondtitle": "PASSO A PASSO DO SOB MEDIDA MEKAL",
+    "seconddescription": "Para atender tais projetos, a Mekal conta com uma equipe de projetistas e área comercial especializada, oferecendo soluções que estejam alinhadas às expectativas dos clientes, sempre mantendo um alto padrão de qualidade. Sendo assim, nossa equipe dará todo o suporte necessário para viabilizar o projeto, passando por etapas cruciais até sua concretização. Entenda agora quais são essas etapas:",
+    "steps": [
+      {
+        "title": "Orçamento",
+        "description": "Trata-se da etapa inicial do sob medida. O nosso especialista da área comercial avaliará juntamente com o cliente/arquiteto todas as possibilidades possíveis de composição das peças no projeto proposto. É nessa etapa que são feitas as especificações básicas do produto, como modelo e tamanho, espessura da chapa, borda, acabamento etc."
+      },
+      {
+        "title": "Pré-projeto",
+        "description": "Havendo necessidade, apresentamos um pré-projeto para o cliente/arquiteto. Trata-se de imagens que simulam como será a aparência final do projeto com o produto já instalado e devidamente ambientado."
+      },
+      {
+        "title": "Medição e Teste de Gabarito",
+        "description": "Levantamento dimensional feito in loco para a obtenção dos pontos hidráulicos e elétricos, dimensões de mobiliários existentes, vãos e ângulos entre paredes etc. Após a medição, se for necessário, é feito um gabarito da peça a ser produzida para que ocorra uma conferência final."
+      },
+      {
+        "title": "Desenho de Aprovação",
+        "description": "Nossa equipe de projetistas prepara um desenho com todos os detalhes, dimensões e características do produto para que o cliente/arquiteto possa analisar e confirmar se tudo está conforme o pedido."
+      }
+    ]
+  }
+  

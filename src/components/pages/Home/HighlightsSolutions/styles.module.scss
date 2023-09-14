@@ -5,7 +5,7 @@
 }
 
 .container_highlights__content {
-    padding: 144px 48px 231px 96px;
+    padding: 144px 32px 231px 96px;
 
     max-width: 1920px;
     margin: 0 auto;
@@ -15,7 +15,7 @@
     }
 
     @include Mobile {
-       padding: 0 40px;
+        padding: 0 40px;
     }
 }
 
@@ -110,7 +110,7 @@
             @media (max-width: 1200px) {
                 width: 508px;
                 height: 473.585px;
-              }
+            }
 
             @include Mobile {
                 width: 326px;
@@ -130,6 +130,10 @@
     }
 
     .line_two__column__one {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
         .line_two__column__one__header {
             margin-bottom: 100px;
 
@@ -138,7 +142,6 @@
                 flex-direction: column;
                 align-items: end;
                 margin-bottom: 40px;
-
             }
 
             .header__image_container {
@@ -159,7 +162,7 @@
                 @media (max-width: 1200px) {
                     width: 346px;
                     height: 540.261px;
-                  }
+                }
 
                 @include Mobile {
                     width: 326px;
@@ -174,6 +177,7 @@
         flex-direction: column;
         align-items: flex-end;
         justify-content: end;
+        padding-top: 297px;
 
         .line_two__column__two__header {
             h2 {
@@ -196,7 +200,7 @@
 
                 @media (max-width: 1200px) {
                     width: 508px;
-                  }
+                }
 
                 @include Tablet {
                     font-size: 32px;
@@ -222,7 +226,7 @@
                 @media (max-width: 1606px) {
                     width: 695px;
                     height: 673.585px;
-                  }
+                }
 
                 @include SmallScreen {
                     width: 608px;
@@ -232,7 +236,7 @@
                 @media (max-width: 1200px) {
                     width: 508px;
                     height: 473.585px;
-                  }
+                }
 
                 @include Tablet {
                     display: none;

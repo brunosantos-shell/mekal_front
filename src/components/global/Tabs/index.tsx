@@ -35,8 +35,7 @@ interface TabsProps {
 }
 
 export default function Tabs({ categories }: TabsProps) {
-
-  console.log(categories)
+  const [hasActiveProducts, setHasActiveProducts] = useState(false)
 
   const categorySlugs = categories.map((categoryObj) => {
     const categoryName = Object.keys(categoryObj)[0]
@@ -51,6 +50,15 @@ export default function Tabs({ categories }: TabsProps) {
   useLayoutEffect(() => {
     const currentSlug = pathname.substring(lastIndex + 1)
     setCurrentTab(currentSlug)
+
+    const categoryName = categories.find(
+      (categoryObj) =>
+        slugify(categoryObj[Object.keys(categoryObj)[0]]?.name) === currentSlug
+    )
+    setHasActiveProducts(
+      !!categoryName &&
+        categoryName[Object.keys(categoryName)[0]].products.length > 0
+    )
   }, [pathname, lastIndex])
 
   const handleTabClick = (category: string) => {
@@ -83,30 +91,36 @@ export default function Tabs({ categories }: TabsProps) {
           })}
         </ul>
       </div>
-      <div className={styles.container_products}>
+      {hasActiveProducts && (
+        <div className={styles.container_products}>
+          <h4>Todos os produtos</h4>
+          {categories.map((categoryObj) => {
+            const categoryName = Object.keys(categoryObj)[0]
+            const isActive =
+              currentTab === slugify(categoryObj[categoryName]?.name)
+            const products = categoryObj[categoryName]?.products ?? []
 
-        <h4>Todos os produtos</h4>
-      {categories.map((categoryObj) => {
-        const categoryName = Object.keys(categoryObj)[0]
-        const isActive = currentTab === slugify(categoryObj[categoryName]?.name)
-        const products = categoryObj[categoryName]?.products ?? []
-
-        return isActive ? (
-          <div key={categoryName} className={styles.container_products__content}>
-            <ul>
-              {products.map((product) => (
-                <CardProduct
-                  key={product.id}
-                  category={'seriados'}
-                  image={product.image}
-                  title={product.name}
-                />
-              ))}
-            </ul>
-          </div>
-        ) : null
-      })}
-      </div>
+            return isActive ? (
+              <div
+                key={categoryName}
+                className={styles.container_products__content}
+              >
+                <ul>
+                  {products.map((product) => (
+                    <CardProduct
+                      key={product.id}
+                      id={product.id}
+                      category={'seriados'}
+                      image={product.image}
+                      title={product.name}
+                    />
+                  ))}
+                </ul>
+              </div>
+            ) : null
+          })}
+        </div>
+      )}
     </>
   )
 }

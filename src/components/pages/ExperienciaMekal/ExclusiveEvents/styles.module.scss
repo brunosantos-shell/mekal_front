@@ -1,0 +1,32 @@
+@import '../../../../styles/utils';
+
+.container {
+    padding: 144px 48px 200px 96px;
+    background-color: #FFF;
+
+
+    .container_header {
+        span {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%;
+
+            color: $color-neutral-low-dark;
+            margin-bottom: 32px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 72px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%; /* 86.4px */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: $color-neutral-low-pure;
+            margin-bottom: 48px;
+        }
+    }
+}

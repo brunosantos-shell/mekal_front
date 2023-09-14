@@ -27,11 +27,14 @@ export default function Header() {
   const [InstitucionalOpen, setInstitucionalOpen] = useState(false)
   const [SuporteOpen, setSuporteOpen] = useState(false)
   const [isRouteChanging, setIsRouteChanging] = useState(false) 
-  const [shouldCloseOnRouteChange, setShouldCloseOnRouteChange] =
-    useState(false)
+  const [shouldCloseOnRouteChange, setShouldCloseOnRouteChange] = useState(false)
   const [previousPathname, setPreviousPathname] = useState('')
 
+  const [windowWidthSize, setWindowWidthSize] = useState(644)
+
   const pathname = usePathname()
+
+  console.log(shouldCloseOnRouteChange)
 
   const closeAllItems = () => {
     setSolutionsOpen(false)
@@ -113,15 +116,13 @@ export default function Header() {
     }
   }, [isMenuOpen, isRouteChanging])
 
-  const getMenuDisplay = () => {
-    if (isMenuOpen) {
-      return 'block' 
-    } else if (isRouteChanging && shouldCloseOnRouteChange) {
-      return 'none' 
-    } else {
-      return 'none' 
+  useEffect(() => {
+    if (window.innerWidth <= 1440) {
+      setWindowWidthSize(444)
     }
-  }
+
+  }, [])
+
 
   return (
     <>
@@ -133,6 +134,7 @@ export default function Header() {
         initial={{ width: 0, opacity: 0 }}
         animate={{ width: 48, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+        
       >
         <div className={styles.header_content}>
           <Hamburger toggled={isMenuOpen} toggle={handleToggleMainMenu} />
@@ -143,7 +145,10 @@ export default function Header() {
       <motion.div
         initial={{ width: 0, opacity: 0 }}
         className={styles.menu_container}
-        animate={{ width: isMenuOpen ? 664 : 0, opacity: isMenuOpen ? 1 : 0 }}
+        animate={{
+          width: isMenuOpen ? windowWidthSize : 0,
+          opacity: isMenuOpen ? 1 : 0,
+        }}
         exit={{
           width: 0,
           opacity: 0,
@@ -151,7 +156,7 @@ export default function Header() {
         }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
         style={{
-          display: getMenuDisplay(),
+         /*  display: getMenuDisplay(), */
           pointerEvents: isMenuOpen ? 'auto' : 'none',
         }}
       >
@@ -280,7 +285,7 @@ export default function Header() {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/suporte/contato">Contato</Link>
+                        <Link href="/suporte/fale-conosco">Contato</Link>
                       </li>
                     </ul>
                   </motion.div>
@@ -336,18 +341,20 @@ export default function Header() {
           pointerEvents: 'none',
         }}
         animate={{
-          x: isMenuOpen && solutionsOpen ? 664 : 0,
-          width: isMenuOpen && solutionsOpen ? 'calc(100% - 664px)' : 0,
+          x: isMenuOpen && solutionsOpen ? windowWidthSize : 0,
+          width: isMenuOpen && solutionsOpen ? `calc(100% - ${windowWidthSize}px)` : 0,
           opacity: isRouteChanging ? 0 : isMenuOpen && solutionsOpen ? 1 : 0,
           zIndex: isMenuOpen && solutionsOpen ? 10 : 1,
           pointerEvents: isMenuOpen && solutionsOpen ? 'auto' : 'none',
         }}
         exit={{ x: '-100%', width: 0, opacity: 0 }}
-        transition={{ duration: isRouteChanging ? 0 : 0.7, ease: 'easeOut' }}
+        transition={{ duration: isRouteChanging ? 0 : 0.5, ease: 'easeInOut' }}
         style={{ display: isMenuOpen && solutionsOpen ? 'block' : 'none' }}
       >
         <div className={styles.solutions_window__content}>
-          <ContentSolutions />
+          <ContentSolutions 
+            responsive={windowWidthSize}
+          />
         </div>
       </motion.div>
     </>

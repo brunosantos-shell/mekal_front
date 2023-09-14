@@ -145,19 +145,169 @@
                   "id": 1,
                   "name": "Farmhouse",
                   "slug": "farmhouse",
-                  "image": "/images/cubas/farmhouse.jpg"
+                  "image": "/images/cubas/farmhouse.jpg",
+                  "info_adicional": [
+                    {
+                        "nome": "Comprimento (mm)",
+                        "valor": 500
+                    },
+                    {
+                        "nome": "Largura (mm)",
+                        "valor": 400
+                    },
+                    {
+                        "nome": "Profundidade (mm)",
+                        "valor": 230
+                    },
+                    {
+                        "nome": "Instalação",
+                        "valor": "Embutir (Undermount)"
+                    },
+                    {
+                        "nome": "Raio",
+                        "valor": "R10"
+                    },
+                    {
+                        "nome": "Espessura da Chapa (mm)",
+                        "valor": 1.2
+                    },
+                    {
+                        "nome": "VSA na cor da cuba (inclusa)",
+                        "valor": "4 1⁄2”"
+                    },
+                    {
+                        "nome": "Furo da válvula",
+                        "valor": ["3.1/2”", "4.1/2”", "3.1/2”"]
+                    },
+                    {
+                        "nome": "Acabamento",
+                        "valor": "Escovado"
+                    },
+                    {
+                        "nome": "Anti Ruído",
+                        "valor": "Teremos nos 4 cantos e no fundo da cuba uma manta anti ruído, além da pintura externa."
+                    },
+                    {
+                        "nome": "Detalhes",
+                        "valor": "As cubas PVD incluem grapas para uma melhor instalação e fixação na bancada."
+                    },
+                    {
+                        "nome": "Código",
+                        "valor": "01023816"
+                    }
+                ]
                 },
                 {
                   "id": 2,
                   "name": "Cuba Simples",
                   "slug": "cuba-simples",
-                  "image": "/images/cubas/cubaSimples.jpg"
+                  "image": "/images/cubas/cubaSimples.jpg",
+                  "info_adicional": [
+                    {
+                        "nome": "Comprimento (mm)",
+                        "valor": 500
+                    },
+                    {
+                        "nome": "Largura (mm)",
+                        "valor": 400
+                    },
+                    {
+                        "nome": "Profundidade (mm)",
+                        "valor": 230
+                    },
+                    {
+                        "nome": "Instalação",
+                        "valor": "Embutir (Undermount)"
+                    },
+                    {
+                        "nome": "Raio",
+                        "valor": "R10"
+                    },
+                    {
+                        "nome": "Espessura da Chapa (mm)",
+                        "valor": 1.2
+                    },
+                    {
+                        "nome": "VSA na cor da cuba (inclusa)",
+                        "valor": "4 1⁄2”"
+                    },
+                    {
+                        "nome": "Furo da válvula",
+                        "valor": ["3.1/2”", "4.1/2”", "3.1/2”"]
+                    },
+                    {
+                        "nome": "Acabamento",
+                        "valor": "Escovado"
+                    },
+                    {
+                        "nome": "Anti Ruído",
+                        "valor": "Teremos nos 4 cantos e no fundo da cuba uma manta anti ruído, além da pintura externa."
+                    },
+                    {
+                        "nome": "Detalhes",
+                        "valor": "As cubas PVD incluem grapas para uma melhor instalação e fixação na bancada."
+                    },
+                    {
+                        "nome": "Código",
+                        "valor": "01023816"
+                    }
+                ]
                 },
                 {
                   "id": 3,
                   "name": "Mekal Shades",
                   "slug": "mekal-shades",
-                  "image": "/images/cubas/mekalShades.jpg"
+                  "image": "/images/cubas/mekalShades.jpg",
+                  "info_adicional": [
+                    {
+                        "nome": "Comprimento (mm)",
+                        "valor": 500
+                    },
+                    {
+                        "nome": "Largura (mm)",
+                        "valor": 400
+                    },
+                    {
+                        "nome": "Profundidade (mm)",
+                        "valor": 230
+                    },
+                    {
+                        "nome": "Instalação",
+                        "valor": "Embutir (Undermount)"
+                    },
+                    {
+                        "nome": "Raio",
+                        "valor": "R10"
+                    },
+                    {
+                        "nome": "Espessura da Chapa (mm)",
+                        "valor": 1.2
+                    },
+                    {
+                        "nome": "VSA na cor da cuba (inclusa)",
+                        "valor": "4 1⁄2”"
+                    },
+                    {
+                        "nome": "Furo da válvula",
+                        "valor": ["3.1/2”", "4.1/2”", "3.1/2”"]
+                    },
+                    {
+                        "nome": "Acabamento",
+                        "valor": "Escovado"
+                    },
+                    {
+                        "nome": "Anti Ruído",
+                        "valor": "Teremos nos 4 cantos e no fundo da cuba uma manta anti ruído, além da pintura externa."
+                    },
+                    {
+                        "nome": "Detalhes",
+                        "valor": "As cubas PVD incluem grapas para uma melhor instalação e fixação na bancada."
+                    },
+                    {
+                        "nome": "Código",
+                        "valor": "01023816"
+                    }
+                ]
                 }
               ]
             }

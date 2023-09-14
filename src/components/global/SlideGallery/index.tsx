@@ -9,6 +9,11 @@ import 'swiper/css/scrollbar'
 
 import './swiper.css'
 
+interface SlideGalleryProps {
+    images?: string[];
+    area?: 'slideProducts';
+    customStyles?: React.CSSProperties;
+}
 
 const swiperParamsSlideGallery = {
     modules: [Navigation, Pagination, Scrollbar, A11y],
@@ -18,31 +23,25 @@ const swiperParamsSlideGallery = {
     pagination: { clickable: true },
 }
 
-interface SlideGalleryProps {
-    images: string[];
+export default function SlideGallery({ images, area, customStyles }: SlideGalleryProps) {
+    const isSlideProducts = area === 'slideProducts'
+
+    return (
+        <div className={`${styles.container_slide__gallery} ${isSlideProducts ? styles.slideProductsContainer : ''}`} style={customStyles}>
+            {area !== 'slideProducts' && (
+                <h5 className={styles.title_slide__gallery}>Confira outras imagens</h5>
+            )}
+            <Swiper {...swiperParamsSlideGallery} className={isSlideProducts ? 'slide-products-swiper' : ''}>
+                {images?.map((image, index) => (
+                    <SwiperSlide key={index}>
+                        <img
+                            src={image}
+                            alt={`imagem ${index}`}
+                            className={styles.image_slide__gallery}
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
+    )
 }
-
-
-export default function SlideGallery ({ images } : SlideGalleryProps) {
-
-  return (
-    <section
-        className={styles.container_slide__gallery}
-    >
-    <h5
-        className={styles.title_slide__gallery}
-    >Confira outras imagens</h5>
-    <Swiper
-        {...swiperParamsSlideGallery}
-    >
-        {images.map((image, index) => (
-            <SwiperSlide key={index}>
-                <img 
-                    src={image} alt={`imagem ${index}`} className={styles.image_slide__gallery}/>
-            </SwiperSlide>
-        ))}
-    </Swiper>
-    </section>
-  )
-};
-

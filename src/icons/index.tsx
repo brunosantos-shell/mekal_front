@@ -374,3 +374,119 @@ export const IconDowload: React.FC = () => {
     </svg>
   )
 }
+
+export const ArrowRightLi = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="8"
+      height="10"
+      viewBox="0 0 8 10"
+      fill="none"
+    >
+      <path
+        d="M0.5 8.19575V1.80425C0.5 1.01881 1.36395 0.539969 2.03 0.956249L7.1432 4.152C7.76987 4.54367 7.76987 5.45633 7.1432 5.848L2.03 9.04375C1.36395 9.46003 0.5 8.98119 0.5 8.19575Z"
+        fill="#282828"
+      />
+    </svg>
+  )
+}
+
+export const ArrowDownBtn = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M6 9L12 15L18 9"
+        stroke="black"
+        stroke-width="1.5"
+        stroke-linecap="square"
+        stroke-linejoin="round"
+      />
+    </svg>
+  )
+}
+
+export const ArrowExternal = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+    >
+      <g clip-path="url(#clip0_2507_1072)">
+        <path
+          d="M4 11.9236L12 3.92358"
+          stroke="#282828"
+          stroke-width="1.5"
+          stroke-linecap="square"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M4.23297 3.45221L12.4707 3.45221L12.4707 11.6899"
+          stroke="#282828"
+          stroke-width="1.5"
+          stroke-linecap="square"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_2507_1072">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+export const IconArrowDownContact = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+    >
+      <path
+        d="M10 15L20 25L30 15"
+        stroke="black"
+        stroke-width="1.5"
+        stroke-linecap="square"
+        stroke-linejoin="round"
+      />
+    </svg>
+  )
+}
+
+export const IconArrowRightSubmit = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+    >
+      <path
+        d="M3 7.66663L12.3333 7.66663"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-linecap="square"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M8.33203 3.00004L12.9987 7.66671L8.33203 12.3334"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-linecap="square"
+      />
+    </svg>
+  )
+}

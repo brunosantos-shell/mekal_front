@@ -117,7 +117,7 @@
   }
 }
 
-// Mixin para telas menores que 1400px (inclusive) e maior ou igual a 998px
+// Mixin para telas menores que 1440px (inclusive) e maior ou igual a 998px
 @mixin SmallScreen {
   @media (max-width: $breakpoint-desktop-M-max) {
     @content;

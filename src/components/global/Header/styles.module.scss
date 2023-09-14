@@ -102,6 +102,10 @@
                     align-items: center;
                     gap: 12px;
 
+                    @include SmallScreen {
+                        font-size: 32px;
+                    }
+
                     button {
                         width: 32px;
                         height: 32px;
