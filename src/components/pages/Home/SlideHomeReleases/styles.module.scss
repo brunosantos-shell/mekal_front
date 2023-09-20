@@ -1,0 +1,102 @@
+@import '../../../../styles/utils';
+
+
+.container_slide_home_realeases {
+    background-color: $color-neutral-high-light;
+
+
+    .slide_home_realeases__content {
+        padding: 0 48px 158px 96px;
+    
+        max-width: 1920px;
+        margin: 0 auto;
+
+        @include SmallScreen {
+            padding: 0 48px 108px 96px;  
+        }
+
+        @include Tablet {
+            padding: 33px 24px 108px 24px;
+        }
+
+
+        .slide_home_realeases__header {
+
+            margin-bottom: 80px;
+
+            span {
+                color: $color-neutral-low-dark;
+        
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 150%;
+                display: block;
+
+                margin-bottom: 21px;
+        
+                
+            }
+
+            .slide_home_realeases__header__title {
+
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                border-top: 1px solid #bfbfbf;
+                padding-top: 80px;
+
+                @include Tablet {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 40px;
+                }
+
+                h1 {
+
+                    color: $color-neutral-low-pure;
+    
+                    max-width: 1310px;
+    
+                    font-size: 72px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 120%; /* 86px */
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+
+
+                    @include SmallScreen {
+                        font-size: 42px;
+                        line-height: 130%;
+
+                        max-width: 768px;
+                    }
+
+                    @media (max-width: 1280px) {
+                        font-size: 32px;
+                    }
+                }
+
+                button {
+                    white-space: nowrap;
+                }
+
+            }
+
+           
+        }
+
+        .image_slide__gallery {
+            max-width: 100%;
+            height: auto;
+
+            @include Mobile {
+                height: 100%;
+            }
+        }
+
+    }
+}
+

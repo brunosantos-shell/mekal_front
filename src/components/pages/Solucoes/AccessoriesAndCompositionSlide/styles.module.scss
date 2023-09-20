@@ -1,0 +1,44 @@
+.container_accessories_and_composition__slide {
+    padding: 0 48px 200px 96px;
+    position: relative;
+
+    .container_swiper__slide {
+        margin-top: 48px;
+    }
+
+    .title_accessories_and_composition__slide {
+        h3 {
+            max-width: 300px;
+        }
+    }
+    
+
+    .container_btn__accessories_and_composition__slide {
+        display: flex;
+        gap: 12px;
+
+    }
+
+
+    .title_accessories_and_composition__slide {
+        display: flex;
+        justify-content: space-between;
+        
+        max-width: 1920px !important;
+
+        padding-right: 110px;
+
+
+        .container_accessories_and_composition__slide__btn {
+            display: flex;
+            gap: 100px;
+            
+        }
+
+    }
+
+
+    
+
+
+}

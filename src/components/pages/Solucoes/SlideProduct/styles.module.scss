@@ -1,0 +1,29 @@
+@import '../../../../styles/_utils/';
+
+.container_slide__product {
+
+    height: 100%;
+    background-color: $color-neutral-high-light;
+    
+
+    h5 {
+
+        color: $color-neutral-low-pure;
+
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; 
+
+        margin-bottom: 16px;
+    }
+}
+
+
+.image_slide__product {
+        height: auto; 
+        width: 100%;
+        object-fit: contain;
+        mix-blend-mode: multiply;
+        
+}

@@ -1,0 +1,38 @@
+@import '../../../styles/utils';
+
+.container_header {
+
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 48px 277px 61px 96px;
+
+    @include SmallScreen {
+        padding: 48px 96px 61px 0;
+    }
+
+    p {
+        max-width: 848px;
+
+            @include SmallScreen {
+                max-width: 780px;
+             }
+        
+
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+
+        color: $color-neutral-low-dark;
+    }
+}
+
+.container_content {
+    display: flex;
+    justify-content: flex-end;
+    padding: 48px 277px 61px 96px;
+
+    background-color: $color-neutral-high-light;
+
+}

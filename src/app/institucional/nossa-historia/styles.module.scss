@@ -1,0 +1,203 @@
+@import '../../../styles/utils';
+
+.container {
+    padding: 132px 48px 200px 96px;
+
+
+    @include Tablet {
+        padding: 40px 24px 1px 24px;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 132px 48px 132px 96px;
+    }
+
+    .container_header {
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 231px;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            margin-bottom: 80px;
+        }
+
+        @include SmallScreen {
+            gap: 40px;
+        }
+
+        > div {
+            h2 {
+                max-width: 616px;
+                @include font-responsive(22px, 42px, 130%);
+                font-style: normal;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            span {
+                margin-bottom: 80px;
+                display: block;
+
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 150%;
+            }
+        }
+    }
+
+    .container_content {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 200px;
+
+        @media (max-width: 1280px) {
+            img {
+                max-width: 517px !important;
+                max-height: 326px !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            flex-direction: column-reverse;
+
+            img {
+                max-width: 100% !important;
+                max-height: 100% !important;
+            }
+
+            margin-bottom: 132px;
+        }
+
+        @include SmallScreen {
+            gap: 80px;
+        }
+
+        .container_content_texto {
+            max-width: 848px;
+            border-top: 1px solid #bfbfbf;
+            padding-top: 40px;
+            display: flex;
+            gap: 80px;
+
+            @include SmallScreen {
+                max-width: 648px;
+                gap: 40px;
+            }
+
+            @media (max-width: 1024px) {
+                border-top: none;
+                padding-top: 0;
+                max-width: 100%;
+            }
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: 80px;
+
+                @media (max-width: 1024px) {
+                    flex-direction: column;
+                }
+
+                @include SmallScreen {
+                    gap: 40px;
+                }
+
+                p {
+                    max-width: 384px;
+                    @include font-responsive(15px, 20px, 150%);
+                    font-style: normal;
+                    font-weight: 400;
+
+                    @media (max-width: 1024px) {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .container_footer {
+        h1 {
+            margin-bottom: 200px;
+
+            @include font-responsive(42px, 72px, 120%);
+
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            @include SmallScreen {
+                font-size: 48px;
+            }
+        }
+
+        .container_footer_texto {
+            display: flex;
+            justify-content: space-between;
+
+            @include SmallScreen {
+                gap: 80px;
+            }
+
+            > div {
+                max-width: 848px;
+
+                span {
+                    display: block;
+                    margin-bottom: 80px;
+                }
+
+                h2 {
+                    @include font-responsive(26px, 42px, 130%);
+
+                    margin-bottom: 125px;
+                    font-style: normal;
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                }
+
+                > div {
+                    display: flex;
+                    gap: 80px;
+
+                   @include SmallScreen {
+                        gap: 40px;
+                    }
+
+                    p {
+
+                        @include font-responsive(15px, 20px, 150%);
+
+                        max-width: 384px;
+                        font-style: normal;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            .container_img {
+                max-width: 618px;
+                height: 928px;
+                position: relative;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.container_img__hero {
+    height: 712px;
+    position: relative;
+    width: 100%;
+
+    @include SmallScreen {
+        height: 580px;
+    }
+}

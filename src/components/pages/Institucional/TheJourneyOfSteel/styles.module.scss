@@ -1,0 +1,37 @@
+.container_the_journey_of_steel {
+    padding: 144px 48px 200px 96px;
+    position: relative;
+
+    span {
+        margin-bottom: 28px;
+        display: block;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        border-top: 1px solid #BFBFBF;
+        padding-top: 52px;
+        padding-bottom: 80px;
+
+        h2 {
+            font-size: 42px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%; /* 54.6px */
+            letter-spacing: 2px;
+            text-transform: uppercase;  
+
+            max-width: 616px;
+        }
+
+    }
+
+
+    .container__slide__btn {
+        display: flex;
+        gap: 12px;
+    }
+
+}

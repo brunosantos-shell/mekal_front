@@ -1,0 +1,426 @@
+
+{
+    "solutions": [
+      {
+        "id": 1,
+        "slug": "arte-e-design",
+        "linhas": []
+      },
+      {
+        "id": 2,
+        "slug": "corporativo",
+        "linhas": [
+          {
+            "portas": {
+              "name": "Portas",
+              "products": [
+                {
+                  "id": 1,
+                  "name": "PORTA DE CORRER",
+                  "slug": "porta-de-correr",
+                  "image": ""                }
+              ]
+            }
+          },
+          {
+            "lavatorios_cirurgicos": {
+              "name": "Lavatorios Cirurgicos",
+              "products": [
+                {
+                  "id": 2,
+                  "name": "LAVATÓRIO CIRÚRGICO",
+                  "slug": "lavatorio-cirurgico",
+                  "image": ""                }
+              ]
+            }
+          },
+          {
+            "pias_de_expurgo": {
+              "name": "Pias de Expurgo",
+              "products": [
+                {
+                  "id": 3,
+                  "name": "PIA DE EXPURGO",
+                  "slug": "pia-de-expurgo",
+                  "image": ""                }
+              ]
+            }
+          },
+          {
+            "mesas": {
+              "name": "Mesas",
+              "products": [
+                {
+                  "id": 4,
+                  "name": "MESA",
+                  "slug": "mesa",
+                  "image": ""                }
+              ]
+            }
+          },
+          {
+            "armarios": {
+              "name": "Armarios",
+              "products": [
+                {
+                  "id": 5,
+                  "name": "ARMÁRIO",
+                  "slug": "armario",
+                  "image": ""                }
+              ]
+            }
+          },
+          {
+            "mobiliario": {
+              "name": "Mobiliario",
+              "products": [
+                {
+                  "id": 6,
+                  "name": "MOBILIÁRIO",
+                  "slug": "mobiliario",
+                  "image": ""                }
+              ]
+            }
+          },
+          {
+            "ralos": {
+              "name": "Ralos",
+              "products": [
+                {
+                  "id": 7,
+                  "name": "RALO",
+                  "slug": "ralo",
+                  "image": ""                }
+              ]
+            }
+          },
+          {
+            "cubas_e_tanques": {
+              "name": "Cubas e Tanques",
+              "products": [
+                {
+                  "id": 8,
+                  "name": "CUBA E TANQUE",
+                  "slug": "cuba-e-tanque",
+                  "image": ""                }
+              ]
+            }
+          }
+        ]
+      },
+      
+      {
+        "id": 3,
+        "slug": "modulares",
+        "linhas": [
+          {
+            "freestanding": {
+              "name": "Freestanding",
+              "products": []
+            }
+          },
+          {
+            "smart_premium": {
+              "name": "Smart Premium",
+              "products": []
+            }
+          },
+          {
+            "smart_kit": {
+              "name": "Smart Kit",
+              "products": []
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "slug": "seriados",
+        "linhas": [
+          {
+            "todos": {
+              "name": "Todos",
+              "products": [
+                {
+                  "id": 1,
+                  "name": "Farmhouse",
+                  "slug": "farmhouse",
+                  "image": "/images/cubas/farmhouse.jpg",
+                  "info_adicional": [
+                    {
+                        "nome": "Comprimento (mm)",
+                        "valor": 500
+                    },
+                    {
+                        "nome": "Largura (mm)",
+                        "valor": 400
+                    },
+                    {
+                        "nome": "Profundidade (mm)",
+                        "valor": 230
+                    },
+                    {
+                        "nome": "Instalação",
+                        "valor": "Embutir (Undermount)"
+                    },
+                    {
+                        "nome": "Raio",
+                        "valor": "R10"
+                    },
+                    {
+                        "nome": "Espessura da Chapa (mm)",
+                        "valor": 1.2
+                    },
+                    {
+                        "nome": "VSA na cor da cuba (inclusa)",
+                        "valor": "4 1⁄2”"
+                    },
+                    {
+                        "nome": "Furo da válvula",
+                        "valor": ["3.1/2”", "4.1/2”", "3.1/2”"]
+                    },
+                    {
+                        "nome": "Acabamento",
+                        "valor": "Escovado"
+                    },
+                    {
+                        "nome": "Anti Ruído",
+                        "valor": "Teremos nos 4 cantos e no fundo da cuba uma manta anti ruído, além da pintura externa."
+                    },
+                    {
+                        "nome": "Detalhes",
+                        "valor": "As cubas PVD incluem grapas para uma melhor instalação e fixação na bancada."
+                    },
+                    {
+                        "nome": "Código",
+                        "valor": "01023816"
+                    }
+                ]
+                },
+                {
+                  "id": 2,
+                  "name": "Cuba Simples",
+                  "slug": "cuba-simples",
+                  "image": "/images/cubas/cubaSimples.jpg",
+                  "info_adicional": [
+                    {
+                        "nome": "Comprimento (mm)",
+                        "valor": 500
+                    },
+                    {
+                        "nome": "Largura (mm)",
+                        "valor": 400
+                    },
+                    {
+                        "nome": "Profundidade (mm)",
+                        "valor": 230
+                    },
+                    {
+                        "nome": "Instalação",
+                        "valor": "Embutir (Undermount)"
+                    },
+                    {
+                        "nome": "Raio",
+                        "valor": "R10"
+                    },
+                    {
+                        "nome": "Espessura da Chapa (mm)",
+                        "valor": 1.2
+                    },
+                    {
+                        "nome": "VSA na cor da cuba (inclusa)",
+                        "valor": "4 1⁄2”"
+                    },
+                    {
+                        "nome": "Furo da válvula",
+                        "valor": ["3.1/2”", "4.1/2”", "3.1/2”"]
+                    },
+                    {
+                        "nome": "Acabamento",
+                        "valor": "Escovado"
+                    },
+                    {
+                        "nome": "Anti Ruído",
+                        "valor": "Teremos nos 4 cantos e no fundo da cuba uma manta anti ruído, além da pintura externa."
+                    },
+                    {
+                        "nome": "Detalhes",
+                        "valor": "As cubas PVD incluem grapas para uma melhor instalação e fixação na bancada."
+                    },
+                    {
+                        "nome": "Código",
+                        "valor": "01023816"
+                    }
+                ]
+                },
+                {
+                  "id": 3,
+                  "name": "Mekal Shades",
+                  "slug": "mekal-shades",
+                  "image": "/images/cubas/mekalShades.jpg",
+                  "info_adicional": [
+                    {
+                        "nome": "Comprimento (mm)",
+                        "valor": 500
+                    },
+                    {
+                        "nome": "Largura (mm)",
+                        "valor": 400
+                    },
+                    {
+                        "nome": "Profundidade (mm)",
+                        "valor": 230
+                    },
+                    {
+                        "nome": "Instalação",
+                        "valor": "Embutir (Undermount)"
+                    },
+                    {
+                        "nome": "Raio",
+                        "valor": "R10"
+                    },
+                    {
+                        "nome": "Espessura da Chapa (mm)",
+                        "valor": 1.2
+                    },
+                    {
+                        "nome": "VSA na cor da cuba (inclusa)",
+                        "valor": "4 1⁄2”"
+                    },
+                    {
+                        "nome": "Furo da válvula",
+                        "valor": ["3.1/2”", "4.1/2”", "3.1/2”"]
+                    },
+                    {
+                        "nome": "Acabamento",
+                        "valor": "Escovado"
+                    },
+                    {
+                        "nome": "Anti Ruído",
+                        "valor": "Teremos nos 4 cantos e no fundo da cuba uma manta anti ruído, além da pintura externa."
+                    },
+                    {
+                        "nome": "Detalhes",
+                        "valor": "As cubas PVD incluem grapas para uma melhor instalação e fixação na bancada."
+                    },
+                    {
+                        "nome": "Código",
+                        "valor": "01023816"
+                    }
+                ]
+                }
+              ]
+            }
+          },
+          {
+            "cuba_simples": {
+              "name": "Cuba Simples",
+              "products": [
+                {
+                  "id": 1,
+                  "name": "Cuba Simples",
+                  "slug": "cuba-simples",
+                  "image": "/images/cubas/cubaSimples.jpg"
+                }
+              ]
+            }
+          },
+          {
+            "cuba_dupla": {
+              "name": "Cuba Dupla",
+              "products": [
+                {
+                  "id": 12,
+                  "name": "CUBA DUPLA",
+                  "slug": "cuba-dupla",
+                  "image": ""
+                }
+              ]
+            }
+          },
+          {
+            "reta_r3": {
+              "name": "Reta R3",
+              "products": [
+                {
+                  "id": 13,
+                  "name": "RETA R3",
+                  "slug": "reta-r3",
+                  "image": ""
+                }
+              ]
+            }
+          },
+          {
+            "mekal_shades": {
+              "name": "Mekal Shades",
+              "products": [
+                {
+                  "id": 14,
+                  "name": "MEKAL SHADES",
+                  "slug": "mekal-shades",
+                  "image": ""                
+                }
+              ]
+            }
+          },
+          {
+            "gourmet": {
+              "name": "Gourmet",
+              "products": [
+                {
+                  "id": 15,
+                  "name": "GOURMET",
+                  "slug": "gourmet",
+                  "image": ""                }
+              ]
+            }
+          },
+          {
+            "workstation": {
+              "name": "Workstation",
+              "products": [
+                {
+                  "id": 16,
+                  "name": "WORKSTATION",
+                  "slug": "workstation",
+                  "image": ""                }
+              ]
+            }
+          },
+          {
+            "canal_equipado": {
+              "name": "Canal Equipado",
+              "products": [
+                {
+                  "id": 17,
+                  "name": "CANAL EQUIPADO",
+                  "slug": "canal-equipado",
+                  "image": ""                }
+              ]
+            }
+          },
+          {
+            "canal_equipado_match": {
+              "name": "Canal Equipado Match",
+              "products": [
+                {
+                  "id": 18,
+                  "name": "CANAL EQUIPADO MATCH",
+                  "slug": "canal-equipado-match",
+                  "image": ""                }
+              ]
+            }
+          }
+        ]
+      },
+      
+      {
+        "id": 5,
+        "slug": "sob-medida",
+        "linhas": []
+      }
+    ]
+  }
+
+  

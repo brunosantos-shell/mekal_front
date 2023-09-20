@@ -1,0 +1,29 @@
+
+.swiper-button-next-accessories,
+.swiper-button-prev-accessories {
+  
+ position: relative;
+
+ }
+
+.swiper-button-next-accessories button,
+.swiper-button-prev-accessories button
+{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border: 1px solid #BFBFBF;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  
+  
+}
+
+.swiper-button-next-accessories svg,
+.swiper-button-prev-accessories svg {
+    width: 32px;
+    height: 32px;
+} 
+

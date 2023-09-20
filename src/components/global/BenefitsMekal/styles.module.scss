@@ -1,0 +1,47 @@
+@import '../../../styles/utils';
+
+.container_benefits_mekal {
+    background-color: $color-neutral-high-light;
+    padding: 128px 48px 128px 96px;
+
+    .benefits_mekal__header {
+        border-bottom: 1px solid #bfbfbf;
+        padding-bottom: 21px;
+
+        span {
+            color: $color-neutral-low-pure;
+
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%;
+        }
+    }
+
+    .benefits_mekal__content {
+        padding-top: 80px;
+        display: flex;
+        
+
+        h2 {
+
+            color: $color-neutral-low-pure;
+
+            font-size: 42px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%; 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            max-width: 384px;
+            margin-right: 79px;
+        }
+    }
+
+    .benefits_mekal__content__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 80px;
+    }
+}

@@ -50,6 +50,11 @@
   @media (min-width: $breakpoint-desktop-L-min) {
     width: $width-site-desktop-L;
   }
+
+  /*ultra wide*/
+  @media (min-width: $breakpoint-ultra-wide-min) {
+    width: $width-site-desktop-L;
+  }
 }
 
 // Mixin para facilitar compatibilidade de navegadores
@@ -103,37 +108,36 @@
 
 // Mixin para facilitar as Media Queries
 
+// Mixin para telas móveis com largura menor ou igual a 599px
 @mixin Mobile {
-  @media (min-width: $breakpoint-mobile-min) and (max-width: $breakpoint-mobile-max) {
+  @media (max-width: $breakpoint-mobile-max) {
     @content;
   }
 }
 
+// Mixin para tablets com largura menor ou igual a 997px
 @mixin Tablet {
-  @media (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
-    @content;
-  }
-}
-
-@mixin SmallScreen {
   @media (max-width: $breakpoint-tablet-max) {
     @content;
   }
 }
-@mixin Desktop {
-  @media (min-width: $breakpoint-desktop-M-min) {
+
+// Mixin para telas menores que 1440px (inclusive) e maior ou igual a 998px
+@mixin SmallScreen {
+  @media (max-width: $breakpoint-desktop-M-max) {
     @content;
   }
 }
 
-@mixin DesktopM {
-  @media (min-width: $breakpoint-desktop-M-min) and (max-width: $breakpoint-desktop-M-max) {
-    @content;
-  }
-}
-
-@mixin DesktopL {
+// Mixin para telas maiores ou igual a 1400px
+@mixin LargeScreen {
   @media (min-width: $breakpoint-desktop-L-min) {
+    @content;
+  }
+}
+
+@mixin UltraLargeScreen {
+  @media (min-width: $breakpoint-ultra-wide-min) {
     @content;
   }
 }

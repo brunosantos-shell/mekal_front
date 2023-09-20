@@ -1,0 +1,108 @@
+@import '../../../../styles/utils';
+
+.container_card {
+    display: flex;
+    height: 100%;
+    gap: 82px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #BFBFBF;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    @include SmallScreen {
+        gap: 40px;
+    }
+
+    .container_img {
+        position: relative;
+        width: 100%;
+        max-width: 384px;
+        height: 250px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .container_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h3 {
+            @include font-responsive(24px, 34px, 120%);
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: $color-neutral-low-pure;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        p {
+            @include font-responsive(14px, 17px, 130%);
+            font-style: normal;
+            font-weight: 400;
+            color: $color-neutral-low-dark;
+        }
+
+        button {
+            max-width: 260px;
+        }
+    }
+
+    .container_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-left: 1px solid #BFBFBF;
+        padding-left: 29px;
+
+        @media (max-width: 768px) {
+            padding-left: 0;
+            border-left: none;
+        }
+
+        .container_info_date {
+            @include font-responsive(42px, 72px, 120%);
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: $color-neutral-low-light;
+        }
+
+        .container_info_local {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            span {
+                @include font-responsive(14px, 18px, 150%);
+                font-style: normal;
+                font-weight: 600;
+                color: $color-neutral-low-pure;
+            }
+
+            p {
+                @include font-responsive(13px, 17px, 130%);
+                font-style: normal;
+                font-weight: 400;
+                color: $color-neutral-low-dark;
+            }
+        }
+    }
+}

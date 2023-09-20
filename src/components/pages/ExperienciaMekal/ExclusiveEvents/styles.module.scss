@@ -1,0 +1,31 @@
+@import '../../../../styles/utils';
+
+.container {
+    background-color: #FFF;
+    padding: 144px 48px 142px 96px;
+
+    @include Tablet {
+        padding: 132px 24px 142px 24px;
+    }
+
+    .container_header {
+        span {
+            @include font-responsive(15px, 18px, 150%);
+            color: $color-neutral-low-dark;
+            display: block;
+            font-style: normal;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            @include font-responsive(48px, 72px, 120%);
+            color: $color-neutral-low-pure;
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 48px;
+            text-transform: uppercase;
+        }
+    }
+}

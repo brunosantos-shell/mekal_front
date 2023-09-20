@@ -1,0 +1,33 @@
+@import '../../../styles/utils';
+
+.container {
+    padding: 61px 0 200px 0;
+
+    .container_header {
+
+        padding: 0 277px 61px 96px;
+
+        @include SmallScreen {
+            padding: 0 96px 61px 0;
+        }
+
+        display: flex;
+        justify-content: flex-end;
+
+        p {
+            max-width: 848px;
+
+                @include SmallScreen {
+                    max-width: 780px;
+                 }
+            
+
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+
+            color: $color-neutral-low-dark;
+        }
+    }
+}
