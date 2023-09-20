@@ -1,7 +1,7 @@
 @import '../../../../styles/utils';
 
 .container_highlights_happen {
-    padding: 144px 48px 0 96px;
+    padding: 144px 48px 80px 96px;
     background-color: $color-neutral-high-light;
 
     @include SmallScreen {
@@ -10,6 +10,10 @@
 
     @include Tablet {
         padding: 80px 40px 0;
+    }
+
+    @include Mobile {
+        padding: 80px 24px 0;
     }
 }
 
@@ -49,6 +53,11 @@
 
             margin-top: 16px;
 
+            @media (max-width: 1280px) {
+                font-size: 32px;
+                max-width: 300px;
+            }
+
             @media (max-width: 1200px) {
                 max-width: 360px;
             }
@@ -65,6 +74,12 @@
             @include Tablet {
                 display: none;
             }
+        }
+    }
+
+    @include Tablet {
+        >button {
+            display: none;
         }
     }
 }
@@ -97,9 +112,19 @@
         margin-top: 48px;
         gap: 0;
         top: 0;
+        padding-bottom: 40px;
 
         h4 {
-            max-width: 350px;
+            max-width: 100%;
         }
+    }
+}
+
+.container_highlights_content__button__mobile {
+
+    padding-bottom: 80px;
+
+    @media (min-width: 951px) {
+        display: none;
     }
 }

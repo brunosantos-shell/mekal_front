@@ -25,24 +25,21 @@ const myFont = localFont({
       weight: '400',
       style: 'italic',
     },
-     {
+    {
       path: '../../fonts/Muli-Light.woff',
       weight: '500',
       style: 'normal',
-     },
-  ]
+    },
+  ],
 })
 
+export default function RootLayout({ children }: { children: React.ReactNode }) {
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+
   return (
     <html lang="en" className={myFont.className}>
       <body>
-        <Header />
+       <Header />
         {children}
         <Footer />
       </body>

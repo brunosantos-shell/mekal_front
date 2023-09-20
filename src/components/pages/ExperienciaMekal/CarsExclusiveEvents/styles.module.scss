@@ -2,14 +2,15 @@
 
 .container_card {
     display: flex;
-    gap: 82px;
-
     height: 100%;
-
-    border-bottom: 1px solid #BFBFBF;
-    padding-bottom: 80px;
+    gap: 82px;
     padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #BFBFBF;
 
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 
     &:last-child {
         border-bottom: none;
@@ -21,11 +22,11 @@
     }
 
     .container_img {
-        max-width: 384px;
-        width: 100%;
-        height: 250px;
         position: relative;
-        
+        width: 100%;
+        max-width: 384px;
+        height: 250px;
+
         img {
             width: 100%;
             height: 100%;
@@ -38,17 +39,13 @@
         flex-direction: column;
         justify-content: space-between;
 
-
         h3 {
-            font-size: 34px;
+            @include font-responsive(24px, 34px, 120%);
             font-style: normal;
             font-weight: 600;
-            line-height: 120%; /* 40.8px */
             letter-spacing: 2px;
             text-transform: uppercase;
-
             color: $color-neutral-low-pure;
-
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -57,11 +54,9 @@
         }
 
         p {
-            font-size: 17px;
+            @include font-responsive(14px, 17px, 130%);
             font-style: normal;
             font-weight: 400;
-            line-height: 130%;
-
             color: $color-neutral-low-dark;
         }
 
@@ -73,19 +68,20 @@
     .container_info {
         display: flex;
         flex-direction: column;
-
         justify-content: space-between;
-
         border-left: 1px solid #BFBFBF;
         padding-left: 29px;
 
+        @media (max-width: 768px) {
+            padding-left: 0;
+            border-left: none;
+        }
+
         .container_info_date {
-            font-size: 72px;
+            @include font-responsive(42px, 72px, 120%);
             font-style: normal;
             font-weight: 600;
-            line-height: 120%; /* 86.4px */
             letter-spacing: 2px;
-
             color: $color-neutral-low-light;
         }
 
@@ -95,23 +91,18 @@
             gap: 12px;
 
             span {
-                font-size: 18px;
+                @include font-responsive(14px, 18px, 150%);
                 font-style: normal;
                 font-weight: 600;
-                line-height: 150%;
-
                 color: $color-neutral-low-pure;
             }
 
             p {
-                font-size: 17px;
+                @include font-responsive(13px, 17px, 130%);
                 font-style: normal;
                 font-weight: 400;
-                line-height: 130%;
-
                 color: $color-neutral-low-dark;
             }
         }
     }
 }
-

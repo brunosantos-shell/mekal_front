@@ -1,3 +1,10 @@
+.swiper {
+ 
+    @media screen and (max-width: 768px) {
+      height: 309px;
+    }
+}
+
 .swiper-pagination-bullet {
     background-color: transparent; 
     width: 12px; 

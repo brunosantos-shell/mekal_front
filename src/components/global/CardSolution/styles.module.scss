@@ -11,6 +11,7 @@
 
     @include Tablet {
         width: 100%;
+        margin-bottom: 40px;
     }
 }
 
@@ -50,13 +51,27 @@
         }
       }
     }
-  }  
-  
+  }
+
+@include Tablet {
+
+    .card_solution.responsive {
+        .image_wrapper__card_solution {
+            height: 100%;
+        }
+    }
+}
+
   
 .responsive {
     @include Tablet {
       width: 100%;
-      height: auto;
+      height: 384px !important;
+      max-width: 100% !important;
+    }
+
+    @include Mobile {
+        height: 184px !important;
     }
 }
   
@@ -116,6 +131,10 @@
 
     margin-top: 20px;
 
+    @include Mobile {
+        font-size: 18px;
+    }
+
 }
 
 @include SmallScreen {
@@ -140,7 +159,10 @@
             img {
                 @include Tablet {
                     width: 100% !important;
-                   
+                }
+
+                @include Mobile {
+                    height: 100% !important;
                 }
             }
         }
@@ -169,6 +191,10 @@
                 @include Tablet {
                     width: 100%;
                 }
+
+                @include Mobile {
+                    height: 100% !important;
+                }
             }
         }
     }
@@ -179,7 +205,7 @@
 
         @include Tablet {
             max-width: 100% !important;
-            height: 384px !important;
+            max-height: 384px !important;
         }
 
         @include Mobile {
@@ -189,12 +215,16 @@
         .image_wrapper__card_solution {
 
             @include Tablet {
-                height: 384px !important;
+                height: 100%;
             }
 
             img {
                 @include Tablet {
-                    width: 100%;                 
+                    width: 100% !important;;                 
+                }
+
+                @include Mobile {
+                    height: 100% !important;
                 }
             }
         }
@@ -223,6 +253,10 @@
                     width: 100%;
                 }
 
+                @include Mobile {
+                    height: 100% !important;
+                }
+
             }
         }
     }
@@ -249,6 +283,10 @@
             img {
                 @include Tablet {
                     width: 100%;
+                }
+
+                @include Mobile {
+                    height: 100% !important;
                 }
             }
         }

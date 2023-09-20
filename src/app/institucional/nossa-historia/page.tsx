@@ -6,9 +6,9 @@ import TheJourneyOfSteel from '@/components/pages/Institucional/TheJourneyOfStee
 import Showcase from '@/components/global/Showcase'
 
 export interface SlideData {
-  ano: string;
-  image: string;
-  description: string;
+  ano: string
+  image: string
+  description: string
 }
 
 export interface NossaHistoriaData {
@@ -36,47 +36,81 @@ export interface NossaHistoriaData {
   }
 
   slideNossaHistoria: {
-    slides: SlideData[];
- 
+    slides: SlideData[]
+  }
 }
-}
-
 
 export default function nossaHistoria() {
   const data: NossaHistoriaData = contentnossaHistoria
 
+  function splitIntoParagraphs(text: string) {
+    return text.split('\n').filter((paragraph) => paragraph.trim() !== '')
+  }
+
+  const paragraphsColumn1Section2 = splitIntoParagraphs(
+    data.section2.textoColuna1
+  )
+
+  const paragraphsColumn2Section2 = splitIntoParagraphs(
+    data.section2.textoColuna2
+  )
+
   return (
     <main>
-
       <Showcase
-                title='Inovando na arte do aço inoxidável há mais de meio século'
-                category='Institucional'
-                image='/images/institucional/nossaHistoria/hero.jpg?v2'
-                catalog={false}
-                customStyles={{height: '464px'}}
-        />
+        title="Inovando na arte do aço inoxidável há mais de meio século"
+        category="Institucional"
+        image="/images/institucional/nossaHistoria/hero.jpg?v2"
+        catalog={false}
+        customStyles={{ height: '464px' }}
+      />
       <section className={styles.container}>
         <div className={styles.container_header}>
           <div>
             <span>{data.section1 && <span>{data.section1.sub}</span>}</span>
             <h2>{data.section1.title}</h2>
           </div>
-
-          <div className={styles.container_img}>
-            <Image src={data.section1.imagem} fill alt={''} quality='100'/>
-          </div>
+          <Image
+            src={data.section1.imagem}
+            width={1080}
+            height={480}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: '480px',
+              maxWidth: '1080px',
+            }}
+            alt={''}
+          />
         </div>
 
         <div className={styles.container_content}>
-          <div className={styles.container_img}>
-            <Image src={data.section2.imagem} alt={''} fill quality='100'/>
-          </div>
+          <Image
+            src={data.section2.imagem}
+            width={617}
+            height={426}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: '426px',
+              maxWidth: '617px',
+            }}
+            alt={''}
+          />
           <div className={styles.container_content_texto}>
-            <div>
-              <p>{data.section2.textoColuna1}</p>
-              <p>{data.section2.textoColuna2}</p>
+              <div>
+                {paragraphsColumn1Section2.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+              <div>
+                {paragraphsColumn2Section2.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
             </div>
-          </div>
         </div>
 
         <div className={styles.container_footer}>
@@ -92,21 +126,20 @@ export default function nossaHistoria() {
               </div>
             </div>
             <div className={styles.container_img}>
-            <Image src={data.section3.imagem} alt={''} fill quality='100'/>
-          </div>
+              <Image src={data.section3.imagem} alt={''} fill quality="100" />
+            </div>
           </div>
         </div>
       </section>
-      <div
-        className={
-          styles.container_img__hero
-        }
-      >
-      <Image src='/images/pageNossaHistoria/hero.jpg' alt={''} fill quality='100'/>
+      <div className={styles.container_img__hero}>
+        <Image
+          src="/images/pageNossaHistoria/hero.jpg"
+          alt={''}
+          fill
+          quality="100"
+        />
       </div>
-      <TheJourneyOfSteel
-        slides={data.slideNossaHistoria.slides}
-      />
+      <TheJourneyOfSteel slides={data.slideNossaHistoria.slides} />
     </main>
   )
 }

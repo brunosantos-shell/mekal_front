@@ -37,7 +37,9 @@ const Showcase: React.FC<ShowcaseProps> = ({
         animate={{ scale: 1 }}
         transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
       >
-        <Image src={image} alt={title} layout="fill" objectFit="cover" />
+        <Image src={image} alt={title} layout="fill" objectFit="cover" quality={100}/>
+        <div className={styles.filter}></div>
+
       </motion.div>
       <div className={styles.showcase_content}>
         <motion.div

@@ -4,6 +4,8 @@
     display: flex;
     justify-content: center;
     gap: 80px;
+    padding: 80px 0 0 0;
+
 
     @include SmallScreen {
          gap: 15px;
@@ -14,7 +16,11 @@
         padding-left: 130px;
     }
 
-    padding: 80px 0 0 0;
+    @include Tablet {
+        padding-left: 80px;
+    }
+
+   
 
     .column {
         width: fit-content;
@@ -37,6 +43,10 @@
 
         >div {
             margin-bottom: 80px;
+        }
+
+        @include Tablet {
+            width: 280px;
         }
     }
 

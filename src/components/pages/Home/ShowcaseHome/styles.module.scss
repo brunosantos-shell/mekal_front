@@ -28,11 +28,27 @@
            bottom: 145px;
         }
 
+        @include Tablet {
+            padding-left: 24px;
+        }
+
+        @include Mobile {
+            flex-direction: column;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 24px;
+            bottom: 70px;
+        }
+
 
         .container_showcase__button {
             display: flex;
             align-items: center;
             gap: 32px;
+
+            @include Mobile {
+                gap: 16px;
+            }
 
             .showcase_button {
                 width: 80px;
@@ -50,6 +66,16 @@
                 &:hover {
                     background-color: $color-neutral-low-pure;
                 }
+
+                @include Mobile {
+                    width: 40px;
+                    height: 40px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
             }
 
             > span {
@@ -61,6 +87,10 @@
                 line-height: 150%;
                 letter-spacing: 1px;
                 text-transform: uppercase;
+
+                @include Mobile {
+                    font-size: 12px;
+                }
             }
         }
 
@@ -74,6 +104,10 @@
                 max-width: 778px;
             }
 
+            @media (max-width: 1024px) {
+                max-width: 578px;
+            }
+
             > p {
                 color: $color-neutral-high-pure;
 
@@ -81,6 +115,13 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 150%;
+
+                @include Mobile {
+                    margin-bottom: 24px;
+
+                    font-size: 13px;
+                }
+
             }
 
             > h2 {
@@ -92,6 +133,14 @@
                 line-height: 130%;
                 letter-spacing: 2px;
                 text-transform: uppercase;
+
+                @media (max-width: 1024px) {
+                    font-size: 32px;
+                }
+
+                @include Mobile {
+                    font-size: 28px;
+                }
             }
         }
     }

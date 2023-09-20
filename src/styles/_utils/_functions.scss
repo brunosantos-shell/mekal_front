@@ -50,6 +50,11 @@
   @media (min-width: $breakpoint-desktop-L-min) {
     width: $width-site-desktop-L;
   }
+
+  /*ultra wide*/
+  @media (min-width: $breakpoint-ultra-wide-min) {
+    width: $width-site-desktop-L;
+  }
 }
 
 // Mixin para facilitar compatibilidade de navegadores
@@ -127,6 +132,12 @@
 // Mixin para telas maiores ou igual a 1400px
 @mixin LargeScreen {
   @media (min-width: $breakpoint-desktop-L-min) {
+    @content;
+  }
+}
+
+@mixin UltraLargeScreen {
+  @media (min-width: $breakpoint-ultra-wide-min) {
     @content;
   }
 }

@@ -28,6 +28,7 @@
 .footer_content {
     margin-top: 128px;
     margin-bottom: 144px;
+    max-width: 1920px;
 
     @include Tablet {
         margin-top: 80px;
@@ -46,6 +47,11 @@
 
         @include SmallScreen {
             font-size: 48px;
+        }
+
+        @media (max-width: 1280px) {
+            font-size: 32px;
+            max-width: 800px;
         }
 
         @include Tablet {
@@ -114,6 +120,10 @@
 
             @include SmallScreen {
                 gap: 40px;
+            }
+
+            @media (max-width: 1000px) {
+                gap: 20px;
             }
 
             @include Tablet {

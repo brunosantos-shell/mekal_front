@@ -1,7 +1,5 @@
 'use client'
 
-// Componentizar melhor o Header
-
 import React, { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 import { motion } from 'framer-motion'
@@ -11,14 +9,18 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import {
+  ArrowLeft,
   IconFacebook,
   IconInstagram,
   IconLinkedin,
   IconPlus,
+  IconSearch,
   IconX,
   IconYouTube,
+  MekalLogo,
 } from '@/icons'
 import ContentSolutions from './components/ContentSolutions'
+import HighlightsProducs from '@/components/pages/Home/HighlightsProducts'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -125,7 +127,10 @@ export default function Header() {
 
 
   return (
-    <>
+    <header>
+    <div
+      className={styles.header__desktop}
+    >
       <motion.header
         id={styles.header}
         className={
@@ -133,7 +138,7 @@ export default function Header() {
         }
         initial={{ width: 0, opacity: 0 }}
         animate={{ width: 48, opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+        
         
       >
         <div className={styles.header_content}>
@@ -357,6 +362,253 @@ export default function Header() {
           />
         </div>
       </motion.div>
-    </>
+    </div>
+
+    <div
+      className={styles.header__mobile}
+    >
+      <div className={styles.header_content__mobile}>
+        <div className={styles.header_content_menu_mobile}>
+          <Hamburger
+            toggled={isMenuOpen}
+            toggle={handleToggleMainMenu}
+            size={24}
+          />
+        </div>
+
+        <div className={styles.header_content_logo__mobile}>
+          <MekalLogo />
+        </div>
+
+        <div className={styles.header_content_search__mobile}>
+          <IconSearch />
+        </div>
+      </div>
+
+      <motion.div
+        className={styles.mobile_menu_container}
+        initial={{ opacity: 0, y: -100, height: 0, zIndex: 998, backgroundColor: '#fff' }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        animate={{
+          opacity: isMenuOpen ? 1 : 0,
+          y: isMenuOpen ? 0 : -100,
+          height: isMenuOpen ? '100vh' : 0,
+          pointerEvents: isMenuOpen ? 'auto' : 'none',
+          position: isMenuOpen ? 'fixed' : 'absolute',
+        }}
+        exit={{
+          opacity: 0,
+          y: -100,
+          height: 0,
+          transition: { duration: 0.7, ease: 'easeOut' },
+        }}
+      >
+        <div className={styles.menu_content}>
+          <div className={styles.menu_content__header}>
+            <span>Explore</span>
+          </div>
+          <div className={styles.menu_content__body}>
+            <ul>
+              <li>
+                <span>
+                  <Link href="/">Início</Link>
+                </span>
+              </li>
+              <li>
+                <span onClick={toggleSolutions}>
+                  Soluções
+                  <button
+                    className={
+                      solutionsOpen
+                        ? styles.menu_content__body__button__open
+                        : styles.menu_content__body__button__close
+                    }
+                  >
+                    {solutionsOpen ? <IconX /> : <IconPlus />}
+                  </button>
+                </span>
+              </li>
+              <li>
+                <span onClick={toggleExperienceMekal}>
+                  Experiência Mekal
+                  <button
+                    className={
+                      experienceMekalOpen
+                        ? styles.menu_content__body__button__open
+                        : styles.menu_content__body__button__close
+                    }
+                  >
+                    {experienceMekalOpen ? <IconX /> : <IconPlus />}
+                  </button>
+                </span>
+                {experienceMekalOpen && (
+                  <motion.div
+                    className={styles.submenu_experience_mekal}
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  >
+                    <ul>
+                      <li>
+                        <Link href="/experiencia-mekal/studio-mekal">
+                          Studio Mekal
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/experiencia-mekal/mekal-proxima-de-voce">
+                          Mekal próxima de você
+                        </Link>
+                      </li>
+                    </ul>
+                  </motion.div>
+                )}
+              </li>
+              <li>
+                <span onClick={toggleInstitucional}>
+                  Institucional
+                  <button
+                    className={
+                      InstitucionalOpen
+                        ? styles.menu_content__body__button__open
+                        : styles.menu_content__body__button__close
+                    }
+                  >
+                    {InstitucionalOpen ? <IconX /> : <IconPlus />}
+                  </button>
+                </span>
+                {InstitucionalOpen && (
+                  <motion.div
+                    className={styles.submenu_experience_mekal}
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  >
+                    <ul>
+                      <li>
+                        <Link href="/institucional/nossa-historia">
+                          Nossa História
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/institucional/codigo-de-etica">
+                          Código de Ética
+                        </Link>
+                      </li>
+                    </ul>
+                  </motion.div>
+                )}
+              </li>
+              <li>
+                <span onClick={toggleSuporte}>
+                  Suporte
+                  <button
+                    className={
+                      SuporteOpen
+                        ? styles.menu_content__body__button__open
+                        : styles.menu_content__body__button__close
+                    }
+                  >
+                    {SuporteOpen ? <IconX /> : <IconPlus />}
+                  </button>
+                </span>
+                {SuporteOpen && (
+                  <motion.div
+                    className={styles.submenu_experience_mekal}
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  >
+                    <ul>
+                      <li>
+                        <Link href="/suporte/perguntas-frequentes">
+                          Perguntas Frequentes
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/suporte/fale-conosco">Contato</Link>
+                      </li>
+                    </ul>
+                  </motion.div>
+                )}
+              </li>
+              <li>
+                <span>
+                  <Link href="/acontece">Acontece</Link>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.menu_content__footer}>
+            <ul className={styles.menu_content__footer__icons}>
+              <li>
+                <Link href="/">
+                  <IconInstagram />
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <IconLinkedin />
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <IconYouTube />
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <IconFacebook />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className={styles.solutions_menu_container}
+        initial={{
+          x: '100%', 
+          transformOrigin: 'right center',
+          width: 0,
+          opacity: 0,
+          right: 0,
+          zIndex: 998,
+          backgroundColor: '#F2F2F2',
+        }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        animate={{
+          x: solutionsOpen ? '0%' : '100%', 
+          transformOrigin: solutionsOpen ? 'right center' : '0%',
+          width: solutionsOpen ? '100%' : 0,
+          opacity: solutionsOpen ? 1 : 0,
+          pointerEvents: solutionsOpen ? 'auto' : 'none',
+          position: solutionsOpen ? 'fixed' : 'absolute',
+        }}
+        exit={{
+          x: '100%',
+          transformOrigin: 'right center',
+          width: 0,
+          opacity: 0,
+          transition: { duration: 0.3, ease: 'easeOut' },
+          right: 0,
+        }}
+      >
+        <div className={styles.solutions_menu_content}>
+          <button
+            onClick={() => {
+              toggleSolutions()
+            }}
+          >
+            <ArrowLeft />
+          </button>
+          <HighlightsProducs />
+        </div>
+      </motion.div>
+    </div>
+    </header>
   )
 }

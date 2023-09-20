@@ -1,32 +1,31 @@
 @import '../../../../styles/utils';
 
 .container {
-    padding: 144px 48px 200px 96px;
     background-color: #FFF;
+    padding: 144px 48px 142px 96px;
 
+    @include Tablet {
+        padding: 132px 24px 142px 24px;
+    }
 
     .container_header {
         span {
-            font-size: 18px;
+            @include font-responsive(15px, 18px, 150%);
+            color: $color-neutral-low-dark;
+            display: block;
             font-style: normal;
             font-weight: 600;
-            line-height: 150%;
-
-            color: $color-neutral-low-dark;
             margin-bottom: 32px;
-            display: block;
         }
 
         h1 {
-            font-size: 72px;
+            @include font-responsive(48px, 72px, 120%);
+            color: $color-neutral-low-pure;
             font-style: normal;
             font-weight: 600;
-            line-height: 120%; /* 86.4px */
             letter-spacing: 2px;
-            text-transform: uppercase;
-
-            color: $color-neutral-low-pure;
             margin-bottom: 48px;
+            text-transform: uppercase;
         }
     }
 }
