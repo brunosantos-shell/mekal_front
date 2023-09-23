@@ -16,8 +16,8 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-  
 }
+
 
 .swiper-button-next-the_journey svg,
 .swiper-button-prev-the_journey svg {
@@ -27,5 +27,26 @@
 
 .swiper-slide {
     max-width: 1310px;
+}
+
+@media (max-width: 950px) {
+    .swiper-button-next-the_journey button,
+    .swiper-button-prev-the_journey button
+    {
+        width: 60px;
+        height: 60px;
+    }
+
+    .swiper-button-next-the_journey svg,
+    .swiper-button-prev-the_journey svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .swiper-slide {
+        max-width: 500px;
+    }
 }
 

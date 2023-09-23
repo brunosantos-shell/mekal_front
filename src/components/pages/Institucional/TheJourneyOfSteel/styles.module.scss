@@ -1,6 +1,22 @@
+@import '../../../../styles/utils';
+
 .container_the_journey_of_steel {
     padding: 144px 48px 200px 96px;
     position: relative;
+
+
+    .container__header {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    @include Tablet {
+        padding: 144px 24px 200px 24px;
+    }
+
+    @include Mobile {
+        padding: 144px 24px 0px 24px;
+    }
 
     span {
         margin-bottom: 28px;
@@ -15,11 +31,16 @@
         padding-top: 52px;
         padding-bottom: 80px;
 
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
         h2 {
-            font-size: 42px;
+
+            @include font-responsive(26px, 42px, 130%);
+
             font-style: normal;
             font-weight: 600;
-            line-height: 130%; /* 54.6px */
             letter-spacing: 2px;
             text-transform: uppercase;  
 
@@ -32,6 +53,11 @@
     .container__slide__btn {
         display: flex;
         gap: 12px;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+            margin-top: 40px;
+        }
     }
 
 }

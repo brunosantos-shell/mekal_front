@@ -1,44 +1,57 @@
+@import '../../../../styles/utils';
+
 .container_accessories_and_composition__slide {
     padding: 0 48px 200px 96px;
     position: relative;
 
+    @media (max-width: 950px) {
+        padding: 0 24px 80px 24px;
+    }
+
+    @include Mobile {
+        padding: 0 0 80px 0;
+    }
+
     .container_swiper__slide {
-        margin-top: 48px;
+        margin-top: 39px;
     }
 
     .title_accessories_and_composition__slide {
         h3 {
+
+            @include font-responsive(26px, 34px, 120%);
+
             max-width: 300px;
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 2px;
         }
     }
-    
 
     .container_btn__accessories_and_composition__slide {
         display: flex;
         gap: 12px;
-
     }
-
 
     .title_accessories_and_composition__slide {
         display: flex;
         justify-content: space-between;
-        
+
         max-width: 1920px !important;
 
         padding-right: 110px;
 
-
         .container_accessories_and_composition__slide__btn {
             display: flex;
             gap: 100px;
-            
+
+            @media (max-width: 1024px) {
+                gap: 70px;
+            }
+
+            @include Mobile {
+                display: none;
+            }
         }
-
     }
-
-
-    
-
-
 }

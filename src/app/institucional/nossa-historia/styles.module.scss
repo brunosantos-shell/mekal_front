@@ -2,15 +2,18 @@
 
 .container {
     padding: 132px 48px 200px 96px;
-
-
-    @include Tablet {
-        padding: 40px 24px 1px 24px;
-    }
+    max-width: 1920px;
+    margin: 0 auto;
 
     @media (max-width: 1024px) {
         padding: 132px 48px 132px 96px;
     }
+
+
+    @include Tablet {
+        padding: 40px 24px 132px 24px;
+    }
+
 
     .container_header {
         display: flex;
@@ -53,6 +56,11 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 200px;
+        gap: 80px;
+
+        @include SmallScreen {
+            gap: 40px;
+        }
 
         @media (max-width: 1280px) {
             img {
@@ -72,9 +80,7 @@
             margin-bottom: 132px;
         }
 
-        @include SmallScreen {
-            gap: 80px;
-        }
+        
 
         .container_content_texto {
             max-width: 848px;
@@ -94,13 +100,17 @@
                 max-width: 100%;
             }
 
+            @include Tablet {
+                flex-direction: column;
+            }
+
             > div {
                 display: flex;
                 flex-direction: column;
                 gap: 80px;
 
                 @media (max-width: 1024px) {
-                    flex-direction: column;
+                    
                 }
 
                 @include SmallScreen {
@@ -116,6 +126,7 @@
                     @media (max-width: 1024px) {
                         max-width: 100%;
                     }
+                    
                 }
             }
         }
@@ -125,24 +136,44 @@
         h1 {
             margin-bottom: 200px;
 
-            @include font-responsive(42px, 72px, 120%);
+            @include font-responsive(29px, 72px, 120%);
 
             font-style: normal;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
 
-            @include SmallScreen {
-                font-size: 48px;
+
+           @media (max-width: 1024px) {
+                text-align: center;
+                margin-bottom: 150px;
+            }
+
+            @include Tablet {
+                margin-bottom: 130px;
+            }
+
+            @include Mobile {
+                margin-bottom: 80px;
             }
         }
 
         .container_footer_texto {
             display: flex;
             justify-content: space-between;
+            gap: 80px;
 
             @include SmallScreen {
-                gap: 80px;
+                gap: 40px;
+            }
+
+            @media (max-width: 1024px) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            @include Tablet {
+                flex-direction: column;
             }
 
             > div {
@@ -171,6 +202,10 @@
                         gap: 40px;
                     }
 
+                    @include Tablet {
+                        flex-direction: column;
+                    }
+
                     p {
 
                         @include font-responsive(15px, 20px, 150%);
@@ -178,15 +213,12 @@
                         max-width: 384px;
                         font-style: normal;
                         font-weight: 400;
+
+                        @media (max-width: 1024px) {
+                            max-width: 100%;
+                        }
                     }
                 }
-            }
-
-            .container_img {
-                max-width: 618px;
-                height: 928px;
-                position: relative;
-                width: 100%;
             }
         }
     }
@@ -199,5 +231,13 @@
 
     @include SmallScreen {
         height: 580px;
+    }
+
+    @media (max-width: 1024px) {
+        height: 380px;
+    }
+
+    @include Mobile {
+        height: 140px;
     }
 }

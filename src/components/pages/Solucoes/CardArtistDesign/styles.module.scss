@@ -5,6 +5,20 @@
     max-width: 1076px;
     width: 100%;
 
+    @include SmallScreen {
+        max-width: 900px;
+    }
+
+    @media (max-width: 1280px) {
+        gap: 40px;
+        max-width: 600px;
+    }
+
+    @include Tablet {
+       max-width: 900px;
+       margin-top: 50px;
+    }
+
 }
 
 .card_artist_design__image {
@@ -13,6 +27,63 @@
     gap: 80px;
 
     margin-bottom: 80px;
+
+    @include SmallScreen {
+
+        gap: 40px;
+        
+        img {
+            width: 340px !important;
+            height: 304px !important;
+            max-width: 340px !important;
+            max-height: 304px !important;
+        }
+    }
+
+    @media (max-width: 1280px) {
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        img {
+            width: 300px !important;
+            height: 264px !important;
+            max-width: 300px !important;
+            max-height: 264px !important;
+        }
+    }
+
+    @include Tablet {
+       align-items: center;
+
+       img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 326px !important;
+        max-height: 2964px !important; 
+       }
+    }
+
+
+    h1 {
+        color: $color-neutral-low-pure;
+
+        @include font-responsive(28px, 72px, 120%);
+
+        font-style: normal;
+        font-weight: 600; 
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    p {
+        color: $color-neutral-low-dark;
+
+        @include font-responsive(15px, 17px, 130%);
+
+        font-style: normal;
+        font-weight: 400;
+    }
 }
 
 .card_artist_design__content {
@@ -21,23 +92,17 @@
 
     margin-bottom: 128px;
 
-    h1 {
-        color: $color-neutral-low-pure;
-
-        font-size: 72px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 120%; 
-        letter-spacing: 2px;
-        text-transform: uppercase;
+    @include SmallScreen {
+      max-width: 516px;
     }
 
-    p {
-        color: $color-neutral-low-dark;
-
-        font-size: 17px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%;
+    @media (max-width: 1280px) {
+        margin-left: 0;
     }
+
+    @include Tablet {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    
 }

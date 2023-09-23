@@ -17,9 +17,24 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-  
-  
 }
+
+@media (max-width: 1024px) {
+    .swiper-button-prev-accessories button,
+    .swiper-button-next-accessories button
+    {
+        width: 60px;
+        height: 60px;
+    }
+
+    .swiper-button-prev-accessories svg,
+    .swiper-button-next-accessories svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
 
 .swiper-button-next-accessories svg,
 .swiper-button-prev-accessories svg {

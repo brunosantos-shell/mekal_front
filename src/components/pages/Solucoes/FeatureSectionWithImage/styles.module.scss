@@ -6,20 +6,26 @@
 
 .container_image {
     width: 100%;
-    height: 456px;
+    height: 398px;
 
     position: relative;
+
+    @include Tablet {
+        height: 300px;
+    }
+
+    @include Mobile {
+        height: 200px;
+    }
 }
 
 .container_content {
     padding-left: 96px;
-}
+    margin-bottom: 130px;
 
-.container_image {
-    width: 100%;
-    height: 456px;
-
-    position: relative;
+    @include Tablet {
+        padding: 0 24px;
+    }
 }
 
 .container_text {
@@ -27,14 +33,24 @@
 
     margin: 0 auto;
     padding-top: 200px;
+    margin-bottom: 80px;
+
+    @include Tablet {
+        padding-top: 150px;
+        margin: 0;
+    }
+
+    @include Mobile {
+        padding-top: 80px;
+    }
 
     h2 {
         color: $color-neutral-low-pure;
 
-        font-size: 42px;
+        @include font-responsive(26px, 42px, 130%);
+
         font-style: normal;
         font-weight: 600;
-        line-height: 130%; /* 54.6px */
         letter-spacing: 2px;
         text-transform: uppercase;
 
@@ -44,12 +60,12 @@
     p {
         color: $color-neutral-low-dark;
 
-        font-size: 20px;
+        @include font-responsive(16px, 20px, 150%);
+
         font-style: normal;
         font-weight: 400;
-        line-height: 150%;
 
-        margin-bottom: 80px;
+        margin-bottom: 30px;
     }
 }
 
@@ -63,6 +79,11 @@
     margin-bottom: 70px;
     flex-direction: column;
 
+    @include Tablet {
+        margin: 0;
+        margin-bottom: 70px;
+    }
+
 
 
     .options_item {
@@ -71,10 +92,10 @@
         h4 {
             color: $color-neutral-low-pure;
 
-            font-size: 26px;
+            @include font-responsive(22px, 26px, 120%);
+
             font-style: normal;
             font-weight: 600;
-            line-height: 120%;
 
             margin-bottom: 32px;
         }
@@ -83,7 +104,6 @@
 
             display: flex;
             flex-direction: column;
-            margin-bottom: 75px;
 
             li {
                 display: flex;
@@ -95,6 +115,8 @@
 
                     color: $color-neutral-low-dark;
 
+                    @include font-responsive(15px, 17px, 130%);
+
                     font-size: 17px;
                     font-style: normal;
                     font-weight: 400;
@@ -102,5 +124,9 @@
                 }
             }
         }
+    }
+
+    .options_item + .options_item {
+        margin-top: 65px;
     }
 }

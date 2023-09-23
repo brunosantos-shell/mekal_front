@@ -13,6 +13,7 @@ export default function codigoDeEtica() {
         catalog={false}
         customStyles={{ height: '464px' }}
         institutionals
+        customPosition={25}
       />
       <section className={styles.container}>
         <div className={styles.container_header}>

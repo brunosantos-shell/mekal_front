@@ -1,93 +1,143 @@
 @import '../../../../styles/utils';
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
     background-color: $color-neutral-high-light;
-    padding: 128px 277px 131px 96px;
 
     @include SmallScreen {
         padding: 128px 96px 131px 96px;
     }
 
-    .container_contact {
+    @media (max-width: 1024px) {
+        padding: 60px 96px 60px 96px;
+    }
 
-        max-width: 384px;
+    @include Tablet {
+        padding: 60px 24px 60px 24px;
+    }
+
+    @include Mobile {
+        padding: 80px 24px 80px 24px;
+    }
+
+    .container_content {
+        display: flex;
+        justify-content: space-between;
+        padding: 128px 277px 131px 96px;
+        max-width: 1920px;
+        margin: 0 auto;
 
         @include SmallScreen {
-           max-width: 300px;
+            padding: 0px;
         }
 
-        h4 {
-            font-size: 26px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 120%;
-
-            color: $color-neutral-low-pure;
-
-            margin-bottom: 32px;
+        @media (max-width: 1024px) {
+            flex-direction: column;
         }
 
-        p {
-            font-size: 17px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 130%;
+        .container_contact {
+            max-width: 384px;
+    
+            @include SmallScreen {
+               max-width: 300px;
+            }
 
-            color: $color-neutral-low-dark;
+            @media (max-width: 1024px) {
+                margin-bottom: 32px;
+            }
 
-            margin-bottom: 24px;
+            @include Mobile {
+                margin-bottom: 80px;
+            }
+    
+            h4 {
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 120%;
+    
+                color: $color-neutral-low-pure;
+    
+                margin-bottom: 32px;
+            }
+    
+            p {
+                font-size: 17px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 130%;
+    
+                color: $color-neutral-low-dark;
+    
+                margin-bottom: 24px;
+            }
+    
+            span {
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 120%;
+    
+                color: $color-neutral-low-pure;
+    
+                display: block;
+            }
         }
+    
+        .container_download {
+    
+            max-width: 848px;
+    
+            @include SmallScreen {
+               max-width: 780px;
+            }
 
-        span {
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 120%;
+            @media (max-width: 1280px) {
+                max-width: 650px;
+            }
 
-            color: $color-neutral-low-pure;
+            @include Tablet {
+                max-width: 100%;
 
-            display: block;
+                button {
+                    margin-bottom: 16px;
+                }
+
+                button:last-child {
+                    margin-bottom: 0;
+                }
+            }
+    
+            h4 {
+
+                @include font-responsive(28px, 34px, 120%);
+
+                font-style: normal;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+    
+                color: $color-neutral-low-pure;
+    
+                margin-bottom: 24px;
+            }
+    
+            p {
+
+                @include font-responsive(15px, 20px, 150%);
+
+                font-style: normal;
+                font-weight: 400;
+    
+                color: $color-neutral-low-dark;
+    
+                margin-bottom: 48px;
+            }
+    
+            button {
+                margin-right: 24px;
+            }
         }
     }
 
-    .container_download {
-
-        max-width: 848px;
-
-        @include SmallScreen {
-           max-width: 780px;
-        }
-
-        h4 {
-            font-size: 34px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 120%; /* 40.8px */
-            letter-spacing: 2px;
-            text-transform: uppercase;
-
-            color: $color-neutral-low-pure;
-
-            margin-bottom: 24px;
-        }
-
-        p {
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 150%;
-
-            color: $color-neutral-low-dark;
-
-            margin-bottom: 48px;
-        }
-
-        button {
-            margin-right: 24px;
-        }
-    }
+    
 }

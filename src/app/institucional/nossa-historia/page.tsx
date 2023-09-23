@@ -125,9 +125,18 @@ export default function nossaHistoria() {
                 <p>{data.section3.textoColuna2}</p>
               </div>
             </div>
-            <div className={styles.container_img}>
-              <Image src={data.section3.imagem} alt={''} fill quality="100" />
-            </div>
+              <Image src={data.section3.imagem}
+                 width={618}
+                 height={928}
+                 sizes="100vw"
+                 style={{
+                   width: '100%',
+                   height: 'auto',
+                   maxHeight: '928px',
+                   maxWidth: '618px',
+                 }}
+                 alt={''}
+              />
           </div>
         </div>
       </section>

@@ -4,6 +4,16 @@
     display: flex;
     justify-content: space-between;
     padding: 0px 48px 128px 96px;
+
+    @include SmallScreen {
+        gap: 80px;
+    }
+
+    @include Tablet {
+        flex-direction: column;
+        padding: 56px 24px 128px 24px;
+        background-color: $color-neutral-high-light;
+    }
 }
 
 .menu {
@@ -13,46 +23,52 @@
     overflow-y: auto;
     z-index: 1;
 
-    ul {
+    @include Tablet {
+        display: none;
+    }
+}
+
+.menuMobileList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 3px;
+
+    li {
+        padding: 13px 24px;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+        width: fit-content;
+
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 3px;
+        align-items: center;
+        justify-content: center;
 
-        li {
+        color: $color-neutral-low-dark;
 
-          padding: 13px 24px;
-          transition: all 0.5s ease-in-out;
-          cursor: pointer;   
-          width: fit-content;
-          
-          display: flex;
-            align-items: center;
-            justify-content: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
 
+        text-decoration: none;
 
-                color: $color-neutral-low-dark;
+        white-space: nowrap;
 
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 150%; 
-                letter-spacing: 1px;
-                text-transform: uppercase;
+        transition: all 0.5s ease-in-out;
+    }
 
-                text-decoration: none;
+    li:hover {
+        background-color: $color-neutral-low-pure;
+        border-radius: 2px;
 
-                white-space: nowrap;
+        color: $color-neutral-high-pure;
+    }
 
-                transition: all 0.5s ease-in-out;
-        }
-
-        li:hover {
-            background-color: $color-neutral-low-pure;
-            border-radius: 2px;
-
-                color: $color-neutral-high-pure;
-        }
+    @include Tablet {
+        align-items: center;
     }
 }
 
@@ -60,7 +76,7 @@
     background-color: $color-neutral-low-pure;
     border-radius: 2px;
 
-        color: $color-neutral-high-pure !important;
+    color: $color-neutral-high-pure !important;
 }
 
 .content {
@@ -70,6 +86,15 @@
 
     @media (max-width: 1600px) {
         align-items: flex-start;
+    }
+
+    @include SmallScreen {
+        align-items: center;
+    }
+
+    @include Tablet {
+        align-items: flex-start;
+        margin: 0;
     }
 }
 
@@ -86,9 +111,56 @@
     position: fixed;
     top: 70px;
     padding-left: 96px;
+
+    @include Tablet {
+        padding-left: 0px;
+        top: 47px;
+        left: 2px;
+    }
 }
 
 .menuPlaceholder {
     width: 326px;
     height: 0;
+}
+
+.menuMobile {
+    width: 100%;
+    background-color: $color-neutral-high-light;
+    z-index: 997;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    > div {
+        padding: 24px;
+    }
+
+    @media (min-width: 950px) {
+        display: none;
+    }
+
+    .menuMobileButton {
+
+        display: flex;
+        align-items: center;
+
+        p {
+
+            color: $color-neutral-low-pure;
+
+            @include font-responsive(15px, 24px, 125%);
+
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 125%;
+        }
+
+        svg {
+            width: 32px;
+            height: 32px;
+        }
+    }
 }

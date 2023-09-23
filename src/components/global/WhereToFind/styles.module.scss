@@ -4,6 +4,23 @@
     display: flex;
     padding: 144px 48px 136px 96px;
     gap: 146px;
+    max-width: 1920px;
+    margin: 0 auto;
+
+    @include SmallScreen {
+        gap: 40px;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 60px 48px 60px 96px;
+    }
+
+    @include Tablet {
+        flex-direction: column;
+        padding: 60px 24px 60px 24px;
+    }
+
+    
 
     .content_where__to__find {
         max-width: 318px;
@@ -22,10 +39,10 @@
         h2 {
             color: $color-neutral-low-pure;
 
-            font-size: 42px;
+            @include font-responsive(26px, 42px, 130%);
+
             font-style: normal;
             font-weight: 600;
-            line-height: 130%; /* 54.6px */
             letter-spacing: 2px;
             text-transform: uppercase;
 
@@ -50,6 +67,14 @@
         position: relative;
         width: 100%;
         gap: 80px;
+
+        @include SmallScreen {
+            gap: 40px;
+        }
+
+        @include Tablet {
+            flex-direction: column;
+        }
 
         .card__where__to__find {
             max-width: 384px;

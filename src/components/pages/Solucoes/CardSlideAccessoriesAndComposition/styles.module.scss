@@ -4,12 +4,17 @@
     background-color: $color-neutral-high-light;
 
     max-width: 848px;
-    max-height: 386px;
+    min-height: 386px;
 
     display: flex;
     justify-content: space-between;
 
     padding: 24px;
+
+    @include Mobile {
+        flex-direction: column-reverse;
+        max-height: 606px;
+    }
 
     .container_card__slide__info {
         display: flex;
@@ -20,7 +25,19 @@
 
         width: 50%;
 
+        @include Mobile {
+            width: 100%;
+            border-right: none;
+            border-top: 1px solid #bfbfbf;
+            padding-top: 24px;
+        }
+
         .container_card__slide__info__title {
+
+            @include Mobile {
+                margin-bottom: 128px;
+            }
+
             h5 {
                 color: $color-neutral-low-pure;
 
@@ -41,6 +58,10 @@
         }
 
         .container_card__slide__info__dimensions {
+
+
+
+
             .container_card__slide__info__dimensions__item {
                 display: flex;
                 align-items: center;

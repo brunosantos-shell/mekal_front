@@ -14,8 +14,9 @@ interface ShowcaseProps {
   image: string
   catalog: boolean
   category: string
-  customStyles?: React.CSSProperties;
-  institutionals?: boolean;
+  customStyles?: React.CSSProperties
+  institutionals?: boolean
+  customPosition?: number
 }
 
 const Showcase: React.FC<ShowcaseProps> = ({
@@ -24,32 +25,48 @@ const Showcase: React.FC<ShowcaseProps> = ({
   catalog,
   category,
   customStyles,
-  institutionals
+  institutionals,
+  customPosition
 }) => {
-
   return (
-    <section className={styles.container_showcase}
-      style={customStyles}
-    >
+    <section className={styles.container_showcase} style={customStyles}>
       <motion.div
         className={styles.hero_image}
         initial={{ scale: 1.2 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
       >
-        <Image src={image} alt={title} layout="fill" objectFit="cover" quality={100}/>
+        <Image
+          src={image}
+          alt={title}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          style={{
+            objectPosition: customPosition ? `50% ${customPosition}%` : '50% 50%'
+          }}
+        />
         <div className={styles.filter}></div>
-
       </motion.div>
       <div className={styles.showcase_content}>
         <motion.div
-          className={styles.showcase_content__text + ' ' + (institutionals ? styles.institutionals : '')}
+          className={
+            styles.showcase_content__text +
+            ' ' +
+            (institutionals ? styles.institutionals : '')
+          }
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
         >
-          <p>{category.replace(/-/g, ' ')}</p>
-          <h2>{title}</h2>
+          <div
+            className={
+              styles.showcase_title
+            }
+          >
+            <p>{category.replace(/-/g, ' ')}</p>
+            <h2>{title}</h2>
+          </div>
         </motion.div>
         <motion.div
           className={styles.container_showcase__button}
@@ -57,16 +74,16 @@ const Showcase: React.FC<ShowcaseProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
         >
-            {
-                catalog && (
-                    <Button
-            onClick={() => { console.log('Clicou') }}
-          >
-            Baixar catálogo 
-            <IconDowload />
-          </Button>
-                )
-            }
+          {catalog && (
+            <Button
+              onClick={() => {
+                console.log('Clicou')
+              }}
+            >
+              Baixar catálogo
+              <IconDowload />
+            </Button>
+          )}
         </motion.div>
       </div>
       {/* Restante do conteúdo do componente Showcase */}
