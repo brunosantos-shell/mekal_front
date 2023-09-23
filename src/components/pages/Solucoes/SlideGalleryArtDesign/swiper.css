@@ -48,3 +48,10 @@
 .swiper:hover .swiper-button-prev:not(.swiper-button-disabled) {
   opacity: 1;
 }
+
+@media (max-width: 950px) {
+  .swiper-slide {
+    width: 100% !important;
+  }
+}
+

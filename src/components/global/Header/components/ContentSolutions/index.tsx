@@ -75,7 +75,7 @@ export default function ContentSolutions({
           numeric={'02'}
           url="/solucoes/modulares"
           width={
-            responsive === 444 ? 284 : 344}
+            responsive === 444 ? 284 : 384}
           height={
             responsive === 444 ? 443.75 : 480 }
           responsive
@@ -121,7 +121,7 @@ export default function ContentSolutions({
           width={
             responsive === 444 ? 284 : 384 }
           height={
-            responsive === 444 ? 284 : 384 }
+            responsive === 444 ? 284 : 480 }
           responsive
         />
 

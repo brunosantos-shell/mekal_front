@@ -1,18 +1,39 @@
 @import '../../../styles/utils';
 
 .container {
-    padding: 61px 0 200px 0;
+    padding: 61px 0 0px 0;
+
+    @include Mobile {
+        padding-top: 48px;
+    }
 
     .container_header {
+        max-width: 1920px;
+        margin: 0 auto;
 
         padding: 0 277px 61px 96px;
+        display: flex;
+        justify-content: flex-end;
 
         @include SmallScreen {
             padding: 0 96px 61px 0;
         }
 
-        display: flex;
-        justify-content: flex-end;
+        @media (max-width: 1024px) {
+            padding: 0 96px 61px 96px;
+            justify-content: flex-start;
+        }
+
+        @include Tablet {
+            padding: 0 24px 61px 24px;
+            max-width: 100%;
+        }
+
+        @include Mobile {
+            padding: 0 24px 48px 24px;
+        }
+
+    
 
         p {
             max-width: 848px;
@@ -20,12 +41,15 @@
                 @include SmallScreen {
                     max-width: 780px;
                  }
-            
 
-            font-size: 20px;
+                 @include Tablet {
+                    max-width: 100%;
+                 }
+            
+            @include font-responsive(17px, 20px, 150%);
+
             font-style: normal;
             font-weight: 400;
-            line-height: 150%;
 
             color: $color-neutral-low-dark;
         }

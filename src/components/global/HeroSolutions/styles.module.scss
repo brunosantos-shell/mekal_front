@@ -1,5 +1,11 @@
+@import '../../../styles/utils';
+
 .container_hero_solutions {
     width: 100%;
     height: 456px;
     position: relative;
+
+    @include Mobile {
+        height: 200px;
+    }
 }

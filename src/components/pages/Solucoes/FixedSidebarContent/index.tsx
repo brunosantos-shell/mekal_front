@@ -3,6 +3,7 @@
 import styles from './styles.module.scss'
 import React, { useState, useEffect, useRef } from 'react'
 import CardArtistDesign from '../CardArtistDesign'
+import {ArrowDownAcordion,ArrowUpAcrodion} from '@/icons'
 
 const MockData = [
   {
@@ -14,9 +15,10 @@ const MockData = [
     allbum: [
       {
         name: 'APARADOR E MESA DE CENTRO GHOST',
-        image: '/images/artist/julianaVasconcellos/allbum/aparador-e-mesa-de-centro-ghost.jpg'
+        image:
+          '/images/artist/julianaVasconcellos/allbum/aparador-e-mesa-de-centro-ghost.jpg',
       },
-      ]
+    ],
   },
   {
     id: 'ronald-sasson',
@@ -27,9 +29,9 @@ const MockData = [
     allbum: [
       {
         name: 'POLTRONA NIN',
-        image: '/images/artist/ronaldSasson/allbum/poltrona-min.jpg'
+        image: '/images/artist/ronaldSasson/allbum/poltrona-min.jpg',
       },
-    ]
+    ],
   },
   {
     id: 'dror-benshetrit',
@@ -40,9 +42,9 @@ const MockData = [
     allbum: [
       {
         name: 'ESCULTURA REACH',
-        image: '/images/artist/drorBenshetrit/allbum/escultura-reach.jpg'
+        image: '/images/artist/drorBenshetrit/allbum/escultura-reach.jpg',
       },
-    ]
+    ],
   },
   {
     id: 'marko-brajovic',
@@ -53,22 +55,25 @@ const MockData = [
     allbum: [
       {
         name: 'BICICLETÁRIO “PASSEANDO DE BICICLETA, RECONHECI SÃO PAULO”',
-        image: '/images/artist/markoBrajovic/allbum/bicicletario-passeando-de-bicicleta-reconheci-sao-paulo.jpg'
+        image:
+          '/images/artist/markoBrajovic/allbum/bicicletario-passeando-de-bicicleta-reconheci-sao-paulo.jpg',
       },
-    ]
+    ],
   },
   {
     id: 'luciana-martins-e-gerson-de-oliveira',
     name: 'Luciana Martins e Gerson de Oliveira (Ovo)',
-    image: '/images/artist/lucianaMartinsEGersonDeOliveira/luciana-martins-e-gerson-de-oliveira.jpg',
+    image:
+      '/images/artist/lucianaMartinsEGersonDeOliveira/luciana-martins-e-gerson-de-oliveira.jpg',
     description: `A obra Serpentina, assinada por Luciana Martins e Gerson de Oliveira (OVO), representa uma espiral quadrada que gradualmente assume formas circulares, com anéis mais espaçados, mudando de um banco para um bicicletário.
                   O mobiliário urbano, produzido em aço inox Mekal, fez parte do projeto Bike Points para a Design Weekend 2015 e SP-Arte 2016.`,
     allbum: [
       {
         name: 'BANCO E BICICLETÁRIO SERPENTINA',
-        image: '/images/artist/lucianaMartinsEGersonDeOliveira/allbum/banco-e-bicicletario-serpentina.jpg'
+        image:
+          '/images/artist/lucianaMartinsEGersonDeOliveira/allbum/banco-e-bicicletario-serpentina.jpg',
       },
-    ]
+    ],
   },
   {
     id: 'carol-gay',
@@ -82,9 +87,9 @@ const MockData = [
     allbum: [
       {
         name: 'VASO BOLA',
-        image: '/images/artist/carolGay/allbum/vaso-bola.jpg'
+        image: '/images/artist/carolGay/allbum/vaso-bola.jpg',
       },
-    ]
+    ],
   },
   {
     id: 'rodrigo-ohtake',
@@ -95,9 +100,10 @@ const MockData = [
     allbum: [
       {
         name: 'POLTRONA E MESA DE CENTRO POUSO',
-        image: '/images/artist/rodrigoOhtake/allbum/poltrona-e-mesa-de-centro-pouso.jpg'
+        image:
+          '/images/artist/rodrigoOhtake/allbum/poltrona-e-mesa-de-centro-pouso.jpg',
       },
-    ]
+    ],
   },
   {
     id: 'guilherme-torres',
@@ -108,9 +114,10 @@ const MockData = [
     allbum: [
       {
         name: 'MESA DE JANTAR JET STEEL',
-        image: '/images/artist/guilhermeTorres/allbum/mesa-de-jantar-jet-steel.jpg'
+        image:
+          '/images/artist/guilhermeTorres/allbum/mesa-de-jantar-jet-steel.jpg',
       },
-    ]
+    ],
   },
   {
     id: 'fernanda-marques',
@@ -121,9 +128,10 @@ const MockData = [
     allbum: [
       {
         name: 'BANCO ORGANIC E BANCO GEOMORPH',
-        image: '/images/artist/fernandaMarques/allbum/banco-organic-e-banco-geomorph.jpg'
+        image:
+          '/images/artist/fernandaMarques/allbum/banco-organic-e-banco-geomorph.jpg',
       },
-    ]
+    ],
   },
   {
     id: 'ruy-ohtake',
@@ -134,7 +142,7 @@ const MockData = [
     allbum: [
       {
         name: 'MESA SINFINIA',
-        image: '/images/artist/ruyOhtake/allbum/mesa-sinfonia.jpg'
+        image: '/images/artist/ruyOhtake/allbum/mesa-sinfonia.jpg',
       },
     ],
   },
@@ -148,9 +156,10 @@ const MockData = [
     allbum: [
       {
         name: 'BANCO PRISMA, BANCO BAR E BANCO REVISTEIRO',
-        image: '/images/artist/zaniniDeZanine/allbum/banco-prisma-banco-bar-e-banco-revisteiro.jpg'
+        image:
+          '/images/artist/zaniniDeZanine/allbum/banco-prisma-banco-bar-e-banco-revisteiro.jpg',
       },
-    ]
+    ],
   },
   {
     id: 'giacomo-tomazzi',
@@ -162,31 +171,33 @@ const MockData = [
     allbum: [
       {
         name: 'COLEÇÃO CÁPSULA MERAKI',
-        image: '/images/artist/giacomoTomazzi/allbum/colecao-capsula-meraki.jpg'
+        image:
+          '/images/artist/giacomoTomazzi/allbum/colecao-capsula-meraki.jpg',
       },
-    ]
+    ],
   },
   {
     id: 'maneco-quindere-e-paulo-alves',
     name: 'Maneco Quinderé e Paulo Alves',
-    image: '/images/artist/manecoQuindereEPauloAlves/maneco-quindere-e-paulo-alves.jpg',
+    image:
+      '/images/artist/manecoQuindereEPauloAlves/maneco-quindere-e-paulo-alves.jpg',
     description: `A Mekal foi convidada pelo light designer Maneco Quinderé e pelo designer Paulo Alves para produzir versões em aço inox das Luminárias Branche e Jabuticaba.
                   O conceito das peças vem diretamente da inspiração na natureza, da leveza e fragilidade dos galhos mais finos das árvores, que enfrentam fortes ventos e se mostram resistentes quando comparados aos galhos e troncos mais grossos.
                   As peças únicas foram produzidas para compor o acervo da coleção colaborativa dos artistas, exposta durante a 12ª edição da feira SP-Arte.`,
     allbum: [
       {
         name: 'LUMINÁRIAS BRANCHE E JABUTICABA',
-        image: '/images/artist/manecoQuindereEPauloAlves/allbum/luminarias-branche-e-jabuticaba.jpg'
+        image:
+          '/images/artist/manecoQuindereEPauloAlves/allbum/luminarias-branche-e-jabuticaba.jpg',
       },
-    ]
-  }
-
-  
+    ],
+  },
 ]
 
 export default function FixedSidebarContent() {
   const [menuFixed, setMenuFixed] = useState(false)
   const [activeMenuItem, setActiveMenuItem] = useState(null as string | null)
+  const [isOpen, setIsOpen] = useState(false)
   const componentRef = useRef<HTMLDivElement | null>(null)
   const lastContentRef = useRef<HTMLDivElement | null>(null)
 
@@ -194,8 +205,9 @@ export default function FixedSidebarContent() {
     const handleScroll = () => {
       if (componentRef.current && lastContentRef.current) {
         const componentTop = componentRef.current.getBoundingClientRect().top
-        const footerElement = document.getElementsByTagName('footer')[0].getBoundingClientRect().top
-
+        const footerElement = document
+          .getElementsByTagName('footer')[0]
+          .getBoundingClientRect().top
 
         if (componentTop <= 0 && footerElement > window.innerHeight) {
           setMenuFixed(true)
@@ -203,7 +215,9 @@ export default function FixedSidebarContent() {
           setMenuFixed(false)
         }
 
-        const contentDivs = document.querySelectorAll(`.${styles.content_autor}`)
+        const contentDivs = document.querySelectorAll(
+          `.${styles.content_autor}`
+        )
 
         let closestSection = null
         let closestDistance = Infinity
@@ -233,7 +247,7 @@ export default function FixedSidebarContent() {
 
   const handleMenuItemClick = (id: string) => {
     setActiveMenuItem(id)
-  
+
     const targetElement = document.getElementById(id)
 
     if (targetElement) {
@@ -244,31 +258,68 @@ export default function FixedSidebarContent() {
         behavior: 'smooth',
       })
     }
+
+    const menuMobile = document.getElementById('menuMobile')
+
+    if (menuMobile) {
+      toggleAccordion()
+    }
   }
+
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen)
+  }
+
 
   return (
     <section className={styles.container} ref={componentRef}>
       {menuFixed && <div className={styles.menuPlaceholder} />}
       <div className={`${styles.menu} ${menuFixed ? styles.fixedMenu : ''}`}>
-        <ul>
-          <li className={activeMenuItem === 'juliana-vasconcellos' ? styles.active : ''}
-            onClick={() => {handleMenuItemClick('juliana-vasconcellos')}}>
+        <ul 
+          className={styles.menuMobileList}
+        >
+          <li
+            className={
+              activeMenuItem === 'juliana-vasconcellos' ? styles.active : ''
+            }
+            onClick={() => {
+              handleMenuItemClick('juliana-vasconcellos')
+            }}
+          >
             JULIANA VASCONCELLOS
           </li>
-          <li className={activeMenuItem === 'ronald-sasson' ? styles.active : ''}
-              onClick={() => {handleMenuItemClick('ronald-sasson')}}>
+          <li
+            className={activeMenuItem === 'ronald-sasson' ? styles.active : ''}
+            onClick={() => {
+              handleMenuItemClick('ronald-sasson')
+            }}
+          >
             RONALD SASSON
           </li>
-          <li className={activeMenuItem === 'dror-benshetrit' ? styles.active : ''}
-              onClick={() => {handleMenuItemClick('dror-benshetrit')}}>
+          <li
+            className={
+              activeMenuItem === 'dror-benshetrit' ? styles.active : ''
+            }
+            onClick={() => {
+              handleMenuItemClick('dror-benshetrit')
+            }}
+          >
             DROR BENSHETRIT
           </li>
-          <li className={activeMenuItem === 'marko-brajovic' ? styles.active : ''}
-              onClick={() => {handleMenuItemClick('marko-brajovic')}}>
+          <li
+            className={activeMenuItem === 'marko-brajovic' ? styles.active : ''}
+            onClick={() => {
+              handleMenuItemClick('marko-brajovic')
+            }}
+          >
             MARKO BRAJOVIC
           </li>
           <li
-            className={activeMenuItem === 'luciana-martins-e-gerson-de-oliveira' ? styles.active : ''}
+            className={
+              activeMenuItem === 'luciana-martins-e-gerson-de-oliveira'
+                ? styles.active
+                : ''
+            }
             onClick={() => {
               handleMenuItemClick('ovo')
             }}
@@ -292,9 +343,11 @@ export default function FixedSidebarContent() {
             RODRIGO OHTAKE
           </li>
           <li
-            className={activeMenuItem === 'guilherme-torres' ? styles.active : ''}
+            className={
+              activeMenuItem === 'guilherme-torres' ? styles.active : ''
+            }
             onClick={() => {
-                handleMenuItemClick('guilherme-torres')
+              handleMenuItemClick('guilherme-torres')
             }}
           >
             GUILHERME TORRES
@@ -318,7 +371,9 @@ export default function FixedSidebarContent() {
             RUY OHTAKE
           </li>
           <li
-            className={activeMenuItem === 'zanini-de-zanine' ? styles.active : ''}
+            className={
+              activeMenuItem === 'zanini-de-zanine' ? styles.active : ''
+            }
             onClick={() => {
               handleMenuItemClick('zanini-de-zanine')
             }}
@@ -345,34 +400,181 @@ export default function FixedSidebarContent() {
               handleMenuItemClick('maneco-quindere-e-paulo-alves')
             }}
           >
-              MANECO QUINDERÉ E PAULO ALVES
+            MANECO QUINDERÉ E PAULO ALVES
           </li>
         </ul>
       </div>
+        <div  id="menuMobile" className={`${styles.menuMobile} ${menuFixed ? styles.fixedMenu : ''}`}>
+        <div className={styles.menuMobileButton} onClick={toggleAccordion}>
+          <p>Navegue pelos Designers e Arquitetos</p>
+          {isOpen ? <ArrowUpAcrodion /> : <ArrowDownAcordion /> }
+        </div>
+
+          {isOpen && (
+            <div
+            className={`${styles.menuMobileContent} ${isOpen ? styles.open : ''}`}
+          >
+            <ul
+              className={styles.menuMobileList}
+            >
+              <li
+                className={
+                  activeMenuItem === 'juliana-vasconcellos' ? styles.active : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('juliana-vasconcellos')
+                }}
+              >
+                JULIANA VASCONCELLOS
+              </li>
+              <li
+                className={
+                  activeMenuItem === 'ronald-sasson' ? styles.active : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('ronald-sasson')
+                }}
+              >
+                RONALD SASSON
+              </li>
+              <li
+                className={
+                  activeMenuItem === 'dror-benshetrit' ? styles.active : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('dror-benshetrit')
+                }}
+              >
+                DROR BENSHETRIT
+              </li>
+              <li
+                className={
+                  activeMenuItem === 'marko-brajovic' ? styles.active : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('marko-brajovic')
+                }}
+              >
+                MARKO BRAJOVIC
+              </li>
+              <li
+                className={
+                  activeMenuItem === 'luciana-martins-e-gerson-de-oliveira'
+                    ? styles.active
+                    : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('ovo')
+                }}
+              >
+                OVO
+              </li>
+              <li
+                className={activeMenuItem === 'carol-gay' ? styles.active : ''}
+                onClick={() => {
+                  handleMenuItemClick('carol-gay')
+                }}
+              >
+                CAROL GAY
+              </li>
+              <li
+                className={
+                  activeMenuItem === 'rodrigo-ohtake' ? styles.active : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('rodrigo-ohtake')
+                }}
+              >
+                RODRIGO OHTAKE
+              </li>
+              <li
+                className={
+                  activeMenuItem === 'guilherme-torres' ? styles.active : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('guilherme-torres')
+                }}
+              >
+                GUILHERME TORRES
+              </li>
+              <li
+                className={
+                  activeMenuItem === 'fernanda-marques' ? styles.active : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('fernanda-marques')
+                }}
+              >
+                FERNANDA MARQUES
+              </li>
+              <li
+                className={activeMenuItem === 'ruy-ohtake' ? styles.active : ''}
+                onClick={() => {
+                  handleMenuItemClick('ruy-ohtake')
+                }}
+              >
+                RUY OHTAKE
+              </li>
+              <li
+                className={
+                  activeMenuItem === 'zanini-de-zanine' ? styles.active : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('zanini-de-zanine')
+                }}
+              >
+                ZANINI DE ZANINE
+              </li>
+              <li
+                className={
+                  activeMenuItem === 'giacomo-tomazzi' ? styles.active : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('giacomo-tomazzi')
+                }}
+              >
+                GIÁCOMO TOMAZZI
+              </li>
+              <li
+                className={
+                  activeMenuItem === 'maneco-quindere-e-paulo-alves'
+                    ? styles.active
+                    : ''
+                }
+                onClick={() => {
+                  handleMenuItemClick('maneco-quindere-e-paulo-alves')
+                }}
+              >
+                MANECO QUINDERÉ E PAULO ALVES
+              </li>
+            </ul>
+          </div>
+          )}
+        
+      </div>
+      
       <div
         className={`${styles.content} ${menuFixed ? styles.contentFixed : ''}`}
       >
-
-
-       {
-        MockData.map((item, index) => {
-
+        {MockData.map((item, index) => {
           const isLastContent = index === MockData.length - 1
 
           return (
-
-          <div id={item.id} className={styles.content_autor} key={index} ref={isLastContent ? lastContentRef : null}>
-            <CardArtistDesign
-              name={item.name}
-              image={item.image}
-              description={item.description}
-              album={item.allbum}
-              
-            />
-          </div>
+            <div
+              id={item.id}
+              className={styles.content_autor}
+              key={index}
+              ref={isLastContent ? lastContentRef : null}
+            >
+              <CardArtistDesign
+                name={item.name}
+                image={item.image}
+                description={item.description}
+                album={item.allbum}
+              />
+            </div>
           )
-        })
-       }
+        })}
       </div>
     </section>
   )

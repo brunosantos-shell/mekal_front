@@ -29,6 +29,13 @@ export default function WhereToFind() {
             alt={'mekalFlagship'}
             width={384}
             height={232}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: '232px',
+              maxWidth: '384px',
+            }}
           />
           <h4>Studio Mekal Flagship</h4>
           <p>
@@ -53,6 +60,13 @@ export default function WhereToFind() {
             alt={'mekalLeblon'}
             width={384}
             height={232}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: '232px',
+              maxWidth: '384px',
+            }}
           />
           <h4>Studio Mekal Leblon</h4>
           <p>
@@ -76,6 +90,13 @@ export default function WhereToFind() {
             alt={'mekalFabric'}
             width={384}
             height={232}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: '232px',
+              maxWidth: '384px',
+            }}
           />
           <h4>Nossa Fabrica</h4>
           <p>

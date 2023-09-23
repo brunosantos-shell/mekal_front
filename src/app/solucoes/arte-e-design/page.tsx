@@ -4,12 +4,10 @@ import Image from 'next/image'
 import styles from './styles.module.scss'
 
 import arteEDesignContent from './content.json'
-import SearchComponent from '@/components/global/SearchComponent'
 
 export default function arteEDesign() {
   return (
     <>
-    <SearchComponent jsonData={arteEDesignContent}/>
       <section
         className={styles.container}
       >

@@ -31,8 +31,16 @@ export default function ContentBox({
   const paragraphsConvert = splitIntoParagraphs(paragraphs ?? '')
 
   return (
-    <div className={styles.container_content_box}>
-      <span>{category}</span>
+    <div className={styles.container_content_box}
+      style={{
+        marginBottom: catalog && technicalFile ? '0' : '80px'
+      }}
+    >
+      <span
+        style={{
+          marginBottom: category ? '0' : '3rem'
+        }}
+      >{category}</span>
       <div className={styles.content_box__header}>
         <h1>{title}</h1>
         <button>
@@ -43,7 +51,11 @@ export default function ContentBox({
         {descriptionConvert.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
-        <div className={styles.content_box__body__buttons}>
+        <div className={styles.content_box__body__buttons}
+          style={{
+            display: catalog && technicalFile ? 'flex' : 'none'
+          }}
+        >
           {technicalFile && (
             <Button
               onClick={() => {

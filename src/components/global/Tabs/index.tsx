@@ -67,9 +67,11 @@ export default function Tabs({ categories }: TabsProps) {
   }
 
   return (
-    <>
+    <div className={
+      styles.container_tabs__wrapper
+    }>
+    <p className={styles.tabs__title}>Conheça as linhas</p>
       <div className={styles.container_tabs}>
-        <p className={styles.tabs__title}>Conheça as linhas</p>
         <ul className={styles.tabs__content}>
           {categorySlugs.map((category) => {
             const isActive = currentTab === category
@@ -121,6 +123,6 @@ export default function Tabs({ categories }: TabsProps) {
           })}
         </div>
       )}
-    </>
+    </div>
   )
 }

@@ -7,9 +7,8 @@ import styles from './styles.module.scss'
 
 export default function Contact() {
   return (
-    <div
-        className={styles.container}
-    >
+    <div className={styles.container}>
+      <div className={styles.container_content}>
       <div className={styles.container_contact}>
         <h4>Contato</h4>
         <p>
@@ -46,6 +45,7 @@ export default function Contact() {
         >
           Registrar relatorio
         </Button>
+      </div>
       </div>
     </div>
   )

@@ -30,6 +30,13 @@ export default function FeatureSectionWithImage({
   optionsList,
   slideList,
 }: FeatureSectionWithImageProps) {
+
+  function splitIntoParagraphs(text: string) {
+    return text.split('\n').filter(paragraph => paragraph.trim() !== '')
+  }
+
+  const paragraphs = splitIntoParagraphs(content)
+
   return (
     <div className={styles.feature_section}>
       <div className={styles.container_image}>
@@ -42,7 +49,11 @@ export default function FeatureSectionWithImage({
         styles.container_text
       }>
         <h2>{title}</h2>
-        <p>{content}</p>
+        {
+          paragraphs.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))
+        }
       </div>
       <div className={
         styles.container_options

@@ -31,7 +31,7 @@ export default function CardArtistDesign ({image, name, description, album}: Car
             <div className={
                 styles.card_artist_design__image
             }>
-                <Image src={image} alt={name} width={380} height={344} />
+                <Image src={image} alt={name} width={380} height={344} sizes="100vw" style={{width: "100%", height: "auto", maxHeight: "344px", maxWidth: "380px"}} />
                 <h1>{name}</h1>
             </div>
             <div className={

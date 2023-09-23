@@ -21,6 +21,7 @@ import {
 } from '@/icons'
 import ContentSolutions from './components/ContentSolutions'
 import HighlightsProducs from '@/components/pages/Home/HighlightsProducts'
+import useWindowResize from '@/utils/ResizeListener'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -36,7 +37,7 @@ export default function Header() {
 
   const pathname = usePathname()
 
-  console.log(shouldCloseOnRouteChange)
+  const { width } = useWindowResize()
 
   const closeAllItems = () => {
     setSolutionsOpen(false)
@@ -119,12 +120,26 @@ export default function Header() {
   }, [isMenuOpen, isRouteChanging])
 
   useEffect(() => {
-    if (window.innerWidth <= 1440) {
-      setWindowWidthSize(444)
+    const handleResize = () => {
+
+      if (width) {
+        if (width <= 1440) {
+          setWindowWidthSize(444)
+        } else {
+          setWindowWidthSize(644)
+        }
+      }
+      
     }
 
-  }, [])
+    window.addEventListener('resize', handleResize)
 
+    handleResize()
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [width])
 
   return (
     <header>

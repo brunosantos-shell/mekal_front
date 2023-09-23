@@ -3,7 +3,16 @@
 
 
 .container {
-    padding: 65px 48px 128px 96px;
+    padding: 80px 48px 0px 96px;
+
+
+    @include Tablet {
+        padding: 80px 24px 0px 24px;
+    }
+
+    @include Mobile {
+        padding: 67px 24px 0px 24px;
+    }
 
 }
 

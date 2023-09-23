@@ -1,5 +1,14 @@
 import CardBenefits from './components/CardBenefits'
 import styles from './styles.module.scss'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
+
+import './swiper.css'
 
 
 const benefits = [
@@ -50,6 +59,14 @@ const benefits = [
     },
 ]
 
+const swiperParamsBenefitsMekal = {
+    modules: [Navigation, Pagination, Scrollbar, A11y],
+    spaceBetween: 50,
+    slidesPerView: 1,
+    navigation: true,
+    pagination: { clickable: true },
+}
+
 
 export default function BenefitsMekal(){
     return(
@@ -74,7 +91,23 @@ export default function BenefitsMekal(){
                             />
                         ))
                     }
-                </div>   
+                </div> 
+                <div
+                    className={styles.benefits_mekal__content__swiper_container}
+                >
+                    <Swiper {...swiperParamsBenefitsMekal} className={styles.benefits_mekal__content__swiper}>
+                        {benefits.map((benefit, index) => (
+                            <SwiperSlide key={index}>
+                                <CardBenefits
+                                    key={index}
+                                    title={benefit.title}
+                                    description={benefit.description}
+                                    image={benefit.image}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>   
+                </div>  
             </div>
         </section>
     )

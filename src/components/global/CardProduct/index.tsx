@@ -14,9 +14,6 @@ interface CardProductProps {
 export default function CardProduct({ title, category, image, id }: CardProductProps) {
   const pathname = usePathname()
 
-  console.log(pathname)
-
-
   return (
     <Link href={`${pathname}/${id}`}>
     <div className={styles.card_product}>

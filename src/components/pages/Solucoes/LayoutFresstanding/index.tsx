@@ -87,6 +87,13 @@ export default function LayoutFresstanding({
             width={1312}
             height={765}
             quality={100}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxWidth: '1312px',
+              maxHeight: '765px',
+            }}
           />
         </div>
         <div className={styles.container_text}>
@@ -103,7 +110,7 @@ export default function LayoutFresstanding({
         </div>
       </section>
       <VideoPlayer src="/videoHome/videoHome.mp4" />
-      <div className={styles.container_text}>
+      <div className={styles.container_text_2}>
         <h4>Funciona até nos mínimos detalhes</h4>
 
         <p>
@@ -127,7 +134,13 @@ export default function LayoutFresstanding({
         </p>
       </div>
       <AccessoriesAndCompositionSlide type="accessories" data={Mock} />
+      <div
+        className={
+          styles.container_slide
+        }
+      >
       <SlideGallery images={images} />
+      </div>
     </>
   )
 }

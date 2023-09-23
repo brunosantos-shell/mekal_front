@@ -1,3 +1,5 @@
+'use client'
+
 import { Navigation, Scrollbar, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { BtnNextSlide, BtnPrevSlide } from '@/icons'
@@ -11,6 +13,8 @@ import './swiper.css'
 
 import styles from './styles.module.scss'
 import CardSlideAccessoriesAndComposition from '../CardSlideAccessoriesAndComposition'
+import { useEffect, useState } from 'react'
+import useWindowResize from '@/utils/ResizeListener'
 
 interface dataProps {
   image: string;
@@ -30,22 +34,36 @@ interface AccessoriesAndCompositionSlideProps {
   customStyles?: React.CSSProperties;
 }
 
-const swiperParamsAccessoriesAndComposition = {
-  modules: [Navigation, Scrollbar, A11y],
-  spaceBetween: 10,
-  slidesPerView: 2,
-  navigation: {
-    prevEl: '.swiper-button-prev-accessories',
-    nextEl: '.swiper-button-next-accessories',
-  },
-  loop: true,
-}
-
 export default function AccessoriesAndCompositionSlide({
   type,
   data,
   customStyles
 }: AccessoriesAndCompositionSlideProps) {
+  const [isMobile, setIsMobile] = useState(false)
+  const { width } = useWindowResize()
+
+  useEffect(() => {
+    if (width) {
+      if (width < 1200) {
+        setIsMobile(true)
+      } else {
+        setIsMobile(false)
+      }
+    }
+  }, [width])
+
+
+  const swiperParamsAccessoriesAndComposition = {
+    modules: [Navigation, Scrollbar, A11y],
+    spaceBetween: 10,
+    slidesPerView: isMobile ? 1 : 2,
+    navigation: {
+      prevEl: '.swiper-button-prev-accessories',
+      nextEl: '.swiper-button-next-accessories',
+    },
+    loop: true,
+  }
+
 
   return (
     <div className={styles.container_accessories_and_composition__slide} style={customStyles}>

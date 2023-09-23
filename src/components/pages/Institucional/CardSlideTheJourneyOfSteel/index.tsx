@@ -21,7 +21,9 @@ export default function CardSlideTheJourneyOfSteel (
         <div
             className={styles.container_card__slide}
         >
-            <span>{ano}</span>
+            <span
+                className={styles.container_card__slide__year}
+            >{ano}</span>
             <div
                 className={styles.container_card__slide__info}
             >
@@ -39,8 +41,10 @@ export default function CardSlideTheJourneyOfSteel (
                     ))
                }
                </div>
-                
             </div>
+            <span
+                className={styles.container_card__slide__year__mobile}
+            >{ano}</span>
         </div>
     )
 }

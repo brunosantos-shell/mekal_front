@@ -2,7 +2,15 @@
 
 .container_benefits_mekal {
     background-color: $color-neutral-high-light;
-    padding: 128px 48px 128px 96px;
+    padding: 128px 48px 80px 96px;
+
+    @include Tablet {
+        padding: 80px 24px 80px 24px;
+    }
+
+    @include Mobile {
+        padding: 67px 24px 0px 24px;
+    }
 
     .benefits_mekal__header {
         border-bottom: 1px solid #bfbfbf;
@@ -21,21 +29,37 @@
     .benefits_mekal__content {
         padding-top: 80px;
         display: flex;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
         
 
         h2 {
 
             color: $color-neutral-low-pure;
 
-            font-size: 42px;
+            @include font-responsive(26px, 42px, 130%);
+
             font-style: normal;
-            font-weight: 600;
-            line-height: 130%; 
+            font-weight: 600; 
             letter-spacing: 2px;
             text-transform: uppercase;
 
             max-width: 384px;
             margin-right: 79px;
+
+
+            @media (max-width: 1284px) {
+                margin-right: 20px;
+                padding-right: 79px;
+            }
+
+            @media (max-width: 1024px) {
+                margin-right: 0;
+                padding-right: 0;
+                margin-bottom: 80px;
+            }
         }
     }
 
@@ -43,5 +67,25 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 80px;
+
+        @media (max-width: 1284px) {
+            grid-gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 700px) {
+            display: none;
+        }
+    }
+
+    .benefits_mekal__content__swiper_container {
+        display: none;
+
+        @media (max-width: 700px) {
+            display: block;
+        }
     }
 }
