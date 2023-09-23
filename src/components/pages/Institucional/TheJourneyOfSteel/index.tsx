@@ -22,7 +22,7 @@ interface SlideData {
 const swiperParamsTheJourneyOfSteel = {
   modules: [Navigation, Scrollbar, A11y],
   spaceBetween: 80,
-  slidesPerView: 'auto',
+  slidesPerView: "auto",
   navigation: {
     prevEl: '.swiper-button-prev-the_journey',
     nextEl: '.swiper-button-next-the_journey',
