@@ -30,8 +30,8 @@ export default function Header() {
   const [InstitucionalOpen, setInstitucionalOpen] = useState(false)
   const [SuporteOpen, setSuporteOpen] = useState(false)
   const [isRouteChanging, setIsRouteChanging] = useState(false) 
-  const [shouldCloseOnRouteChange, setShouldCloseOnRouteChange] = useState(false)
-  const [previousPathname, setPreviousPathname] = useState('')
+  /* const [shouldCloseOnRouteChange, setShouldCloseOnRouteChange] = useState(false) */
+  /* const [previousPathname, setPreviousPathname] = useState('') */
 
   const [windowWidthSize, setWindowWidthSize] = useState(644)
 
@@ -101,16 +101,16 @@ export default function Header() {
 
   useEffect(() => {
     handleCloseMenu()
-    setShouldCloseOnRouteChange(false)
-    setPreviousPathname(pathname)
+   /*  setShouldCloseOnRouteChange(false) */
+   /*  setPreviousPathname(pathname) */
     setIsRouteChanging(true)
   }, [pathname])
 
-  useEffect(() => {
+  /* useEffect(() => {
     if ((previousPathname !== "") && previousPathname !== pathname) {
       setShouldCloseOnRouteChange(true)
     }
-  }, [pathname, previousPathname])
+  }, [pathname, previousPathname]) */
 
   useEffect(() => {
     if (isRouteChanging) {
