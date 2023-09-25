@@ -15,7 +15,7 @@ export default function ShowcaseHome() {
         animate={{ scale: 1 }}
         transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
       >
-        <source src="/videoHome/videoHome.mp4" type="video/mp4" />
+        <source src="/videoHome/videoHome.mp4" type="video/mp4"/>
       </motion.video>
       <div className={style.showcase_content}>
         <motion.div

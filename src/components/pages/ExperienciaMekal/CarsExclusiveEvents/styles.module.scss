@@ -63,6 +63,10 @@
         button {
             max-width: 260px;
         }
+
+        @media (max-width: 768px) {
+            gap: 20px;
+        }
     }
 
     .container_info {

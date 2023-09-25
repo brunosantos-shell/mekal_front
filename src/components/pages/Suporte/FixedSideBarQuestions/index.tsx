@@ -255,6 +255,7 @@ export default function FixedSideBarQuestions() {
 
   return (
     <section className={styles.container} ref={componentRef}>
+      <div className={styles.container_around}>
       {menuFixed && <div className={styles.menuPlaceholder} />}
       <div className={`${styles.menu} ${menuFixed ? styles.fixedMenu : ''}`}>
         <ul>
@@ -314,6 +315,69 @@ export default function FixedSideBarQuestions() {
           </li>
         </ul>
       </div>
+      <div  id="menuMobile" className={`${styles.menuMobile}`}>
+        <div className={styles.menuMobileButton}>
+          <p>Navegue</p>
+        </div>
+            <div className={`${styles.menuMobileContent}`}>
+           <ul className={styles.menuMobileList}>
+          <li
+            className={
+              activeMenuItem === 'garantia-dos-produtos' ? styles.active : ''
+            }
+            onClick={() => {
+              handleMenuItemClick('garantia-dos-produtos')
+            }}
+          >
+            Garantia dos produtos
+          </li>
+          <li
+            className={
+              activeMenuItem === 'contato-com-assistencia-tecnica'
+                ? styles.active
+                : ''
+            }
+            onClick={() => {
+              handleMenuItemClick('contato-com-assistencia-tecnica')
+            }}
+          >
+            
+              Contato com assistência técnica
+           
+          </li>
+          <li
+            className={
+              activeMenuItem === 'armazenamento-e-instalacao'
+                ? styles.active
+                : ''
+            }
+            onClick={() => {
+              handleMenuItemClick('armazenamento-e-instalacao')
+            }}
+          >
+            Armazenamento e Instalação
+          </li>
+          <li
+            className={activeMenuItem === 'materia-prima' ? styles.active : ''}
+            onClick={() => {
+              handleMenuItemClick('materia-prima')
+            }}
+          >
+          Matéria Prima
+          </li>
+          <li
+            className={
+              activeMenuItem === 'limpeza-e-manutencao' ? styles.active : ''
+            }
+            onClick={() => {
+              handleMenuItemClick('limpeza-e-manutencao')
+            }}
+          >
+           Limpeza e Manutenção
+          </li>
+        </ul>
+          </div>
+        </div>
       <div
         className={`${styles.content} ${menuFixed ? styles.contentFixed : ''}`}
       >
@@ -337,6 +401,7 @@ export default function FixedSideBarQuestions() {
             </div>
           )
         })}
+      </div>
       </div>
     </section>
   )

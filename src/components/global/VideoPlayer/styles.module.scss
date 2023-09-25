@@ -26,6 +26,11 @@
     transform: translate(-50%, -50%);
     cursor: pointer;
     transition: all 0.5s ease-in-out;
+
+    @include Mobile {
+        width: 72px;
+        height: 72px;
+    }
 }
 
 .container_video:hover .button_play__video {

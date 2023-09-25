@@ -11,6 +11,11 @@
         padding: 48px 96px 61px 0;
     }
 
+    @include Tablet {
+        padding: 48px 24px 61px 24px;
+        justify-content: flex-start;
+    }
+
     p {
         max-width: 848px;
 

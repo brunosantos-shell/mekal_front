@@ -4,6 +4,12 @@
     display: flex;
     justify-content: space-between;
     padding: 0px 48px 128px 96px;
+    max-width: 1920px;
+    margin: 0 auto;
+
+    @include UltraLargeScreen {
+        padding: 0px 0px 128px 0px;
+    }
 
     @include SmallScreen {
         gap: 80px;
@@ -137,7 +143,7 @@
         padding: 24px;
     }
 
-    @media (min-width: 950px) {
+    @media (min-width: 951px) {
         display: none;
     }
 

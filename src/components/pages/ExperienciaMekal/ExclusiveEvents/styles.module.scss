@@ -3,6 +3,12 @@
 .container {
     background-color: #FFF;
     padding: 144px 48px 142px 96px;
+    max-width: 1920px;
+    margin: 0 auto;
+
+    @include UltraLargeScreen {
+        padding: 132px 0px 142px 0px;
+    }
 
     @include Tablet {
         padding: 132px 24px 142px 24px;
@@ -19,7 +25,7 @@
         }
 
         h1 {
-            @include font-responsive(48px, 72px, 120%);
+            @include font-responsive(32px, 72px, 120%);
             color: $color-neutral-low-pure;
             font-style: normal;
             font-weight: 600;
