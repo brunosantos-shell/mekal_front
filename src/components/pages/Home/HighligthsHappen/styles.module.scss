@@ -127,4 +127,10 @@
     @media (min-width: 951px) {
         display: none;
     }
+
+    @include Mobile {
+        button {
+            padding: 15px 20px !important;
+        }
+    }
 }

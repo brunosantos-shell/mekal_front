@@ -551,7 +551,7 @@ export default function FixedSidebarContent() {
           </div>
           )}
         
-      </div>
+        </div>
       
       <div
         className={`${styles.content} ${menuFixed ? styles.contentFixed : ''}`}

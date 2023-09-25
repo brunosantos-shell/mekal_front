@@ -93,7 +93,9 @@
             height: auto;
 
             @include Mobile {
-                height: 100%;
+                height: 309px;
+                object-fit: cover;
+                
             }
         }
 

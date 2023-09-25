@@ -1,6 +1,10 @@
 @import '../../../../styles/utils';
 
 .container_content_box {
+
+    max-width: 1920px;
+    margin: 0 auto;
+
     > span {
         color: $color-neutral-low-pure;
 

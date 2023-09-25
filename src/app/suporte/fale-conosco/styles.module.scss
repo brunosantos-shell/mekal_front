@@ -11,13 +11,13 @@
         padding: 48px 96px 61px 0;
     }
 
+    @include Tablet {
+        padding: 48px 24px 61px 24px;
+        justify-content: flex-start;
+    }
+
     p {
         max-width: 848px;
-
-            @include SmallScreen {
-                max-width: 780px;
-             }
-        
 
         font-size: 20px;
         font-style: normal;
@@ -25,6 +25,14 @@
         line-height: 150%;
 
         color: $color-neutral-low-dark;
+
+        @include SmallScreen {
+                max-width: 780px;
+        }
+        
+        @include Tablet {
+            max-width: 100%;
+        }
     }
 }
 
@@ -34,5 +42,10 @@
     padding: 48px 277px 61px 96px;
 
     background-color: $color-neutral-high-light;
+
+    @include Tablet {
+        padding: 48px 24px 61px 24px;
+        justify-content: flex-start;
+    }
 
 }

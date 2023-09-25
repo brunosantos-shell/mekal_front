@@ -2,6 +2,10 @@
 
 .container {
     padding: 0px 48px 318px 96px;
+
+    @include Tablet {
+        padding: 0px 24px 120px 24px;
+    }
 }
 
 .container_text {
@@ -13,6 +17,7 @@
     align-items: center;
 
     margin-top: 107px;
+
 
     .text_quote {
         color: $color-neutral-low-pure;

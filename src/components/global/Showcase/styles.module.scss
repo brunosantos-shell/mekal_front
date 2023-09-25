@@ -52,6 +52,12 @@
             
         }
 
+        .showcase_content__text.catalog {
+            @include Tablet {
+                bottom: 150px;
+            }
+        }
+
         .institutionals {
             position: absolute;
             right: 287px;
@@ -77,12 +83,9 @@
                 max-width: 780px;
             }
 
-            @media (max-width: 900px) {
+            @include Tablet {
                 right: -24px;
-            }
-
-            @include Mobile {
-
+                max-width: 100%;
             }
         }
 
@@ -90,6 +93,11 @@
             position: absolute;
             bottom: 56px;
             right: 96px;
+
+            @include Tablet {
+                left: 24px;
+
+            }
         }
     }
 }

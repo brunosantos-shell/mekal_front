@@ -53,7 +53,8 @@ const Showcase: React.FC<ShowcaseProps> = ({
           className={
             styles.showcase_content__text +
             ' ' +
-            (institutionals ? styles.institutionals : '')
+            (institutionals ? styles.institutionals : '') + (catalog ? styles.catalog : '')
+
           }
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

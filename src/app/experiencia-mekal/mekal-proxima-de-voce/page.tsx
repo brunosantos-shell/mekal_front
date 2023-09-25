@@ -14,6 +14,9 @@ export default function mekalProximaDeVoce() {
         category="Mekal próxima de você"
       />
       <section className={styles.container}>
+        <div
+          className={styles.container_around}
+        >
         <div className={styles.container_header}>
           <div>
             <span>Lorem ipsum dolor</span>
@@ -115,6 +118,7 @@ export default function mekalProximaDeVoce() {
                 alt={''}
               />
           </div>
+        </div>
         </div>
       </section>
       <ExclusiveEvents />
