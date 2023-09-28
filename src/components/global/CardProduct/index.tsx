@@ -25,6 +25,13 @@ export default function CardProduct({ title, category, image, id }: CardProductP
           alt="cuba"
           width={540}
           height={313}
+          sizes="100vw"
+          style={{
+            width: '100%',
+            height: '100%',
+            maxHeight: '313px',
+            maxWidth: '540px',
+          }}
         />
       </div>
       <button className={styles.card_product__btn__view_product}>

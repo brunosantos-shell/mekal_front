@@ -273,7 +273,7 @@ export default function FixedSidebarContent() {
 
   return (
     <section className={styles.container} ref={componentRef}>
-      {menuFixed && <div className={styles.menuPlaceholder} />}
+      {/* {menuFixed && <div className={styles.menuPlaceholder} />} */}
       <div className={`${styles.menu} ${menuFixed ? styles.fixedMenu : ''}`}>
         <ul 
           className={styles.menuMobileList}

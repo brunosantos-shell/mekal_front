@@ -32,9 +32,9 @@ const Showcase: React.FC<ShowcaseProps> = ({
     <section className={styles.container_showcase} style={customStyles}>
       <motion.div
         className={styles.hero_image}
-        initial={{ scale: 1.2 }}
+        /* initial={{ scale: 1.2 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+        transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }} */
       >
         <Image
           src={image}
@@ -77,6 +77,7 @@ const Showcase: React.FC<ShowcaseProps> = ({
         >
           {catalog && (
             <Button
+              inverted
               onClick={() => {
                 console.log('Clicou')
               }}
@@ -87,7 +88,6 @@ const Showcase: React.FC<ShowcaseProps> = ({
           )}
         </motion.div>
       </div>
-      {/* Restante do conteúdo do componente Showcase */}
     </section>
   )
 }

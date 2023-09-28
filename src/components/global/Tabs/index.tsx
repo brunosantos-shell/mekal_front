@@ -36,6 +36,8 @@ interface TabsProps {
 
 export default function Tabs({ categories }: TabsProps) {
   const [hasActiveProducts, setHasActiveProducts] = useState(false)
+  const [qtdLinesBiggerThree, setQtdLinesBiggerThree] = useState(false)
+  const [qtdProducts, setQtdProducts] = useState(0)
 
   const categorySlugs = categories.map((categoryObj) => {
     const categoryName = Object.keys(categoryObj)[0]
@@ -47,9 +49,12 @@ export default function Tabs({ categories }: TabsProps) {
   const pathnameWithoutLastSlash = pathname.substring(0, lastIndex)
   const [currentTab, setCurrentTab] = useState<string>('')
 
+
   useLayoutEffect(() => {
     const currentSlug = pathname.substring(lastIndex + 1)
     setCurrentTab(currentSlug)
+
+    categories.length > 3 ? setQtdLinesBiggerThree(true) : setQtdLinesBiggerThree(false)
 
     const categoryName = categories.find(
       (categoryObj) =>
@@ -59,6 +64,12 @@ export default function Tabs({ categories }: TabsProps) {
       !!categoryName &&
         categoryName[Object.keys(categoryName)[0]].products.length > 0
     )
+
+    if (categoryName) {
+      setQtdProducts(categoryName[Object.keys(categoryName)[0]].products.length)
+    } else {
+      setQtdProducts(0) 
+    }
   }, [pathname, lastIndex])
 
   const handleTabClick = (category: string) => {
@@ -67,10 +78,11 @@ export default function Tabs({ categories }: TabsProps) {
   }
 
   return (
-    <div className={
-      styles.container_tabs__wrapper
-    }>
-    <p className={styles.tabs__title}>Conheça as linhas</p>
+    <div className={styles.container_tabs__wrapper}>
+      <div className={styles.container_header}>
+      <p className={`${styles.tabs__title} ${
+        qtdLinesBiggerThree ? styles.tabs__title__bigger_three : ''
+      }`}>Conheça as linhas</p>
       <div className={styles.container_tabs}>
         <ul className={styles.tabs__content}>
           {categorySlugs.map((category) => {
@@ -93,9 +105,13 @@ export default function Tabs({ categories }: TabsProps) {
           })}
         </ul>
       </div>
+      </div>
+      
       {hasActiveProducts && (
         <div className={styles.container_products}>
-          <h4>Todos os produtos</h4>
+         <h4 className={styles.product_count} data-count={qtdProducts}>
+         Todos os produtos
+         </h4>
           {categories.map((categoryObj) => {
             const categoryName = Object.keys(categoryObj)[0]
             const isActive =
@@ -123,6 +139,6 @@ export default function Tabs({ categories }: TabsProps) {
           })}
         </div>
       )}
-    </div>
+      </div>
   )
 }

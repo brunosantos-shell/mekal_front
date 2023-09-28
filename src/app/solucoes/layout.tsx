@@ -5,6 +5,9 @@ import HeroSolutions from '@/components/global/HeroSolutions'
 import Showcase from '@/components/global/Showcase'
 import WhereToFind from '@/components/global/WhereToFind'
 import { usePathname } from 'next/navigation'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 interface LayoutSolucoesProps {
   children: React.ReactElement<ShowcaseData>
@@ -20,6 +23,8 @@ interface HeroData {
   image: string
 }
 
+gsap.registerPlugin(ScrollTrigger)
+
 export default function LayoutSolucoes({ children }: LayoutSolucoesProps) {
   const pathname = usePathname()
   const pathElements = pathname
@@ -29,6 +34,9 @@ export default function LayoutSolucoes({ children }: LayoutSolucoesProps) {
 
   const lastElement = pathElements[pathElements.length - 1]
   const isNumeric = /^\d+$/.test(lastElement)
+
+  const containerRef = useRef(null)
+  const overlayRef = useRef(null)
 
   const getShowCaseData = (pathname: string) => {
     switch (secondItem) {
@@ -108,22 +116,62 @@ export default function LayoutSolucoes({ children }: LayoutSolucoesProps) {
   const showcaseData = getShowCaseData(pathname) as ShowcaseData
   const heroData = getHeroData(pathname) as HeroData
 
+  console.log(secondItem)
+
+  useEffect(() => {
+    const overlay = overlayRef.current
+
+    gsap.to(overlay, {
+      y: 0,
+      ease: 'ease-in-out',
+      duration: 1,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top center',
+        end: 'bottom top',
+        scrub: true,
+      },
+    })
+
+    gsap.to('.showcase', {
+      y: 300,
+      ease: 'none',
+      duration: 1,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        pin: false,
+      },
+    })
+  }, [])
+
   return (
     <div>
-      {isNumeric ? null : (
-        <Showcase
-          key={secondItem}
-          title={showcaseData.title}
-          image={showcaseData.image}
-          catalog={showcaseData.catalog}
-          category={secondItem}
-        />
-      )}
-
-      {children}
-      {secondItem === 'arte-e-design' ? null : <BenefitsMekal />}
-      {heroData ? <HeroSolutions image={heroData.image} /> : null}
-      {secondItem === 'arte-e-design' ? null : <WhereToFind />}
+      <div ref={containerRef} className="showcase">
+        {isNumeric ? null : (
+          <Showcase
+            key={secondItem}
+            title={showcaseData.title}
+            image={showcaseData.image}
+            catalog={showcaseData.catalog}
+            category={secondItem}
+          />
+        )}
+      </div>
+      <div
+        className="sessao-por-cima"
+        ref={overlayRef}
+        style={{
+          zIndex: 2,
+        }}
+      >
+        {children}
+        {secondItem === 'arte-e-design' ? null : <BenefitsMekal />}
+        {heroData ? <HeroSolutions image={heroData.image} /> : null}
+        {secondItem === 'arte-e-design' ? null : <WhereToFind />}
+      </div>
     </div>
   )
 }

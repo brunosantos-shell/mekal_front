@@ -35,6 +35,13 @@
     color: $color-neutral-high-pure;
     padding: 21px 32px;
 
+    svg {
+      path {
+        fill: $color-neutral-high-pure;
+        stroke: $color-neutral-high-pure;
+      }
+    }
+
   }
 
     &.btn_rounded {

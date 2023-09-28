@@ -6,6 +6,7 @@ import HighlightsHappen from '@/components/pages/Home/HighligthsHappen'
 import ShowcaseHome from '@/components/pages/Home/ShowcaseHome'
 import SlideHomeReleases from '@/components/pages/Home/SlideHomeReleases'
 
+
 const MockSlideGallery = [
   '/images/gallerySlide/foto1.jpg',
   '/images/gallerySlide/foto2.jpg',
@@ -19,7 +20,7 @@ export default function Home() {
         position: 'relative',
       }}
     >
-      <ShowcaseHome />
+      <ShowcaseHome/>
       <HighlightsSolutions />
       <SlideHomeReleases images={MockSlideGallery} />
       <HighlightsProducs />

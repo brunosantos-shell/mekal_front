@@ -10,6 +10,7 @@
     justify-content: space-between;
 
     padding: 24px;
+    width: 100%;
 
     @include Mobile {
         flex-direction: column-reverse;
@@ -28,8 +29,8 @@
         @include Mobile {
             width: 100%;
             border-right: none;
-            border-top: 1px solid #bfbfbf;
-            padding-top: 24px;
+            border-top: 1px solid #bfbfbf;    
+            padding-top: 24px;        
         }
 
         .container_card__slide__info__title {
@@ -92,6 +93,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include Mobile {
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+        }
 
         img {
             mix-blend-mode: multiply;

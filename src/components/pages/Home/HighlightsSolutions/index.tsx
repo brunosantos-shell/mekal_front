@@ -4,8 +4,8 @@ import styles from './styles.module.scss'
 
 export default function HighlightsSolutions() {
   return (
-    <section className={styles.container_highlights}>
-      <div className={styles.container_highlights__content}>
+    <section className={styles.container_highlights} id="container_highlights">
+      <div className={`${styles.container_highlights__content}`}>
         <div className={styles.highlights__line__one}>
           <div className={styles.line_one__column__one}>
             <div className={styles.line_one__column__one__header}>
@@ -39,7 +39,7 @@ export default function HighlightsSolutions() {
             <span className={styles.photo_legend}>Smart Premium</span>
           </div>
         </div>
-        <div className={styles.highlights__line__two}>
+        <div className={styles.highlights__line__two} >
           <div className={styles.line_two__column__one}>
             <div className={styles.line_two__column__one__header}>
               <div className={styles.header__image_container}>

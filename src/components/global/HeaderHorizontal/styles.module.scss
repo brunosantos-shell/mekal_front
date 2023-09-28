@@ -1,0 +1,25 @@
+@import '../../../styles/utils';
+
+.container_header_horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 995;
+    position: absolute;
+    height: 4rem;
+    width: 100%;
+    padding-left: 96px;
+
+    @include Tablet {
+        display: none;
+    }
+}
+
+.container_logo {
+    svg {
+        path {
+            fill: #fff;
+        }
+    }
+}

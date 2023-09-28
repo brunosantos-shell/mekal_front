@@ -1,0 +1,131 @@
+@import '../../../styles/utils';
+
+.container_search_component_header {
+
+    .search_component_header__button {
+        width: 100%;
+        svg {
+            path {
+                stroke: #fff;
+            }
+        }
+
+        @include Tablet {
+            svg {
+                path {
+                    stroke: #000;
+                }
+            }
+        }
+    }       
+}
+
+.search_component_header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $color-neutral-low-dark;
+    width: 100vw;
+    padding: 16px 48px 16px 0px;
+
+    @include Tablet {
+        padding: 16px 24px 16px 0px;
+    }
+
+    @include Mobile {
+        padding: 16px 16px 16px 0px;
+    }
+}
+
+.search_component_header__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 96px;
+
+    @include Tablet {
+        padding-left: 24px;
+    }
+
+    input {
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        color: $color-neutral-high-pure;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $color-neutral-low-light;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 130%;
+        }
+    }
+}
+
+.search_component_header__input__search_input {
+    display: flex;
+    max-width: 1022px;
+    width: 100%;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 24px;
+    }
+
+    @include Mobile {
+        svg {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+        }
+    }
+}
+
+.search_component_header__input__buttons {
+    display: flex;
+    gap: 16px;
+
+    @include Mobile {
+        gap: 4px;
+    }
+}
+
+.search_component_header__input__buttons__search,
+.search_component_header__input__buttons__close
+{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(55, 52, 53, 0.70);
+    border: none;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1px;
+    transition: all 0.5s ease-in-out;
+
+    @include Mobile {
+        width: 32px;
+        height: 32px;
+    }
+
+    svg {
+        width: 15px;
+        height: 15px;
+
+        path {
+            stroke: #fff;
+        }
+    }
+
+    &:hover {
+        background-color: $color-neutral-low-pure;
+    }
+}
+

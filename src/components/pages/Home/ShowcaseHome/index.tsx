@@ -4,8 +4,11 @@ import { ArrowDown } from '@/icons'
 import { motion } from 'framer-motion'
 
 export default function ShowcaseHome() {
+
+
   return (
-    <section className={style.container_showcase}>
+    <section className={style.container_showcase}
+    >
       <motion.video
         className={style.showcase__video}
         autoPlay
@@ -24,12 +27,12 @@ export default function ShowcaseHome() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
         >
-          <motion.button
+          <motion.div
             className={style.showcase_button}
             whileTap={{ y: 0, scale: 0.9 }}
           >
             <ArrowDown />
-          </motion.button>
+          </motion.div>
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

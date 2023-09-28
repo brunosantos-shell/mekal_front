@@ -4,8 +4,10 @@ import style from './styles.module.scss'
 
 export default function HighlightsHappen() {
   return (
-    <section className={style.container_highlights_happen}>
-      <div className={style.container_highlights_content}>
+    <section className={style.container_highlights_happen}
+    >
+      <div className={`${style.container_highlights_content}`}
+      >
         <div className={style.highlights_content__header}>
           <span>Acontece</span>
           <div>

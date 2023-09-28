@@ -1,11 +1,54 @@
+'use client'
+
 import Showcase from '@/components/global/Showcase'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 import ExclusiveEvents from '@/components/pages/ExperienciaMekal/ExclusiveEvents'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef } from 'react'
 
-export default function mekalProximaDeVoce() {
+gsap.registerPlugin(ScrollTrigger)
+
+export default function MekalProximaDeVoce() {
+  const containerRef = useRef(null)
+  const overlayRef = useRef(null)
+
+  useEffect(() => {
+    const overlay = overlayRef.current
+
+    gsap.to(overlay, {
+      y: 0,
+      ease: 'none',
+      duration: 1,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top center',
+        end: 'bottom top',
+        scrub: true,
+      },
+    })
+  
+    gsap.to('.showcase', {
+      y: 300,
+      ease: 'none',
+      duration: 1,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        pin: false,
+      },
+    })
+  }, [])
+
+
   return (
     <main>
+      <div ref={containerRef}
+        className='showcase'
+      >
       <Showcase
         title="Especialista em produtos premium de aço inox"
         customStyles={{ height: '464px' }}
@@ -13,7 +56,9 @@ export default function mekalProximaDeVoce() {
         catalog={false}
         category="Mekal próxima de você"
       />
-      <section className={styles.container}>
+      </div>
+      <div ref={overlayRef}>
+      <section className={styles.container} >
         <div
           className={styles.container_around}
         >
@@ -122,6 +167,7 @@ export default function mekalProximaDeVoce() {
         </div>
       </section>
       <ExclusiveEvents />
+      </div>
     </main>
   )
 }

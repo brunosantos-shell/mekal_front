@@ -1,0 +1,27 @@
+@import '../../../../styles/_utils/';
+
+.container_description_product {
+    margin: 200px 0;
+
+    @include Tablet {
+        padding: 80px 24px 80px 24px;
+        margin: 0;
+    }
+}
+
+.container_slide_images {
+
+    padding: 0px 0px 0px 96px;
+
+    @include Tablet {
+        padding: 0 24px;
+    }
+}
+
+.container_accessories {
+    margin-top: 200px;
+
+    @include Tablet {
+        margin-top: 80px;
+    }
+}

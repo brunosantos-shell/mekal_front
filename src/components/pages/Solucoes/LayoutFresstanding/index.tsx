@@ -64,7 +64,9 @@ export default function LayoutFresstanding({
 }: LayoutFresstandingProps) {
   return (
     <>
-      <section className={styles.container}>
+      <section className={styles.container}
+        
+      >
         <ContentBox
           title="Unidade independente, 
                 com alta funcionalidade 

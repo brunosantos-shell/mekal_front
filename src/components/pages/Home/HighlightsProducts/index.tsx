@@ -3,40 +3,41 @@ import styles from './styles.module.scss'
 
 export default function HighlightsProducs() {
   return (
-    <section className={styles.container_highlights_producs}>
-
-        <div className={styles.container_highlights_header}>
-            <span>
-                Explore nossos produtos
-            </span>
-            <ul>
-                <li>
-                    <span>Seriados</span>
-                </li>
-                <li>
-                    <span>Modulados</span>
-                </li>
-                <li>
-                    <span>Sob medida</span>
-                </li>
-                <li>
-                    <span>Corporativo</span>
-                </li>
-                <li>
-                    <span>Arte e Design</span>
-                </li>
-            </ul>
+    <section
+      className={`${styles.container_highlights_producs}`}
+    >
+      <div className={`${styles.container_highlights_header}`}
+      >
+        <span>Explore nossos produtos</span>
+        <ul>
+          <li>
+            <span>Seriados</span>
+          </li>
+          <li>
+            <span>Modulados</span>
+          </li>
+          <li>
+            <span>Sob medida</span>
+          </li>
+          <li>
+            <span>Corporativo</span>
+          </li>
+          <li>
+            <span>Arte e Design</span>
+          </li>
+        </ul>
         <h2 className={styles.container_highlights_producs__title}>
-        Nossas soluções
-      </h2>
-        </div>
+          Nossas soluções
+        </h2>
+      </div>
 
-      <div className={styles.container_highlights_producs__content}>
+      <div className={`${styles.container_highlights_producs__content}`}
+      >
         <div className={styles.first_card}>
           <CardSolution
             title="Seriados"
             type="seriados"
-            url='/solucoes/seriados'
+            url="/solucoes/seriados"
             image="/images/highlightsProducts/seriados.jpg"
             alt="Seriados"
             numeric={'01'}
@@ -45,17 +46,16 @@ export default function HighlightsProducs() {
         <CardSolution
           title="Modulados"
           type="modulados"
-          url='/solucoes/modulares'
+          url="/solucoes/modulares"
           image="/images/highlightsProducts/modulados.jpg"
           alt="Modulados"
           numeric={'02'}
-          
         />
         <div className={styles.sob_medida_container}>
           <CardSolution
             title="Sob medida"
             type="sob-medida"
-            url='/solucoes/sob-medida'
+            url="/solucoes/sob-medida"
             image="/images/highlightsProducts/sobMedida.jpg"
             alt="Sob medida"
             numeric={'03'}
@@ -72,7 +72,7 @@ export default function HighlightsProducs() {
         <CardSolution
           title="Corporativo"
           type="corporativo"
-          url='/solucoes/corporativo'
+          url="/solucoes/corporativo"
           image="/images/highlightsProducts/corporativo.jpg"
           alt="Corporativo"
           numeric={'04'}
@@ -81,7 +81,7 @@ export default function HighlightsProducs() {
           <CardSolution
             title="Arte e Design"
             type="art-e-design"
-            url='/solucoes/arte-e-design'
+            url="/solucoes/arte-e-design"
             image="/images/highlightsProducts/arteDesign.jpg"
             alt="Arte e Design"
             numeric={'05'}

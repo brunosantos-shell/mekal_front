@@ -22,6 +22,7 @@ const Button = ({
 
   const buttonClass = `${styles.btn} ${buttonRoundedClass} ${buttonBaseClass} ${buttonIconOnlyClass}`
 
+
   return (
     <button onClick={onClick} className={buttonClass}>
         {children}

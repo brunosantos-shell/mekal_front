@@ -1,9 +1,14 @@
+'use client'
+
 import Image from 'next/image'
 import styles from './styles.module.scss'
 
 import contentnossaHistoria from './content.json'
 import TheJourneyOfSteel from '@/components/pages/Institucional/TheJourneyOfSteel'
 import Showcase from '@/components/global/Showcase'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 export interface SlideData {
   ano: string
@@ -40,7 +45,15 @@ export interface NossaHistoriaData {
   }
 }
 
-export default function nossaHistoria() {
+gsap.registerPlugin(ScrollTrigger)
+
+
+
+export default function NossaHistoria() {
+  const containerRef = useRef(null)
+  const overlayRef = useRef(null)
+
+
   const data: NossaHistoriaData = contentnossaHistoria
 
   function splitIntoParagraphs(text: string) {
@@ -55,8 +68,41 @@ export default function nossaHistoria() {
     data.section2.textoColuna2
   )
 
+  useEffect(() => {
+    const overlay = overlayRef.current
+
+    gsap.to(overlay, {
+      y: 0,
+      ease: 'ease-in-out',
+      duration: 1,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top center',
+        end: 'bottom top',
+        scrub: true,
+      },
+    })
+  
+    gsap.to('.showcase', {
+      y: 300,
+      ease: 'none',
+      duration: 1,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        pin: false,
+      },
+    })
+  }, [])
+
   return (
     <main>
+      <div
+        ref={containerRef}
+        className='showcase'
+      >
       <Showcase
         title="Inovando na arte do aço inoxidável há mais de meio século"
         category="Institucional"
@@ -64,6 +110,12 @@ export default function nossaHistoria() {
         catalog={false}
         customStyles={{ height: '464px' }}
       />
+      </div>
+      <div  ref={overlayRef}
+        style={{
+          backgroundColor: '#fff',
+        }}
+      >
       <section className={styles.container}>
         <div className={styles.container_header}>
           <div>
@@ -149,6 +201,7 @@ export default function nossaHistoria() {
         />
       </div>
       <TheJourneyOfSteel slides={data.slideNossaHistoria.slides} />
+      </div>
     </main>
   )
 }
