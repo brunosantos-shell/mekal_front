@@ -24,8 +24,10 @@ interface SlideHomeProps {
 
 export default function SlideHomeReleases({ images }: SlideHomeProps) {
   return (
-    <section className={styles.container_slide_home_realeases}>
-      <div className={styles.slide_home_realeases__content}>
+    <section className={styles.container_slide_home_realeases}
+      >
+      <div className={`${styles.slide_home_realeases__content}`}
+      >
         <div className={styles.slide_home_realeases__header}>
           <span>Lançamento Mekal</span>
 

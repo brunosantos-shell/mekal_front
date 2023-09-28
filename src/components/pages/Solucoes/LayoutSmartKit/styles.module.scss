@@ -2,6 +2,7 @@
 
 .container {
     padding: 78px 48px 128px 96px;
+    background-color: $color-neutral-high-pure;
 
     @include Tablet {
         padding: 80px 24px 0px 24px;

@@ -1,48 +1,50 @@
 @import '../../../styles/utils';
 
-
 .container_tabs__wrapper {
-    background-color: $color-neutral-high-light;
-    padding: 36px 0 36px 96px;
-
-    display: flex;
-    align-items: center;
-
-    @include Tablet {
-        padding: 36px 0 36px 24px;
-    }
-
     @media (max-width: 768px) {
         flex-direction: column;
         align-items: flex-start;
         gap: 24px;
     }
+}
 
-    
+.container_around {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.container_header {
+    display: flex;
+    background-color: $color-neutral-high-light;
+    padding: 32px 0px 32px 96px;
+
+    @include Tablet {
+        padding: 32px 0px 32px 24px;
+        flex-direction: column;
+        gap: 24px;
+    }
 }
 
 .container_tabs {
     width: 100%;
+    overflow-y: scroll;
 
     @media (max-width: 768px) {
         overflow-y: auto;
         min-width: 200px;
     }
-    
 }
 
 .tabs {
-
-    padding: 9px 24px ;
+    padding: 9px 24px;
 
     span {
         font-size: 14px;
         font-weight: 700;
         line-height: 150%;
         letter-spacing: 1px;
-        text-transform: uppercase; 
+        text-transform: uppercase;
     }
-
 }
 
 .active {
@@ -67,9 +69,13 @@
     }
 
     @include Tablet {
-        padding-right: 10%;
+        padding-right: 70%;
         overflow-x: hidden;
     }
+}
+
+.tabs__title.tabs__title__bigger_three {
+    padding-right: 78px;
 }
 
 .tabs__content {
@@ -87,12 +93,44 @@
 .container_products {
     padding: 88px 48px 144px 96px;
 
-   
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: $color-neutral-high-pure;
+
+    .product_count {
+        position: relative;
+
+        color: $color-neutral-low-pure;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+      }
+
+      .product_count::after {
+        content: attr(data-count);
+        position: absolute;
+        top: -10px; 
+        font-size: 18px;
+        font-weight: 600;
+        color: $color-neutral-low-dark;
+      }
+
+
+    @include UltraLargeScreen {
+        padding: 88px 0px 144px 0px;
+    }
+
+    @include Tablet {
+        padding: 40px 24px 1px 24px;
+    }
 
     .container_products__content {
-
         padding-top: 48px;
 
+        a {
+            text-decoration: none;
+        }
 
         > ul {
             display: grid;
@@ -100,7 +138,5 @@
             gap: 40px;
             width: 100%;
         }
-        
     }
 }
-

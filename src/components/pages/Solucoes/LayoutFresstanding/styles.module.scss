@@ -2,6 +2,9 @@
 
 .container {
     padding: 80px 48px 0px 96px;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: $color-neutral-high-pure;
 
     @include Tablet {
         padding: 80px 24px 0px 24px;
@@ -10,9 +13,6 @@
     @include Mobile {
         padding: 67px 24px 0px 24px;
     }
-
-    max-width: 1920px;
-    margin: 0 auto;
 }
 
 .container_image {
@@ -153,6 +153,8 @@
 }
 
 .container_slide {
+    padding: 0px 0px 150px 96px;
+
     @include Tablet {
         padding: 0px 24px 0px 24px;
     }

@@ -1,0 +1,23 @@
+@import '../../../styles/utils';
+
+.container_content {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 100%;
+    background-color: rgba(55, 52, 53, 0.70);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include Mobile {
+        width: 40px;
+        height: 40px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import Button from '@/components/global/Button'
-import { ArrowDown, IconDowload } from '@/icons'
+import ContentIndicador from '@/components/global/ContentIndicator'
+import { IconDowload } from '@/icons'
 import styles from './styles.module.scss'
 
 interface ContentBoxProps {
@@ -43,9 +44,7 @@ export default function ContentBox({
       >{category}</span>
       <div className={styles.content_box__header}>
         <h1>{title}</h1>
-        <button>
-          <ArrowDown />
-        </button>
+        <ContentIndicador />
       </div>
       <div className={styles.content_box__body}>
         {descriptionConvert.map((paragraph, index) => (

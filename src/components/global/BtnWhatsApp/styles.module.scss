@@ -1,0 +1,30 @@
+.container_btn_whatsapp {
+    width: fit-content;
+    background-color: #282828;
+    z-index: 990;
+    position: fixed;
+    right: 16px;
+    top: 50%;
+    transition: all 0.5s ease-in-out;
+
+    :hover {
+        background-color: #24c796;
+    }
+
+    a {
+        border: 2px solid #5d5f61;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-right: 12px;
+        padding-left: 15px;
+        background-color: transparent;
+        transition: background-color 0.5s ease-in-out;
+
+        :hover {
+            background-color: transparent;
+        }
+    }
+}

@@ -114,9 +114,9 @@
 }
 
 .fixedMenu {
-    position: fixed;
+    position: sticky;
     top: 70px;
-    padding-left: 96px;
+    padding-right: 200px;
 
     @include Tablet {
         padding-left: 0px;

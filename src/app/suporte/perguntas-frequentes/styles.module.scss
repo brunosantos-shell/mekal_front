@@ -6,6 +6,7 @@
     justify-content: flex-end;
 
     padding: 48px 277px 61px 96px;
+    background-color: $color-neutral-high-light;
 
     @include SmallScreen {
         padding: 48px 96px 61px 0;

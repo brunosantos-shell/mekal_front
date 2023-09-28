@@ -5,6 +5,7 @@ import Tabs from '@/components/global/Tabs'
 
 import Mocks from '@/mocks/linhas.json'
 import SlideGallery from '@/components/global/SlideGallery'
+import styles from './styles.module.scss'
 
 interface Product {
   id: number
@@ -37,22 +38,24 @@ export default function Seriados() {
   const pathElements = pathname
     .split('/')
     .filter((element) => element.trim() !== '')
- const slugToMatch = pathElements[1]
-
+  const slugToMatch = pathElements[1]
 
   const matchingSolution = Mocks.solutions.find(
     (solution) => solution.slug === slugToMatch
   ) as MockSolution | undefined
 
   return (
-    <main style={{ position: 'relative'}}>
-      {matchingSolution?.linhas !== null && matchingSolution?.linhas !== undefined && (
-        <Tabs categories={matchingSolution.linhas} />
-      )}
+    <main style={{ position: 'relative' }}>
+      {matchingSolution?.linhas !== null &&
+        matchingSolution?.linhas !== undefined && (
+          <Tabs categories={matchingSolution.linhas} />
+        )}
 
-      <SlideGallery 
-        images={SlideGalleryTemp}
-      />
+      <div
+        className={styles.slide_gallery__wrapper}
+      >
+        <SlideGallery images={SlideGalleryTemp} />
+      </div>
     </main>
   )
 }

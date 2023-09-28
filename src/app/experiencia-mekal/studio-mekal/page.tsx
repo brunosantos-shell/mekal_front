@@ -5,8 +5,17 @@ import SlideComeMeet from '@/components/pages/ExperienciaMekal/SlideComeMeet'
 import Image from 'next/image'
 import styles from './styles.module.scss'
 import contentStudioMekal from './content.json'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef } from 'react'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function StudioMekal() {
+  const containerRef = useRef(null)
+  const overlayRef = useRef(null)
+
+
   function splitIntoParagraphs(text: string) {
     return text.split('\n').filter((paragraph) => paragraph.trim() !== '')
   }
@@ -40,16 +49,58 @@ export default function StudioMekal() {
     contentStudioMekal.section4.column2
   )
 
+  
+  
+  useEffect(() => {
+    const overlay = overlayRef.current
+
+    gsap.to(overlay, {
+      y: 0,
+      ease: 'ease-in-out',
+      duration: 1,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top center',
+        end: 'bottom top',
+        scrub: true,
+      },
+    })
+  
+    gsap.to('.showcase', {
+      y: 300,
+      ease: 'none',
+      duration: 1,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        pin: false,
+      },
+    })
+  }, [])
+  
+
   return (
     <main>
+      <div
+        ref={containerRef}
+        className={`${styles.container_showcase} showcase`}
+
+      >
       <Showcase
         title="Especialista em produtos premium de aço inox"
         customStyles={{ height: '464px' }}
         image="/images/experienciaMekal/studioMekal/hero.jpg"
         catalog={false}
         category="Studio Mekal"
+
       />
-      <section className={styles.container}>
+      </div>
+      <div className='sessao-por-cima' ref={overlayRef} style={{
+        zIndex: 2,
+      }}>
+      <section className={`${styles.container}`}>
         <div className={styles.container_around}>
           <div className={styles.container_header}>
             <div>
@@ -380,6 +431,8 @@ export default function StudioMekal() {
           </div>
         </div>
       </section>
+      </div>
+      
     </main>
   )
 }

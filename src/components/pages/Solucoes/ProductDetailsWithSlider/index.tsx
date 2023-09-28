@@ -21,8 +21,16 @@ export default function ProductDetailsWithSlider() {
         <h1>Mekal Shades</h1>
         <p>A qualidade Mekal que você já conhece, agora também em cores.</p>
       </div>
-      <div>
-        <div>
+      <div className={
+        styles.container_slide_product__mobile
+    }>
+        <SlideProduct 
+            images={mockSlide}
+        />
+    </div>
+        <div
+            className={styles.container_infos}
+        >
           <button>Modelo Extra
             <ArrowDownBtn />
           </button>
@@ -76,7 +84,6 @@ export default function ProductDetailsWithSlider() {
             arquivos técnicos
           </Button>
         </div>
-      </div>
     </div>
     <div className={
         styles.container_slide_product

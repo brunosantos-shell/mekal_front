@@ -1,7 +1,14 @@
+'use client'
+
 import Header from '@/components/global/Header'
 import Footer from '@/components/global/Footer'
 import localFont from 'next/font/local'
 import '@/styles/global.scss'
+import BtnWhatsApp from '@/components/global/BtnWhatsApp'
+import HeaderHorizontal from '@/components/global/HeaderHorizontal'
+import { useEffect } from 'react'
+import Lenis from '@studio-freight/lenis'
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar'
 
 const myFont = localFont({
   src: [
@@ -36,11 +43,33 @@ const myFont = localFont({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
 
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    })
+
+    function raf(time: unknown) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, [])
+
   return (
     <html lang="en" className={myFont.className}>
       <body>
        <Header />
-        {children}
+       <HeaderHorizontal />
+       <BtnWhatsApp />
+       {children}
+       <ProgressBar
+          height="4px"
+          color="#282828"
+          options={{ showSpinner: false }}
+          shallowRouting
+        />        
         <Footer />
       </body>
     </html>

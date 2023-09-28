@@ -8,13 +8,13 @@ import Link from 'next/link'
 
 import { usePathname } from 'next/navigation'
 
+
 import {
   ArrowLeft,
   IconFacebook,
   IconInstagram,
   IconLinkedin,
   IconPlus,
-  IconSearch,
   IconX,
   IconYouTube,
   MekalLogo,
@@ -22,6 +22,11 @@ import {
 import ContentSolutions from './components/ContentSolutions'
 import HighlightsProducs from '@/components/pages/Home/HighlightsProducts'
 import useWindowResize from '@/utils/ResizeListener'
+import SearchComponentHeader from '../SearchComponentHeader'
+
+interface LanguageMenuProps {
+  language: 'PT' | 'EN' | 'ES'
+}
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -30,14 +35,18 @@ export default function Header() {
   const [InstitucionalOpen, setInstitucionalOpen] = useState(false)
   const [SuporteOpen, setSuporteOpen] = useState(false)
   const [isRouteChanging, setIsRouteChanging] = useState(false) 
-  /* const [shouldCloseOnRouteChange, setShouldCloseOnRouteChange] = useState(false) */
-  /* const [previousPathname, setPreviousPathname] = useState('') */
+  const [language, setLanguage] = useState<LanguageMenuProps['language']>('PT')
 
   const [windowWidthSize, setWindowWidthSize] = useState(644)
 
   const pathname = usePathname()
 
   const { width } = useWindowResize()
+
+  const handleLanguageChange = (newLanguage: LanguageMenuProps['language']) => {
+      setLanguage(newLanguage)
+    
+  }
 
   const closeAllItems = () => {
     setSolutionsOpen(false)
@@ -101,16 +110,9 @@ export default function Header() {
 
   useEffect(() => {
     handleCloseMenu()
-   /*  setShouldCloseOnRouteChange(false) */
-   /*  setPreviousPathname(pathname) */
     setIsRouteChanging(true)
   }, [pathname])
 
-  /* useEffect(() => {
-    if ((previousPathname !== "") && previousPathname !== pathname) {
-      setShouldCloseOnRouteChange(true)
-    }
-  }, [pathname, previousPathname]) */
 
   useEffect(() => {
     if (isRouteChanging) {
@@ -153,6 +155,7 @@ export default function Header() {
         }
         initial={{ width: 0, opacity: 0 }}
         animate={{ width: 48, opacity: 1 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
         
         
       >
@@ -364,12 +367,11 @@ export default function Header() {
           x: isMenuOpen && solutionsOpen ? windowWidthSize : 0,
           width: isMenuOpen && solutionsOpen ? `calc(100% - ${windowWidthSize}px)` : 0,
           opacity: isRouteChanging ? 0 : isMenuOpen && solutionsOpen ? 1 : 0,
-          zIndex: isMenuOpen && solutionsOpen ? 10 : 1,
+          zIndex: isMenuOpen && solutionsOpen ? 999 : 1,
           pointerEvents: isMenuOpen && solutionsOpen ? 'auto' : 'none',
         }}
         exit={{ x: '-100%', width: 0, opacity: 0 }}
-        transition={{ duration: isRouteChanging ? 0 : 0.5, ease: 'easeInOut' }}
-        style={{ display: isMenuOpen && solutionsOpen ? 'block' : 'none' }}
+        transition={{ duration: isRouteChanging ? 0 : 1, ease: 'easeInOut' }}
       >
         <div className={styles.solutions_window__content}>
           <ContentSolutions 
@@ -396,7 +398,7 @@ export default function Header() {
         </div>
 
         <div className={styles.header_content_search__mobile}>
-          <IconSearch />
+          <SearchComponentHeader />
         </div>
       </div>
 
@@ -579,6 +581,41 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
+            <div
+              className={styles.menu_content__footer__languages}
+              style={{
+                flexDirection: 'row',
+                gap: '12px'
+              }}
+            >
+              <button
+                className={
+                  language === 'PT'
+                    ? styles.active : ''
+                }
+                onClick={() => {
+                  handleLanguageChange('PT')
+                }}
+              >PT</button>
+              <button
+                className={
+                  language === 'EN'
+                    ? styles.active : ''
+                }
+                onClick={() => {
+                  handleLanguageChange('EN')
+                }}
+              >EN</button>
+              <button
+                className={
+                  language === 'ES'
+                    ? styles.active : ''
+                }
+                onClick={() => {
+                  handleLanguageChange('ES')
+                }}
+              >ES</button>
+            </div>
           </div>
         </div>
       </motion.div>

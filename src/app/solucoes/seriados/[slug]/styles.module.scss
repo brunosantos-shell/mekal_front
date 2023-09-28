@@ -1,0 +1,16 @@
+@import '../../../../styles/utils';
+
+.slide_gallery__wrapper {
+    padding: 0 0 143px 96px;
+
+    max-width: 1920px;
+    margin: 0 auto;
+
+    @include UltraLargeScreen {
+        padding: 0 0 143px 0px;
+    }
+
+    @include Tablet {
+        padding: 80px 24px 0px 24px;
+    }
+}
