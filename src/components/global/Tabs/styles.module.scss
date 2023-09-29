@@ -132,11 +132,22 @@
             text-decoration: none;
         }
 
-        > ul {
+        .products_grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
-            gap: 40px;
+            grid-template-columns: repeat(3 , 1fr);
+            gap: 24px;
             width: 100%;
+
+
+            @include SmallScreen {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
+                gap: 48px;
+            }
+
+            @include Tablet {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+            }
+
         }
     }
 }

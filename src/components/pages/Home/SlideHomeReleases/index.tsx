@@ -1,6 +1,9 @@
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+'use client'
+
 import styles from './styles.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -10,6 +13,10 @@ import 'swiper/css/scrollbar'
 import './swiper.css'
 import Button from '@/components/global/Button'
 
+interface SlideHomeProps {
+  images: string[]
+}
+
 const swiperParams = {
   modules: [Navigation, Pagination, Scrollbar, A11y],
   spaceBetween: 50,
@@ -18,11 +25,9 @@ const swiperParams = {
   pagination: { clickable: true },
 }
 
-interface SlideHomeProps {
-  images: string[]
-}
-
 export default function SlideHomeReleases({ images }: SlideHomeProps) {
+  
+
   return (
     <section className={styles.container_slide_home_realeases}
       >

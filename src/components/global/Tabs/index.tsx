@@ -5,6 +5,7 @@ import Link from 'next/link'
 import styles from './styles.module.scss'
 import { useLayoutEffect, useState } from 'react'
 import CardProduct from '../CardProduct'
+import CardMorExclusive from '../CardMorExclusive'
 
 const slugify = (text: string) => {
   return text
@@ -80,65 +81,73 @@ export default function Tabs({ categories }: TabsProps) {
   return (
     <div className={styles.container_tabs__wrapper}>
       <div className={styles.container_header}>
-      <p className={`${styles.tabs__title} ${
-        qtdLinesBiggerThree ? styles.tabs__title__bigger_three : ''
-      }`}>Conheça as linhas</p>
-      <div className={styles.container_tabs}>
-        <ul className={styles.tabs__content}>
-          {categorySlugs.map((category) => {
-            const isActive = currentTab === category
-
-            return (
-              <Link
-                href={`${pathnameWithoutLastSlash}/${category}`}
-                key={category}
-                shallow={true}
-              >
-                <li
-                  onClick={() => handleTabClick(category)}
-                  className={`${isActive ? styles.active : ''} ${styles.tabs}`}
+        <p
+          className={`${styles.tabs__title} ${
+            qtdLinesBiggerThree ? styles.tabs__title__bigger_three : ''
+          }`}
+        >
+          Conheça as linhas
+        </p>
+        <div className={styles.container_tabs}>
+          <ul className={styles.tabs__content}>
+            {categorySlugs.map((category) => {
+              const isActive = currentTab === category
+  
+              return (
+                <Link
+                  href={`${pathnameWithoutLastSlash}/${category}`}
+                  key={category}
+                  shallow={true}
                 >
-                  <span>{category}</span>
-                </li>
-              </Link>
-            )
-          })}
-        </ul>
-      </div>
-      </div>
-      
-      {hasActiveProducts && (
-        <div className={styles.container_products}>
-         <h4 className={styles.product_count} data-count={qtdProducts}>
-         Todos os produtos
-         </h4>
-          {categories.map((categoryObj) => {
-            const categoryName = Object.keys(categoryObj)[0]
-            const isActive =
-              currentTab === slugify(categoryObj[categoryName]?.name)
-            const products = categoryObj[categoryName]?.products ?? []
-
-            return isActive ? (
-              <div
-                key={categoryName}
-                className={styles.container_products__content}
-              >
-                <ul>
-                  {products.map((product) => (
-                    <CardProduct
-                      key={product.id}
-                      id={product.id}
-                      category={'seriados'}
-                      image={product.image}
-                      title={product.name}
-                    />
-                  ))}
-                </ul>
-              </div>
-            ) : null
-          })}
+                  <li
+                    onClick={() => handleTabClick(category)}
+                    className={`${isActive ? styles.active : ''} ${styles.tabs}`}
+                  >
+                    <span>{category}</span>
+                  </li>
+                </Link>
+              )
+            })}
+          </ul>
         </div>
-      )}
       </div>
+        
+      {hasActiveProducts && (
+      <div className={styles.container_products}>
+        <h4 className={styles.product_count} data-count={qtdProducts}>
+          Todos os produtos
+        </h4>
+        {categories.map((categoryObj, index) => {
+          const categoryName = Object.keys(categoryObj)[0]
+          const isActive =
+            currentTab === slugify(categoryObj[categoryName]?.name)
+          const products = categoryObj[categoryName]?.products ?? []
+          
+          const allProducts = products.map((product) => (
+            <CardProduct
+              key={product.id}
+              id={product.id}
+              category={'seriados'}
+              image={product.image}
+              title={product.name}
+            />
+          ))
+
+          allProducts.push(<CardMorExclusive key="CardMorExclusive" />)
+
+          return isActive ? (
+            <div
+              key={categoryName}
+              className={styles.container_products__content}
+            >
+              <ul className={styles.products_grid}>
+                {allProducts}
+              </ul>
+            </div>
+          ) : null
+        })}
+      </div>
+    )}
+    </div>
   )
 }

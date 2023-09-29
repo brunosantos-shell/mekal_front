@@ -27,9 +27,10 @@ export default function SlideProduct({ images }: SlideProductProps) {
     return (
       <div className={styles.container_slide__product}>
         <Swiper {...swiperParamsSlideProduct}
+          className='slideProductsSwiper'
         >
           {images?.map((image, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className='swiperSlideProduct'>
               <img
                 src={image}
                 alt={`imagem ${index}`}

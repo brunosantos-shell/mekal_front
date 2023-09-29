@@ -41,8 +41,7 @@ const myFont = localFont({
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-
-
+ 
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.5,
@@ -56,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
     requestAnimationFrame(raf)
   }, [])
+
 
   return (
     <html lang="en" className={myFont.className}>
