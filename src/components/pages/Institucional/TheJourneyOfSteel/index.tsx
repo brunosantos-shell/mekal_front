@@ -1,8 +1,10 @@
 'use client'
 
+import { Swiper, SwiperSlide } from 'swiper/react'
+
 import { BtnNextSlide, BtnPrevSlide } from '@/icons'
 import styles from './styles.module.scss'
-import { Navigation, Scrollbar, A11y } from 'swiper/modules'
+import { swiperParamsTheJourneyOfSteel } from './TheJourneyOfSteelSwiperConfig'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -11,7 +13,6 @@ import 'swiper/css/scrollbar'
 
 import './swiper.css'
 import CardSlideTheJourneyOfSteel from '../CardSlideTheJourneyOfSteel'
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 interface SlideData {
   ano: string
@@ -19,17 +20,6 @@ interface SlideData {
   description: string
 }
 
-const swiperParamsTheJourneyOfSteel = {
-  modules: [Navigation, Scrollbar, A11y],
-  spaceBetween: 80,
-  // eslint-disable-next-line @typescript-eslint/prefer-as-const
-  slidesPerView: 'auto' as 'auto',
-  navigation: {
-    prevEl: '.swiper-button-prev-the_journey',
-    nextEl: '.swiper-button-next-the_journey',
-  },
-  loop: true,
-}
 
 export default function TheJourneyOfSteel({ slides }: { slides: SlideData[] }) {
   return (
@@ -57,7 +47,9 @@ export default function TheJourneyOfSteel({ slides }: { slides: SlideData[] }) {
       <div className={styles.container__slide}>
         <Swiper {...swiperParamsTheJourneyOfSteel}>
           {slides.map((slide, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index}
+              className='swiperSlideTheJourney'
+            >
               <CardSlideTheJourneyOfSteel
                 ano={slide.ano}
                 image={slide.image}

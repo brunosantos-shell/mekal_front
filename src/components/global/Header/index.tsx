@@ -367,7 +367,7 @@ export default function Header() {
           x: isMenuOpen && solutionsOpen ? windowWidthSize : 0,
           width: isMenuOpen && solutionsOpen ? `calc(100% - ${windowWidthSize}px)` : 0,
           opacity: isRouteChanging ? 0 : isMenuOpen && solutionsOpen ? 1 : 0,
-          zIndex: isMenuOpen && solutionsOpen ? 999 : 1,
+          zIndex: isMenuOpen && solutionsOpen ? 997 : 1,
           pointerEvents: isMenuOpen && solutionsOpen ? 'auto' : 'none',
         }}
         exit={{ x: '-100%', width: 0, opacity: 0 }}

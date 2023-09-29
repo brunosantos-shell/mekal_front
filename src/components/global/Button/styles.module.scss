@@ -28,12 +28,21 @@
 
     &:hover {
       color: $color-neutral-high-pure;
+      transition: all 0.5s ease-in-out;
+
+      svg {
+        path {
+          fill: $color-neutral-high-pure;
+          stroke: $color-neutral-high-pure;
+        }
+      }
     }
   }
 
   &.btn_inverter {
     color: $color-neutral-high-pure;
     padding: 21px 32px;
+    transition: all 0.5s ease-in-out;
 
     svg {
       path {

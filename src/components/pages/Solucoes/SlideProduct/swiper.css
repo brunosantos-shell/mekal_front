@@ -46,16 +46,16 @@
   background-repeat: no-repeat;
 }
 
-.swiper:hover .swiper-button-next:not(.swiper-button-disabled),
-.swiper:hover .swiper-button-prev:not(.swiper-button-disabled) {
+.slideProductsSwiper:hover .swiper-button-next:not(.swiper-button-disabled),
+.slideProductsSwiper:hover .swiper-button-prev:not(.swiper-button-disabled) {
   opacity: 1;
 }
 
-.swiper {
+.slideProductsSwiper {
   height: 100%;
 }
 
-.swiper-slide {
+.swiperSlideProduct {
   display: flex;
   justify-content: center;
   align-items: center;

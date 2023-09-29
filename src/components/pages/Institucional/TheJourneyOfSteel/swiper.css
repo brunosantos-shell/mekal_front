@@ -16,6 +16,17 @@
     display: flex;
     justify-content: center;
     align-items: center; 
+    transition: all 0.5s ease-in-out;
+}
+
+.swiper-button-next-the_journey button:hover,
+.swiper-button-prev-the_journey button:hover {
+    background-color: #282828;
+}
+
+.swiper-button-next-the_journey button:hover svg path,
+.swiper-button-prev-the_journey button:hover svg path{
+    stroke: #fff;
 }
 
 
@@ -25,7 +36,7 @@
     height: 32px;
 } 
 
-.swiper-slide {
+.swiperSlideTheJourney {
     max-width: 1310px;
 }
 
@@ -45,7 +56,7 @@
 }
 
 @media (max-width: 768px) {
-    .swiper-slide {
+    .swiperSlideTheJourney {
         max-width: 500px;
     }
 }

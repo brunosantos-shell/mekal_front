@@ -22,7 +22,9 @@ export default function IconsMidiaSocial () {
               <IconLinkedin />
             </Link>
           </li>
-          <li>
+          <li
+            className={styles.youtube}
+          >
             <Link href="/">
               <IconYouTube />
             </Link>
