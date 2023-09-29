@@ -1,6 +1,7 @@
 import Button from '@/components/global/Button'
 import Image from 'next/image'
 import styles from './styles.module.scss'
+import contentHighlightsSolutions from './content.json'
 
 export default function HighlightsSolutions() {
   return (
@@ -9,21 +10,19 @@ export default function HighlightsSolutions() {
         <div className={styles.highlights__line__one}>
           <div className={styles.line_one__column__one}>
             <div className={styles.line_one__column__one__header}>
-              <span>Primor em cada detalhe</span>
-              <h2>A harmonia perfeita entre tecnologia e arte feita à mão</h2>
+              <span>{contentHighlightsSolutions.header1}</span>
+              <h2>{contentHighlightsSolutions.subHeader1}</h2>
               <Button
                 onClick={() => {
                   console.log('Clicou')
                 }}
               >
-                Conheça nossas soluções
+                {contentHighlightsSolutions.button1}
               </Button>
             </div>
             <div className={styles.paragraph_column__footer}>
               <p>
-                Matéria-prima de alta qualidade e processo inteligente no
-                desenvolvimento de peças de aço inoxidável. A Mekal garante
-                beleza e sofisticação em peças versáteis e resistentes.
+                {contentHighlightsSolutions.paragraph1}
               </p>
             </div>
           </div>
@@ -50,21 +49,17 @@ export default function HighlightsSolutions() {
                   alt="Smart Premium"
                 />
               </div>
-              <span className={styles.photo_legend}>Sob Medida</span>
+              <span className={styles.photo_legend}>{contentHighlightsSolutions.header2}</span>
             </div>
             <div className={styles.paragraph_column__footer}>
               <p>
-                Transforme sua cozinha em um espaço de elegância e sofisticação.
-                A Mekal traz sua expertise em aço inox para transformar seus
-                sonhos em realidade, com produtos premium que se ajustam ao seu
-                projeto. Materializamos a inventividade humana em soluções
-                criativas.
+                {contentHighlightsSolutions.paragraph2}
               </p>
             </div>
           </div>
           <div className={styles.line_two__column__two}>
             <div className={styles.line_two__column__two__header}>
-              <h2>O mais belo e requintado design de peças em aço inox</h2>
+              <h2>{contentHighlightsSolutions.subheader3}</h2>
             </div>
             <div className={styles.line_two__column__two__footer}>
               <div

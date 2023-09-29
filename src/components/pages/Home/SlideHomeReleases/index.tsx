@@ -3,6 +3,7 @@
 import styles from './styles.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+import contentSlideHomeReleases from './content.json'
 
 
 import 'swiper/css'
@@ -34,12 +35,11 @@ export default function SlideHomeReleases({ images }: SlideHomeProps) {
       <div className={`${styles.slide_home_realeases__content}`}
       >
         <div className={styles.slide_home_realeases__header}>
-          <span>Lançamento Mekal</span>
+          <span>{contentSlideHomeReleases.header}</span>
 
           <div className={styles.slide_home_realeases__header__title}>
             <h1>
-              A Freestanding apresenta o novo conceito de cozinha como
-              equipamento
+              {contentSlideHomeReleases.subheader}
             </h1>
 
             <Button onClick={() => { console.log('Clicou') }}>Saiba mais</Button>
