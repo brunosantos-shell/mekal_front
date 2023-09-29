@@ -2,6 +2,7 @@ import React from 'react'
 import style from './styles.module.scss'
 import { ArrowDown } from '@/icons'
 import { motion } from 'framer-motion'
+import contentShowcaseHome from './content.json'
 
 export default function ShowcaseHome() {
 
@@ -38,7 +39,7 @@ export default function ShowcaseHome() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.4, ease: 'easeOut' }}
           >
-            Explore
+            {contentShowcaseHome.explore}
           </motion.span>
         </motion.div>
         <motion.div
@@ -48,10 +49,10 @@ export default function ShowcaseHome() {
           transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
         >
           <motion.p>
-            Elegância, História e Arte em uma experiência única.
+            {contentShowcaseHome.eleganceHistoryArt}
           </motion.p>
           <motion.h2>
-            Originalidade e inovação materializados em aço inox
+            {contentShowcaseHome.originalityInnovation}
           </motion.h2>
         </motion.div>
       </div>

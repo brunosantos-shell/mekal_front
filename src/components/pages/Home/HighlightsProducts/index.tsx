@@ -1,6 +1,7 @@
 import CardSolution from '@/components/global/CardSolution'
 import Link from 'next/link'
 import styles from './styles.module.scss'
+import contentHighlightsProducts from './content.json'
 
 export default function HighlightsProducs() {
   return (
@@ -9,36 +10,19 @@ export default function HighlightsProducs() {
     >
       <div className={`${styles.container_highlights_header}`}
       >
-        <span>Explore nossos produtos</span>
+        <span>{contentHighlightsProducts.explore}</span>
         <ul>
-          <li>
-            <Link href="/solucoes/seriados">
-            <span>Seriados</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="/solucoes/modulares">
-            <span>Modulados</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="/solucoes/sob-medida">
-            <span>Sob medida</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="/solucoes/corporativo">
-            <span>Corporativo</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="/solucoes/arte-e-design">
-            <span>Arte e Design</span>
-            </Link>
-          </li>
+          {contentHighlightsProducts.categories.map((category, index) => (
+            <li key={index}>
+              <Link href={category.href}>
+                <span>{category.name}</span>
+              </Link>
+            </li>
+          ))
+          }
         </ul>
         <h2 className={styles.container_highlights_producs__title}>
-          Nossas soluções
+          {contentHighlightsProducts.title}
         </h2>
       </div>
 
@@ -73,10 +57,7 @@ export default function HighlightsProducs() {
           />
           <div className={styles.additional_text}>
             <p>
-              Fabricamos cozinhas, produtos para casa ou ambientes corporativos.
-              Tudo com acabamento premium e exclusivo. Desenvolvemos produtos
-              multifuncionais, integrando ambientes e proporcionando
-              experiências marcantes.
+              {contentHighlightsProducts.additionalText}
             </p>
           </div>
         </div>

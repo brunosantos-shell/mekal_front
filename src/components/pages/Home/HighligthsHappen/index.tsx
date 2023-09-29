@@ -1,6 +1,7 @@
 import Button from '@/components/global/Button'
 import CardSolution from '@/components/global/CardSolution'
 import style from './styles.module.scss'
+import contentHighlightsHappen from './content.json'
 
 export default function HighlightsHappen() {
   return (
@@ -9,15 +10,15 @@ export default function HighlightsHappen() {
       <div className={`${style.container_highlights_content}`}
       >
         <div className={style.highlights_content__header}>
-          <span>Acontece</span>
+          <span>{contentHighlightsHappen.header}</span>
           <div>
-            <h2>Explore mais sobre a mekal</h2>
+            <h2>{contentHighlightsHappen.explore}</h2>
             <Button
               onClick={() => {
                 console.log('Clicou')
               }}
             >
-              Ver mais
+              {contentHighlightsHappen.button}
             </Button>
           </div>
         </div>

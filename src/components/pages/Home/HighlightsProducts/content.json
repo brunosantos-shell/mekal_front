@@ -1,0 +1,27 @@
+{
+    "explore": "Explore nossos produtos",
+    "categories": [
+        {
+            "name": "Seriados",
+            "href": "/solucoes/seriados"
+        },
+        {
+            "name": "Modulados",
+            "href": "/solucoes/modulares"
+        },
+        {
+            "name": "Sob medida",
+            "href": "/solucoes/sob-medida"
+        },
+        {
+            "name": "Corporativo",
+            "href": "/solucoes/corporativo"
+        },
+        {
+            "name": "Arte e Design",
+            "href": "/solucoes/arte-e-design"
+        }
+    ],
+    "title": "Nossas soluções",
+    "additionalText": "Fabricamos cozinhas, produtos para casa ou ambientes corporativos. Tudo com acabamento premium e exclusivo. Desenvolvemos produtos multifuncionais, integrando ambientes e proporcionando experiências marcantes."
+}
