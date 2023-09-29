@@ -16,7 +16,22 @@
     border-radius: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.swiper-button-next-accessories button:hover,
+.swiper-button-prev-accessories button:hover
+{
+    background-color: #282828;
+    
+
+}
+
+.swiper-button-next-accessories button:hover svg path,
+.swiper-button-prev-accessories button:hover svg path
+{
+    stroke: #fff;
 }
 
 @media (max-width: 1024px) {
