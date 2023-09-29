@@ -1,4 +1,5 @@
 import CardSolution from '@/components/global/CardSolution'
+import Link from 'next/link'
 import styles from './styles.module.scss'
 
 export default function HighlightsProducs() {
@@ -11,19 +12,29 @@ export default function HighlightsProducs() {
         <span>Explore nossos produtos</span>
         <ul>
           <li>
+            <Link href="/solucoes/seriados">
             <span>Seriados</span>
+            </Link>
           </li>
           <li>
+            <Link href="/solucoes/modulares">
             <span>Modulados</span>
+            </Link>
           </li>
           <li>
+            <Link href="/solucoes/sob-medida">
             <span>Sob medida</span>
+            </Link>
           </li>
           <li>
+            <Link href="/solucoes/corporativo">
             <span>Corporativo</span>
+            </Link>
           </li>
           <li>
+            <Link href="/solucoes/arte-e-design">
             <span>Arte e Design</span>
+            </Link>
           </li>
         </ul>
         <h2 className={styles.container_highlights_producs__title}>
