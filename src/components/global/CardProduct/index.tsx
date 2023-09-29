@@ -15,8 +15,8 @@ export default function CardProduct({ title, category, image, id }: CardProductP
   const pathname = usePathname()
 
   return (
-    <Link href={`${pathname}/${id}`}>
     <div className={styles.card_product}>
+       <Link href={`${pathname}/${id}`}>
       <h5>{title}</h5>
       <p className="small">{category}</p>
       <div className={styles.image_wrapper__card_product}>
@@ -37,7 +37,7 @@ export default function CardProduct({ title, category, image, id }: CardProductP
       <button className={styles.card_product__btn__view_product}>
         <IconPlusButton />
       </button>
+      </Link>
     </div>
-    </Link>
   )
 }
