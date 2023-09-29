@@ -35,7 +35,7 @@ export default function Footer() {
             <li>
               <span>Soluções</span>
               <Link href="/solucoes/seriados">Seriados</Link>
-              <Link href="/solucoes/modulados">Modulados</Link>
+              <Link href="/solucoes/modulares">Modulados</Link>
               <Link href="/solucoes/sob-Medida">Sob medida</Link>
               <Link href="/solucoes/corporativo">Corporativo</Link>
               <Link href="/solucoes/arte-e-design">Arte e Design</Link>
